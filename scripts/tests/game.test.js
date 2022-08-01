@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game, generateItem } = require("../game");
+const { game, generateItem, generateRoom } = require("../game");
 
  beforeAll(() => {
     let fs = require("fs");
@@ -28,11 +28,16 @@ describe('item generators works correctly', () => {
     beforeAll(() => {
         game.inventory = [];
         game.items = [];
-        game.room = '';
+        game.room = [];
     });
 
     test('an item appears in the items array', () => {
         generateItem();
         expect(game.items.length).toBe(1);
+    });
+
+    test('a room is generated and appears in the rooms array', () => {
+        generateRoom();
+        expect(game.room.length).toBe(1);
     });
 })
