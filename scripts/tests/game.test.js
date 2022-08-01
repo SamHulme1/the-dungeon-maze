@@ -2,8 +2,6 @@
  * @jest-environment jsdom
  */
 
- const { expect } = require("@jest/globals");
-const { describe } = require("yargs");
 const { game } = require("../game");
 
  beforeAll(() => {
@@ -17,5 +15,11 @@ const { game } = require("../game");
 describe('game has the correct keys', () => {
     test('inventory key exits', () => {
       expect('inventory' in game).toBe(true);
+    });
+    test('items key exits', () => {
+        expect('items' in game).toBe(true);
+    });
+    test('room key exits', () => {
+        expect('room' in game).toBe(true);
     });
   });
