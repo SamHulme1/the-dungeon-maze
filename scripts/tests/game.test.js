@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game } = require("../game");
+const { game, generateItem } = require("../game");
 
  beforeAll(() => {
     let fs = require("fs");
@@ -23,3 +23,16 @@ describe('game has the correct keys', () => {
         expect('room' in game).toBe(true);
     });
   });
+
+describe('item generators works correctly', () => {
+    beforeAll(() => {
+        game.inventory = [];
+        game.items = [];
+        game.room = '';
+    });
+
+    test('an item appears in the items array', () => {
+        generateItem();
+        expect(game.items.length).toBe(1);
+    });
+})
