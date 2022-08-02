@@ -13,14 +13,17 @@ const { game, generateItem, generateRoom, addToInventory } = require("../game");
 });
 
 describe('game has the correct keys', () => {
-    test('inventory key exits', () => {
+    test('inventory key exists', () => {
       expect('inventory' in game).toBe(true);
     });
-    test('items key exits', () => {
+    test('items key exists', () => {
         expect('items' in game).toBe(true);
     });
-    test('room key exits', () => {
+    test('room key exists', () => {
         expect('room' in game).toBe(true);
+    });
+    test('health key exists', () => {
+        expect('health' in game).toBe(true);
     });
   });
 

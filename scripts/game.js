@@ -1,7 +1,8 @@
 let game = {
     inventory: [],
     items: [],
-    room: []
+    room: [], 
+    health: 10
 }
 
 /**
