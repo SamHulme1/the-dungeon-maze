@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game, generateItem, generateRoom, addToInventory } = require("../game");
+const { game, generateItem, generateRoom, addToInventory, drinkPotion } = require("../game");
 
  beforeAll(() => {
     let fs = require("fs");
@@ -61,5 +61,17 @@ describe('checks if items that are generated are stored in the inventory after t
         console.log(game.items);
         expect(game.inventory.length).toBe(3);
         console.log(game.inventory);
+    });
+});
+
+describe('checks if the potion adds health points to the health bar', () => {
+    beforeAll(() => {
+        game.health = ['heart'];
+        console.log(game.health);
+    });
+    test('potion adds points to health', () => {
+        drinkPotion();
+        expect(game.health.length).toBe(5);
+        console.log(game.health);
     });
 });

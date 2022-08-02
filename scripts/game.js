@@ -2,7 +2,7 @@ let game = {
     inventory: [],
     items: [],
     room: [], 
-    health: 10
+    health : ['heart', 'heart','heart','heart','heart']
 }
 
 /**
@@ -65,4 +65,14 @@ function addToInventory(){
   game.items = [];
 }
 
-module.exports = { game, generateItem, generateRoom, addToInventory };
+/**
+ * This function increases the health in the game key back to maximum
+ */
+ function drinkPotion(){
+   while(game.health.length < 5){
+     game.health.push('heart');
+   }
+ }
+
+
+module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion };
