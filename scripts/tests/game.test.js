@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game, generateItem, generateRoom } = require("../game");
+const { game, generateItem, generateRoom, addToInventory } = require("../game");
 
  beforeAll(() => {
     let fs = require("fs");
@@ -26,7 +26,6 @@ describe('game has the correct keys', () => {
 
 describe('item generators works correctly', () => {
     beforeAll(() => {
-        game.inventory = [];
         game.items = [];
         game.room = [];
     });
@@ -40,4 +39,24 @@ describe('item generators works correctly', () => {
         generateRoom();
         expect(game.room.length).toBe(1);
     });
-})
+});
+
+describe('checks if items that are generated are stored in the inventory after the function checkItemFound is called', () => {
+    beforeAll(() => {
+        game.items = [];
+        game.inventory = [];
+    });
+    test('items is added to inventory array', () => {
+        generateItem();
+        addToInventory();
+    });
+    test('multiple items can be added to the inventory',() => {
+        generateItem();
+        addToInventory();
+        generateItem();
+        addToInventory();
+        console.log(game.items);
+        expect(game.inventory.length).toBe(3);
+        console.log(game.inventory);
+    });
+});

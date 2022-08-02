@@ -9,25 +9,7 @@ let game = {
  */
 
 /**
- * This function generates a randomItem and then pushes the item to the items array in game
- */
-
-function generateItem() {
-    let randomItem = Math.floor(Math.random()*10) +1;
-    if (randomItem === 1){
-        game.items.push('potion');
-    } else if (randomItem === 2){
-        game.items.push('sword');
-    } else if (randomItem === 3){
-        game.items.push('axe');
-    } else if (randomItem === 4){
-        game.items.push('key');
-    } else {
-        game.items.push('nothing');
-    }
-}
-/**
- * This function generates a randomRoom and then pushes the item to the items array in game
+ * This function generates a randomRoom and then pushes the item to the room array in game
  */
 
 function generateRoom() {
@@ -53,12 +35,33 @@ function generateRoom() {
     }
 }
 
+/**
+ * This function generates a randomItem and then pushes the item to the items array in game
+ */
 
+function generateItem() {
+    let randomItem = Math.floor(Math.random()*10) +1;
+    if (randomItem === 1){
+        game.items.push('potion');
+    } else if (randomItem === 2){
+        game.items.push('sword');
+    } else if (randomItem === 3){
+        game.items.push('axe');
+    } else if (randomItem === 4){
+        game.items.push('key');
+    } else {
+        game.items.push('nothing');
+    }
+    return game.items;
+}
 
+/**
+ * This function adds the item found to the inventory and resets the items in the game array
+ */
+function addToInventory(){
+  let itemFound = game.items[0];
+  game.inventory.push(itemFound);
+  game.items = [];
+}
 
-
-
-
-
-
-module.exports = { game, generateItem, generateRoom };
+module.exports = { game, generateItem, generateRoom, addToInventory };
