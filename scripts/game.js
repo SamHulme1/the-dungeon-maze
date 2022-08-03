@@ -73,6 +73,9 @@ function addToInventory(){
      game.health.push('heart');
    }
  }
+ /**
+ * This function will be called whenever the game needs to reset
+ */
 
  function startNewGame(){
     game.inventory = [];
@@ -83,4 +86,16 @@ function addToInventory(){
     generateItem();
  }
 
-module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame };
+ /**
+ * This function will be called whenever the user starts a new turn
+ */
+
+ function startNewTurn(){
+    game.items = [];
+    game.room = [];
+    generateRoom();
+    generateItem();
+    //game.health? game.inventory?
+ }
+
+module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };

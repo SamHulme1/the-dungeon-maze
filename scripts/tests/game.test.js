@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame } = require("../game");
+const { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn} = require("../game");
 
  beforeAll(() => {
     let fs = require("fs");
@@ -84,6 +84,7 @@ describe('the game functions work as intended', () => {
     });
     test('startNewTurn function works', () => {
     startNewTurn();
-
+    expect(game.items.length).toBe(1);
+    expect(game.room.length).toBe(1);
     });
 });
