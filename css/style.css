@@ -4,10 +4,27 @@ body {
 
 .heading {
     text-align: center;
+    font-size: 60px;
+    margin-top: 20px;
+    font-family: 'Press Start 2P', sans-serif;
+    color:white;
+    letter-spacing: 15px;
 }
 
+.heading-two {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+    font-family: 'Press Start 2P', sans-serif;
+    color:white;
+    letter-spacing: 15px;
+}
+
+.text-output {
+    text-align: center;
+}
 .game-output-area{
-    margin-top: 100px;
+    margin-top: 60px;
     margin-left: 40px;
     margin-right:40px;
     height:60vh;
