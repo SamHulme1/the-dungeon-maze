@@ -74,5 +74,13 @@ function addToInventory(){
    }
  }
 
+ function startNewGame(){
+    game.inventory = [];
+    game.items = [];
+    game.room = [];
+    game.health = ['heart', 'heart','heart','heart','heart'];
+    generateRoom();
+    generateItem();
+ }
 
-module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion };
+module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame };

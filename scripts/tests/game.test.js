@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game, generateItem, generateRoom, addToInventory, drinkPotion } = require("../game");
+const { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame } = require("../game");
 
  beforeAll(() => {
     let fs = require("fs");
@@ -42,16 +42,10 @@ describe('item generators works correctly', () => {
         generateRoom();
         expect(game.room.length).toBe(1);
     });
-});
-
-describe('checks if items that are generated are stored in the inventory after the function checkItemFound is called', () => {
-    beforeAll(() => {
-        game.items = [];
-        game.inventory = [];
-    });
     test('items is added to inventory array', () => {
         generateItem();
         addToInventory();
+        expect(game.inventory.length).toBe(1);
     });
     test('multiple items can be added to the inventory',() => {
         generateItem();
@@ -67,11 +61,29 @@ describe('checks if items that are generated are stored in the inventory after t
 describe('checks if the potion adds health points to the health bar', () => {
     beforeAll(() => {
         game.health = ['heart'];
-        console.log(game.health);
     });
     test('potion adds points to health', () => {
         drinkPotion();
         expect(game.health.length).toBe(5);
-        console.log(game.health);
+    });
+});
+
+describe('the game functions work as intended', () => {
+    beforeAll(() => {
+    game.inventory = ['key','sword','axe'];
+    game.items = ['key'];
+    game.room = ['small room'];
+    game.health = ['heart', 'heart','heart'];
+    });
+    test('startNewGame function works', () => {
+    startNewGame();
+    expect(game.inventory.length).toBe(0);
+    expect(game.items.length).toBe(1);
+    expect(game.room.length).toBe(1);
+    expect(game.health).toEqual(['heart', 'heart','heart','heart','heart']);
+    });
+    test('startNewTurn function works', () => {
+    startNewTurn();
+
     });
 });
