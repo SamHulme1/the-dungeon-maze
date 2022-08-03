@@ -1,0 +1,31 @@
+body {
+    background-color: darkgrey;
+}
+
+.heading {
+    text-align: center;
+}
+
+.game-output-area{
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right:40px;
+    height:60vh;
+    border-style:solid;
+    border-color: black;
+    text-align: center;
+
+}
+
+.game-interaction-area{
+    height:50vh;
+}
+
+.game-btn{
+    background-color: red;
+    margin-bottom: 30px;
+}
+
+.health{
+    float: right;
+}

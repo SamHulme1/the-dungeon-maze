@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwpoint" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+		<script src="https://kit.fontawesome.com/8be5f8d5f5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <title>Dungeon Maze</title>
+    </head>
+    <body>
+        <h1 class="heading">
+            The Dungeon Maze
+            <img class="logo" src="" alt="">
+        </h1>
+        <h2>Enter if you dare!</h2>
+        <section class="game-output-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img id="image-output">
+                        <p id="text-output">
+                        Welcome to the game!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="game-interaction-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="health">Health: <span id="hp-remaining"><i class="fa-solid fa-heart"></i></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <button class="game-btn" data-type="advance-onwards">click me to move to a new area</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="game-btn" data-type="look-in-inventory">click me to check your inventory</button>
+                    </div> 
+                    <div class="col-4">   
+                        <button class="game-btn" data-type="drink-a-potion">click me to drink a potion</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button data-type="use-attack">click me to attack</button>
+                    </div>
+                    <div class="col-6">
+                        <button data-type="use-block">click me to block</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script src="scripts/game.js"></script>
+    </body>
+</html>
