@@ -15,9 +15,18 @@ body {
     text-align: center;
     font-size: 40px;
     margin-top: 20px;
+    margin-bottom: 20px;
     font-family: 'Press Start 2P', sans-serif;
     color:white;
     letter-spacing: 15px;
+}
+.paragraph-text {
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', sans-serif;
+    color:black;
+    letter-spacing: 5px;
 }
 
 .text-output {
@@ -27,7 +36,9 @@ body {
     margin-top: 60px;
     margin-left: 40px;
     margin-right:40px;
-    height:60vh;
+    margin-top: -6px;
+    margin-bottom: -6px;
+    height:20em;
     border-style:solid;
     border-color: black;
     text-align: center;
@@ -35,12 +46,30 @@ body {
 }
 
 .game-interaction-area{
-    height:50vh;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.health-and-inventory-area{
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right:40px;
+    height:10em;
+    border-style:solid;
+    border-color: black;
+    text-align: center;
 }
 
 .game-btn{
     background-color: red;
-    margin-bottom: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+    padding: 25px;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right:40px;
+    display: inline;
+
 }
 
 .health{

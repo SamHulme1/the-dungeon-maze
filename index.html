@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-12">
                         <img id="image-output">
-                        <p id="text-output">
+                        <p id="text-output" class="paragraph-text">
                         Welcome to the game!
                         </p>
                     </div>
@@ -30,31 +30,31 @@
             </div>
         </section>
         <section class="game-interaction-area">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
-                        <p class="health">Health: <span id="hp-remaining"><i class="fa-solid fa-heart"></i></span></p>
+                    <div class="col-3">
+                        <button class="game-btn" data-type="advance-onwards">new room</button>
+                    </div>
+                    <div class="col-3">   
+                        <button class="game-btn" data-type="drink-a-potion">potion</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="game-btn" data-type="use-attack">attack</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="game-btn" data-type="use-block">block</button>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-4">
-                        <button class="game-btn" data-type="advance-onwards">click me to move to a new area</button>
-                    </div>
-                    <div class="col-4">
-                        <button class="game-btn" data-type="look-in-inventory">click me to check your inventory</button>
-                    </div> 
-                    <div class="col-4">   
-                        <button class="game-btn" data-type="drink-a-potion">click me to drink a potion</button>
-                    </div>
-                </div>
+        </section>
+        <section class="health-and-inventory-area">
+            <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <button data-type="use-attack">click me to attack</button>
+                        <p class="paragraph-text">Inventory</p>
                     </div>
                     <div class="col-6">
-                        <button data-type="use-block">click me to block</button>
+                        <p class="health paragraph-text">Health: <span id="hp-remaining"><i class="fa-solid fa-heart"></i></span></p>
                     </div>
                 </div>
             </div>
