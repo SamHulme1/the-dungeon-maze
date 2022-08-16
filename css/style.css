@@ -4,7 +4,7 @@ body {
 
 .heading {
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     margin-top: 20px;
     font-family: 'Press Start 2P', sans-serif;
     color:white;
@@ -13,7 +13,7 @@ body {
 
 .heading-two {
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'Press Start 2P', sans-serif;
@@ -22,27 +22,44 @@ body {
 }
 .paragraph-text {
     font-size: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     font-family: 'Press Start 2P', sans-serif;
-    color:black;
     letter-spacing: 5px;
+    padding-top: 10px;
 }
 
-.text-output {
-    text-align: center;
-}
 .game-output-area{
     margin-top: 60px;
     margin-left: 40px;
     margin-right:40px;
     margin-top: -6px;
     margin-bottom: -6px;
-    height:20em;
+    height:30em;
     border-style:solid;
     border-color: black;
     text-align: center;
+    border-width: 5px;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
 
+}
+.output-text {
+    color: white;
+    background-color: red;
+    position: absolute;
+    right: -84px;
+    top: 0px;
+    width: 40em;
+    height: 49em;
+}
+
+.output-image {
+    height: 30em;
+    position: absolute;
+    left: -83px;
+    top: 0px;
+    background-color: red;
+    z-index: 1;
 }
 
 .game-interaction-area{
@@ -58,6 +75,7 @@ body {
     border-style:solid;
     border-color: black;
     text-align: center;
+    border-width: 5px;
 }
 
 .game-btn{
@@ -69,6 +87,7 @@ body {
     margin-left: 40px;
     margin-right:40px;
     display: inline;
+    border: none;
 
 }
 

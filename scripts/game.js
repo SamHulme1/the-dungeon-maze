@@ -2,7 +2,7 @@ let game = {
     inventory: [],
     items: [],
     room: [], 
-    health : ['heart', 'heart','heart','heart','heart']
+    health : ['heart']
 }
 
 /**
@@ -69,10 +69,12 @@ function addToInventory(){
  * This function increases the health in the game key back to maximum
  */
  function drinkPotion(){
-   while(game.health.length < 5){
-     game.health.push('heart');
-   }
- }
+    while(game.health.length < 5){
+      game.health.push('heart');
+      let hp = document.getElementById('hp-remaining');
+      hp.innerHTML = '<i class="fa-solid fa-heart"></i>';
+    }
+  }
  /**
  * This function will be called whenever the game needs to reset
  */
@@ -97,5 +99,6 @@ function addToInventory(){
     generateItem();
     //game.health? game.inventory?
  }
+ drinkPotion();
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
