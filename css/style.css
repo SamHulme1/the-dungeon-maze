@@ -33,33 +33,25 @@ body {
     margin-right:40px;
     margin-top: -6px;
     margin-bottom: -6px;
-    height:30em;
     border-style:solid;
     border-color: black;
     text-align: center;
     border-width: 5px;
     overflow: hidden;
     background-color: black;
-    position: relative;
 
 }
 .output-text {
     color: white;
     background-color: red;
-    position: absolute;
-    right: -84px;
-    top: 0px;
-    width: 40em;
-    height: 49em;
+    width: auto;
+    float:right;
 }
 
 .output-image {
-    height: 30em;
-    position: absolute;
-    left: -83px;
-    top: 0px;
-    background-color: red;
-    z-index: 1;
+    height: 100%;
+    width: 100%;
+    float: left;
 }
 
 .game-interaction-area{
