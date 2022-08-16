@@ -2,13 +2,37 @@ body {
     background-color: darkgrey;
 }
 
+.logo {
+    background-image: url(../img/dungeon-maze-title-image.jpg);
+    width: 5em;
+    height:5em;
+    background-size: contain;
+    border-radius: 50%;
+    border-style: ridge;
+    border-color: black;
+    border-width: 0.1px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar li a {
+    font-family: 'Press Start 2P', sans-serif;
+    color: black;
+    letter-spacing: 10px;
+}
+
 .heading {
     text-align: center;
     font-size: 80px;
-    margin-top: 20px;
+    margin-top: 10%;
     font-family: 'Press Start 2P', sans-serif;
     color:white;
-    letter-spacing: 15px;
+    letter-spacing: 10px;
 }
 
 .heading-two {
@@ -18,7 +42,7 @@ body {
     margin-bottom: 20px;
     font-family: 'Press Start 2P', sans-serif;
     color:white;
-    letter-spacing: 15px;
+    letter-spacing: 10px;
 }
 .paragraph-text {
     font-size: 10px;
