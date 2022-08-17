@@ -1,5 +1,9 @@
 body {
-    background-color: darkgrey;
+    background-color: #85A58E;
+}
+
+.nopadding {
+    padding:0;
 }
 
 .logo {
@@ -22,7 +26,7 @@ body {
 
 .navbar li a {
     font-family: 'Press Start 2P', sans-serif;
-    color: black;
+    color: #671716;
     letter-spacing: 10px;
 }
 
@@ -30,9 +34,10 @@ body {
     text-align: center;
     font-size: 80px;
     margin-top: 10%;
+    margin-bottom: 5%;
     font-family: 'Press Start 2P', sans-serif;
-    color:white;
-    letter-spacing: 10px;
+    color:#671716;
+    letter-spacing: 2px;
 }
 
 .heading-two {
@@ -45,39 +50,30 @@ body {
     letter-spacing: 10px;
 }
 .paragraph-text {
-    font-size: 10px;
+    font-size: 15px;
     font-family: 'Press Start 2P', sans-serif;
-    letter-spacing: 5px;
-    padding-top: 10px;
+    letter-spacing: 1px;
+    padding: 20px;
+    color: black;
 }
 
 .game-output-area{
-    margin-top: 60px;
-    margin-left: 40px;
-    margin-right:40px;
-    margin-top: -6px;
-    margin-bottom: -6px;
-    border-style:solid;
-    border-color: black;
-    text-align: center;
-    border-width: 5px;
-    overflow: hidden;
     background-color: black;
 
-}
-.output-text {
-    color: white;
-    background-color: red;
-    width: auto;
-    float:right;
 }
 
 .output-image {
     height: 100%;
     width: 100%;
-    float: left;
+}
+.output-image-container{
+    overflow: hidden;
 }
 
+.output-text-container {
+    background-color: #671716;
+    height: 100%;
+}
 .game-interaction-area{
     margin-bottom: 10px;
     margin-top: 10px;

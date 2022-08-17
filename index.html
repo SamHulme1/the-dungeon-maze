@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="veiwpoint" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<script src="https://kit.fontawesome.com/8be5f8d5f5.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,37 +23,50 @@
                 </ul>
             </nav>
         </header>
-        <h1 class="heading">
-            The Dungeon Maze
-        </h1>
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="heading">
+                            The Dungeon Maze
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>    
         <section class="game-output-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-12 col-md-6" id="image-output">
-                        <img class ="output-image" src="img/tavern.jpg" alt="the dugeon maze title image">
-                    </div>
-                    <div class="col-sm-12 col-md-6 output-text" id="text-output">
-                        <div class= "paragraph-text">
-                            Welcome to the game!
+                    <div class="col-12 col-md-6 nopadding">
+                        <div class="output-image-container" id="image-output">
+                            <img class ="output-image" src="img/tavern.jpg" alt="the dugeon maze title image">
                         </div>
                     </div>
-                </div>    
+                    <div class="col-12 col-md-6 nopadding">
+                        <div class="output-text-container" id="text-output">
+                            <P class= "paragraph-text">
+                                The dungeon of the once great king ... is renowned for it's many treasures but also it's deadly inhabitents. You've come across hard times in resent months, the harvests have been poor, and you have been forced to find other means of accumulating income. So you ended up here. In this inn on the otherside of the world. Many others like you have come to seek their fortune but many will fail. You decide to have one last ale before calling it a day. You'll enter the maze at first light. 
+                                press continue to start your adventure. 
+                            </P> 
+                        </div>
+                    </div>   
+                </div> 
             </div>
         </section>
         <section class="game-interaction-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3 col-sm-12">
+                    <div class="col-12 col-md-3">
                         <button class="game-btn" data-type="advance-onwards">new room</button>
                     </div>
-                    <div class="col-md-3 col-sm-12">   
+                    <div class="col-12 col-md-3">   
                         <button class="game-btn" data-type="drink-a-potion">potion</button>
                     </div>
-                    <div class="col-md-3 col-sm-12">
+                    <div class="col-12 col-md-3">
                         <button class="game-btn" data-type="use-attack">attack</button>
                     </div>
-                    <div class="col-md-3 col-sm-12">
-                        <button class="game-btn" data-type="use-block">block</button>
+                    <div class="col-12 col-md-3">
+                            <button class="game-btn" data-type="use-block">block</button>
                     </div>
                 </div>
             </div>
@@ -60,16 +74,15 @@
         <section class="health-and-inventory-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <p class="paragraph-text">Inventory</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <p class="health paragraph-text">Health: <span id="hp-remaining"><i class="fa-solid fa-heart"></i></span></p>
                     </div>
                 </div>
             </div>
         </section>
-        
         <script src="scripts/game.js"></script>
     </body>
 </html>
