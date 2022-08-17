@@ -8,32 +8,39 @@ body {
 
 .logo {
     background-image: url(../img/dungeon-maze-title-image.jpg);
-    width: 5em;
-    height:5em;
-    background-size: contain;
+    height:100%;
+    width: 20%;
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
     border-style: ridge;
     border-color: black;
     border-width: 0.1px;
     background-repeat: no-repeat;
     overflow: hidden;
+    float: left;
+    z-index: 1;
 }
 
 .navbar {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+    float: right;
+    height: 20vh;
 }
 
 .navbar li a {
     font-family: 'Press Start 2P', sans-serif;
     color: #671716;
     letter-spacing: 10px;
+    width: 20%;
+    height: 100%;
 }
 
 .heading {
     text-align: center;
     font-size: 80px;
-    margin-top: 10%;
+    margin-top: 20%;
     margin-bottom: 5%;
     font-family: 'Press Start 2P', sans-serif;
     color:#671716;
@@ -73,6 +80,7 @@ body {
 .output-text-container {
     background-color: #671716;
     height: 100%;
+    width: 100%;
 }
 .game-interaction-area{
     margin-bottom: 10px;
@@ -105,4 +113,40 @@ body {
 
 .health{
     float: right;
+}
+
+
+@media (max-width: 600px){
+    .heading {
+        font-size: 30px;
+        margin-top: 30%;
+    }
+    .navbar li a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 620px){
+    .heading {
+        font-size: 30px;
+        margin-top: 30%;
+    }
+    .navbar li a {
+        font-size: 10px;
+    }
+    .health-and-inventory-area {
+        margin-left: 0; 
+        margin-right: 0;
+        height: 300px;
+    }
+}
+
+@media (max-width: 428px){
+    .heading {
+        font-size: 20px;
+        margin-top: 35%;
+    }
+    .logo {
+        display: none;
+    }
 }
