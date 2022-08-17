@@ -1,5 +1,7 @@
 body {
-    background-color: #85A58E;
+    background : url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .nopadding {
@@ -19,7 +21,7 @@ body {
 
 .navbar {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255,255,255, 0.3);
     float: right;
     height: 20vh;
 }
@@ -61,6 +63,9 @@ body {
 
 .game-output-area{
     background-color: black;
+    border-style:solid;
+    border-color: rgba(255,255,255, 0.5);
+    border-width: 5px;
 
 }
 
@@ -85,15 +90,14 @@ body {
 
 .health-and-inventory-area{
     margin-top: 10px;
-    margin-left: 40px;
-    margin-right:40px;
     border-style:solid;
-    border-color: black;
+    border-color: rgba(255,255,255, 0.5);
     border-width: 5px;
+    background-color: rgba(255,255,255, 0.2);
 }
 
 .game-btn{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255,255,255, 0.6);
     font-family: 'Press Start 2P', sans-serif;
     width: 10em;
     height: 5em;
@@ -112,6 +116,22 @@ body {
 
 .inventory{
     float: left;
+}
+
+.contact-icons{
+    text-align: center;
+    font-size: 60px;
+}
+
+.contact-icons i {
+    margin-left:10%;
+    margin-right:10%;
+    color: #671716;
+}
+
+footer {
+    background-color:rgba(255,255,255, 0.5);
+    margin-top: 20%;
 }
 
 
