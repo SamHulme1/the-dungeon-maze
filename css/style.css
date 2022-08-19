@@ -16,15 +16,14 @@ body {
 .navbar {
     width: 100%;
     background-color: rgba(255,255,255, 0.3);
-    float: right;
 }
 
 .navbar li a {
     font-family: 'Press Start 2P', sans-serif;
     color: #671716;
     letter-spacing: 10px;
-    width: 20%;
     height: 100%;
+    float: right;
 }
 
 .heading {
@@ -60,6 +59,16 @@ body {
     border-color: rgba(255,255,255, 0.5);
     border-width: 5px;
 
+}
+
+.hero-container{
+    overflow: hidden;
+    height: 50%;
+    width:50%;
+}
+
+.hero-image {
+    width:inherit;
 }
 
 .output-image {
