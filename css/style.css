@@ -63,7 +63,6 @@ body {
 
 .hero-container{
     overflow: hidden;
-    height: 50%;
     width:50%;
 }
 
@@ -72,8 +71,9 @@ body {
 }
 
 .output-image {
-    height: 100%;
-    width: 100%;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
 }
 .output-image-container{
     overflow: hidden;
@@ -156,6 +156,13 @@ footer {
     .navbar li a {
         font-size: 10px;
     }
+    .heading-two {
+        font-size: 20px;
+    }
+    .contact-icons{
+        font-size: 20px;
+    }
+
 }
 
 @media (max-width: 620px){

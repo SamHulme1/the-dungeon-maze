@@ -1,5 +1,5 @@
 let game = {
-    inventory: [],
+    inventory: ['potion'],
     items: [],
     room: [], 
     health : ['heart']
@@ -69,14 +69,22 @@ function addToInventory(){
  * This function increases the health in the game key back to maximum
  */
  function drinkPotion(){
-    while(game.health.length < 5){
-      game.health.push('heart');
-      let hp = document.getElementById('hp-remaining');
-      hp.innerHTML = '<i class="fa-solid fa-heart"></i>';
+    if(game.inventory.includes("potion")){
+        while(game.health.length < 5){
+            game.health.push('heart');
+            let hp = document.querySelector('#hp-remaining');
+            let addHeart = hp.cloneNode(true);
+            hp.after(addHeart);
+          }
+    } else {
+        alert("You don't have a potion");
     }
+    
   }
+
+  
  /**
- * This function will be called whenever the game needs to reset
+ * This function will be called whenever the game needs to reset or when the user starts the game
  */
 
  function startNewGame(){
@@ -84,8 +92,6 @@ function addToInventory(){
     game.items = [];
     game.room = [];
     game.health = ['heart', 'heart','heart','heart','heart'];
-    generateRoom();
-    generateItem();
  }
 
  /**
@@ -99,6 +105,5 @@ function addToInventory(){
     generateItem();
     //game.health? game.inventory?
  }
- drinkPotion();
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
