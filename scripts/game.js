@@ -1,5 +1,5 @@
 let game = {
-    inventory: ['potion'],
+    inventory: [],
     items: [],
     room: [], 
     health : ['heart']
@@ -14,26 +14,31 @@ let game = {
  */
 
 function generateRoom() {
+    game.room = [];
     let randomRoom = Math.floor(Math.random()*10) +1;
     if (randomRoom === 1){
-        game.room.push('corridoor');
+        game.room.push('hidden Chamber');
+        roomImage = document.getElementsByClassName("output-image").src = "";
     } else if (randomRoom === 2){
         game.room.push('large room');
+        roomImage = document.getElementsByClassName("output-image").src = "img/largeroom-1.jpg";
     } else if (randomRoom === 3){
         game.room.push('large room two');
-    } else if (randomRoom === 5){
+        roomImage = document.getElementsByClassName("output-image").src = "img/largeroom-2.jpg";
+    } else if (randomRoom === 4){
         game.room.push('small room');
-    } else if (randomRoom === 6){
+    } else if (randomRoom === 5){
         game.room.push('small room two');
-    } else if (randomRoom === 7){
+    } else if (randomRoom === 6){
         game.room.push('bedroom');
-    } else if (randomRoom === 8){
+    } else if (randomRoom === 7){
         game.room.push('well');
-    } else if (randomRoom === 9){
+    } else if (randomRoom === 8){
         game.room.push('locked door');
     } else {
-        game.room.push('cave in');
+        game.room.push('corridoor');
     }
+    return game.room;
 }
 
 /**
@@ -41,19 +46,42 @@ function generateRoom() {
  */
 
 function generateItem() {
+    game.items = [];
     let randomItem = Math.floor(Math.random()*10) +1;
     if (randomItem === 1){
-        game.items.push('potion');
+        game.items.push('a potion');
     } else if (randomItem === 2){
-        game.items.push('sword');
+        game.items.push('a sword');
     } else if (randomItem === 3){
-        game.items.push('axe');
+        game.items.push('an axe');
     } else if (randomItem === 4){
-        game.items.push('key');
+        game.items.push('a key');
     } else {
         game.items.push('nothing');
     }
     return game.items;
+}
+
+function createGameArea() {
+    generateItem(); 
+    generateRoom();
+    let generatedOutput = document.getElementById("game-output-area");
+    generatedOutput.innerHTML = `
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 nopadding">
+                <div class="output-image-container">
+                    <img class ="output-image" src="img/bedroom.jpg" alt="the dugeon maze title image">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 nopadding">
+                <div class="output-text-container">
+                    <p class="paragraph-text">
+                    ${game.room} ${game.items}
+                    </p> 
+                </div>
+            </div>   
+        </div> `
 }
 
 /**
@@ -92,6 +120,8 @@ function addToInventory(){
     game.items = [];
     game.room = [];
     game.health = ['heart', 'heart','heart','heart','heart'];
+    generateRoom();
+    generateItem();
  }
 
  /**

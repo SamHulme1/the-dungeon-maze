@@ -35,16 +35,16 @@
                 </div>
             </div>
         </section>    
-        <section class="game-output-area">
+        <section id="game-output-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12 col-md-6 nopadding">
-                        <div class="output-image-container" id="image-output">
+                    <div class="col-12 nopadding">
+                        <div class="output-image-container">
                             <img class ="output-image" src="img/tavern.jpg" alt="the dugeon maze title image">
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 nopadding">
-                        <div class="output-text-container" id="text-output">
+                    <div class="col-12 nopadding">
+                        <div class="output-text-container">
                             <p class="paragraph-text">
                                 The dungeon of the once great king ... is renowned for it's many treasures but also it's deadly inhabitents. You've come across hard times in resent months, the harvests have been poor, and you have been forced to find other means of accumulating income. So you ended up here. In this inn on the otherside of the world. Many others like you have come to seek their fortune but many will fail. You decide to have one last ale before calling it a day. You'll enter the maze at first light. 
                                 press continue to start your adventure. 
@@ -58,7 +58,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-6 col-md-3">
-                        <button class="game-btn" data-type="advance-onwards"><i class="fa-solid fa-dungeon"></i></button>
+                        <button class="game-btn" id="next-room" onclick="createGameArea()"><i class="fa-solid fa-dungeon"></i></button>
                     </div>
                     <div class="col-6 col-md-3">   
                         <button class="game-btn" id="drink-potion" onclick="drinkPotion();"><i class="fa-solid fa-heart-circle-plus"></i></button>
