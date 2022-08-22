@@ -49,16 +49,25 @@ function generateItem() {
     game.items = [];
     let randomItem = Math.floor(Math.random()*10) +1;
     if (randomItem === 1){
-        game.items.push('a potion');
+        game.items.push('potion');
     } else if (randomItem === 2){
-        game.items.push('a sword');
+        game.items.push('Diamond ring');
     } else if (randomItem === 3){
-        game.items.push('an axe');
+        game.items.push('300 Gold Coins');
     } else if (randomItem === 4){
-        game.items.push('a key');
+        game.items.push('key');
+    } else if (randomItem === 5){
+        game.items.push('500 Silver Coins');
+    } else if (randomItem === 6){
+        game.items.push('bronse Statue');
+    } else if (randomItem === 7){
+        game.items.push('bag of jemstones');
+    } else if (randomItem === 8){
+        game.items.push('crystal dagger');  
     } else {
-        game.items.push('nothing');
+        game.items.push('old sock');
     }
+    addToInventory();
     return game.items;
 }
 
@@ -90,7 +99,8 @@ function createGameArea() {
 function addToInventory(){
   let itemFound = game.items[0];
   game.inventory.push(itemFound);
-  game.items = [];
+  let userInventory = document.getElementById("itemsInInventory");
+  userInventory.innerHTML = `Inventory: <br> ${game.inventory}`;
 }
 
 /**
@@ -120,8 +130,6 @@ function addToInventory(){
     game.items = [];
     game.room = [];
     game.health = ['heart', 'heart','heart','heart','heart'];
-    generateRoom();
-    generateItem();
  }
 
  /**
