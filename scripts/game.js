@@ -16,7 +16,7 @@ let game = {
 function generateRoom() {
     game.room = [];
     let randomRoom = Math.floor(Math.random()*10) +1;
-    roomImage = document.getElementsByClassName("output-image")
+    roomImage = document.getElementsByClassName("output-image");
     if (randomRoom === 1){
         game.room.push('You come accross a partial cave-in, after moving some of the rubble, you discover a small passageway "I shouldnt have had that extra large breakfast" you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a');
         roomImage.src = "";
@@ -75,23 +75,9 @@ function generateItem() {
 function createGameArea() {
     generateItem(); 
     generateRoom();
-    let generatedOutput = document.getElementById("game-output-area");
+    let generatedOutput = document.getElementById("output-text");
     generatedOutput.innerHTML = `
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6 nopadding">
-                <div class="output-image-container">
-                    <img class ="output-image" src="img/bedroom.jpg" alt="the dugeon maze title image">
-                </div>
-            </div>
-            <div class="col-12 col-md-6 nopadding">
-                <div class="output-text-container">
-                    <p class="paragraph-text">
-                    ${game.room} ${game.items}
-                    </p> 
-                </div>
-            </div>   
-        </div> `
+    <p class="paragraph-text"> ${game.room} ${game.items}</p> `;
 }
 
 /**
