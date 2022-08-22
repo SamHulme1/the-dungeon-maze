@@ -140,7 +140,6 @@ footer {
     .inventory, .health{
         float: none;
         text-align: center;
-        margin-bottom: 20%;
     }
     .health-and-inventory-area {
         margin-left: 0; 
