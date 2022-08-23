@@ -10,7 +10,7 @@ let game = {
  */
 
 /**
- * This function generates a randomRoom and then pushes the item to the room array in game
+ * This function generates a randomRoom and then pushes the room to the room array in game, the room generated contains a text description which is then read later on in the code. At the start of the fuction the room array in the game is cleared so that a new value can be stored.
  */
 
 function generateRoom() {
@@ -43,7 +43,7 @@ function generateRoom() {
 }
 
 /**
- * This function generates a randomItem and then pushes the item to the items array in game
+ * This function generates a randomItem and then pushes the item to the items array in game it then calls the function addToInventory which passes the generated value to the inventory array in the game object.
  */
 
 function generateItem() {
@@ -72,6 +72,10 @@ function generateItem() {
     return game.items;
 }
 
+/**
+ * This is the main function for the game it calls the functions generateItem and generateRoom and then uses their values to manipulate the text that the user see on screen.
+ */
+
 function createGameArea() {
     generateItem(); 
     generateRoom();
@@ -81,7 +85,7 @@ function createGameArea() {
 }
 
 /**
- * This function adds the item found to the inventory and resets the items in the game array
+ * This function adds the item found to the inventory and then manipulates the DOM to display what the user has in their inventory to them on the webpage.
  */
 function addToInventory(){
   let itemFound = game.items[0];
@@ -91,7 +95,7 @@ function addToInventory(){
 }
 
 /**
- * This function increases the health in the game key back to maximum
+ * This function increases the health in the game key back to maximum, it's done by checking first if the user has a potion in their inventory and if their hearts are less than 5 in the game object it clones w
  */
  function drinkPotion(){
     if(game.inventory.includes("potion")){
@@ -169,16 +173,5 @@ function addToInventory(){
     game.health = ['heart', 'heart','heart','heart','heart'];
  }
 
- /**
- * This function will be called whenever the user starts a new turn
- */
-
- function startNewTurn(){
-    game.items = [];
-    game.room = [];
-    generateRoom();
-    generateItem();
-    //game.health? game.inventory?
- }
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
