@@ -2,11 +2,12 @@ let game = {
     inventory: [],
     items: [],
     room: [], 
+    monster: [],
     health : ['heart','heart','heart','heart','heart']
 }
 
 /**
- * Generator Functions
+ * -----------------------------------------------------------------------------------Generator Functions
  */
 
 /**
@@ -102,6 +103,32 @@ function generateItem() {
     return game.items;
 }
 
+function generateMonster() {
+    game.monster = [];
+    let randomMonster = Math.floor(Math.random()*10) +1;
+    if (randomMonster === 1){
+        game.monster.push('old goblin guarding a ');
+    } else if (randomMonster === 2){
+        game.monster.push('giant rat guarding a ');
+    } else if (randomMonster === 3){
+        game.monster.push('mad old man, looks like hes been down here a while. He has a ');
+    } else if (randomMonster === 4){
+        game.monster.push('zombie who has a ');
+    } else if (randomMonster === 5){
+        game.monster.push('fearsome orc treasuring he fights fearsly over a ');
+    } else if (randomMonster === 6){
+        game.monster.push('red dragon smiling at you. How dare you try and steal his most treasured item a ');
+    } else if (randomMonster === 7){
+        game.monster.push('ogre scratching its head and looks at you, "hey thats my "');
+    } else if (randomMonster === 8){
+        game.monster.push('crawling out of a small hole emerges a warewolf he carrys a ');  
+    } else {
+        game.monster.push('The ghost of your mother wonders towards you, she hands you a ');
+    }
+    return game.monster;
+}
+
+
 /**
  * This is the main function for the game it calls the functions generateItem and generateRoom and then uses their values to manipulate the text that the user see on screen.
  */
@@ -109,9 +136,10 @@ function generateItem() {
 function createGameArea() {
     generateItem(); 
     generateRoom();
+    generateMonster();
     let generatedOutput = document.getElementById("output-text");
     generatedOutput.innerHTML = `
-    <p class="paragraph-text"> ${game.room} ${game.items}</p> `;
+    <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
 }
 
 /**
