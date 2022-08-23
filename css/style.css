@@ -74,11 +74,19 @@ body {
     height: 40rem;
 }
 
-.output-image {
+.player-input {
+    background-color: rgba(0,0,0, 0.5);
+    border-style: none;
+    margin-bottom: 10px;
+}
+
+.center {
     width: 50%;
     display: block;
     margin-left: auto;
     margin-right:auto;
+}
+.output-image {
     margin-top: 20px;
     border-style: solid;
     border-color: rgba(255,255,255, 0.5);
