@@ -86,7 +86,7 @@ body {
     margin-left: auto;
     margin-right:auto;
 }
-.output-image {
+.hero-image {
     margin-top: 20px;
     border-style: solid;
     border-color: rgba(255,255,255, 0.5);
@@ -133,13 +133,6 @@ body {
     display: block;
     margin-left: auto;
     margin-right:auto;
-}
-
-.health{
-
-}
-
-.inventory{
 }
 
 .contact-icons{
