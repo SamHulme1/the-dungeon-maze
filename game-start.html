@@ -20,7 +20,6 @@
                     <li class="nav-item home-nav mr-4 ml-4"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item htplay-nav mr-4 ml-4"><a class ="nav-link" href="">How To Play</a></li>
                     <li class="nav-item score-board-nav mr-4 ml-4"><a class="nav-link" href="score-board.html">Score Board</a></li>
-                    <li class="nav-item start-nav mr-4 ml-4"><a class="nav-link" href="game-start.html">Start Game</a></li>
                 </ul>
             </nav>
         </header>
@@ -75,12 +74,16 @@
         <section class="health-and-inventory-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <p class="paragraph-text">Health: <span id="hp-remaining"><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i><i class="fa-solid fa-heart"></i></span></p>
+                    <div class="col-12 col-md-4">
+                        <p class="paragraph-text">Health: <span id="hp-remaining"></i></span></p>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-4">
                         <p class="paragraph-text">Inventory:<br>
                             <div id="itemsInInventory" class="paragraph-text"></div></p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <p class="paragraph-text">Monster Health:
+                            <div id="monster-hp" class="paragraph-text"></div></p>
                     </div>
                 </div>
             </div>

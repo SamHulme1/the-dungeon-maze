@@ -1,11 +1,12 @@
 let game = {
-    inventory: [],
+    inventory: ['potion'],
     items: [],
     room: [], 
     monster: [],
     attack: [],
-    health : ['heart','heart','heart','heart','heart'],
-    monsterHealth : 1
+    health : [],
+    monsterHealth : 0,
+    score : 0
 }
 
 /**
@@ -101,7 +102,6 @@ function generateItem() {
     } else {
         game.items.push('old pair of socks');
     }
-    addToInventory();
     return game.items;
 }
 
@@ -126,7 +126,7 @@ function generateMonster() {
     } else if (randomMonster === 8){
         game.monster.push('crawling out of a small hole emerges a warewolf he carrys a ');  
     } else {
-        game.monster.push('The ghost of your mother wonders towards you, she hands you a ');
+        game.monster.push('ghost of your mother wonders towards you, she hands you a ');
     }
     return game.monster;
 }
@@ -137,12 +137,15 @@ function generateMonster() {
  */
 
 function createGameArea() {
+    drinkPotion();
     generateItem(); 
     generateRoom();
     generateMonster();
     let generatedOutput = document.getElementById("output-text");
     generatedOutput.innerHTML = `
     <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
+    let monsterHp =document.getElementById("monster-hp");
+    monsterHp.innerHTML = game.monsterHealth;
 }
 
 /**
@@ -158,20 +161,23 @@ function addToInventory(){
 /**
  * This function increases the health in the game key back to maximum, it's done by checking first if the user has a potion in their inventory and if their hearts are less than 5 in the game object it clones w
  */
+ 
+
  function drinkPotion(){
     if(game.inventory.includes("potion")){
         while(game.health.length < 5){
             game.health.push('heart');
-            let hp = document.querySelector('#hp-remaining');
-            let addHeart = hp.cloneNode(true);
-            hp.after(addHeart);
+            let hp = document.getElementById('hp-remaining');
+            let heart = document.createElement('i');
+            heart.innerHTML = `<i class="fa-solid fa-heart">`;
+            hp.appendChild(heart);
           }
     } else {
         alert("You don't have a potion");
     }
     
   }
-
+ 
 function fight (){
     let monsterAttack = Math.floor(Math.random()*3)+1;
     if (monsterAttack == 1) {
@@ -181,13 +187,20 @@ function fight (){
     } else if(monsterAttack == 3) {
         game.attack.push("Monster Hits");
     }
+        if(game.monsterHealth = 0){
+            alert("monster defeated");
+            addToInventory();
+        }
     return game.attack;
+        
 }
 
 function block(){
     fight();
     if (game.attack.includes("Monster Blocks")) {
         alert("You both block");
+        game.health.splice[0];
+        game.monsterHealth --;
     } else if (game.attack.includes("Monster Attacks")){
         alert("You block the monster");
     } else if (game.attack.includes("Monster Hits")){
@@ -209,6 +222,7 @@ function attack(){
         game.health.splice[0];
     }
     game.attack = [];
+    return game.monsterHealth;
 }
   
  /**
