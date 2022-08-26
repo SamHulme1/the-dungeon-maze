@@ -3,7 +3,9 @@ let game = {
     items: [],
     room: [], 
     monster: [],
-    health : ['heart','heart','heart','heart','heart']
+    attack: [],
+    health : ['heart','heart','heart','heart','heart'],
+    monsterHealth : 1
 }
 
 /**
@@ -104,6 +106,7 @@ function generateItem() {
 }
 
 function generateMonster() {
+    game.monsterHealth = 3;
     game.monster = [];
     let randomMonster = Math.floor(Math.random()*10) +1;
     if (randomMonster === 1){
@@ -169,6 +172,44 @@ function addToInventory(){
     
   }
 
+function fight (){
+    let monsterAttack = Math.floor(Math.random()*3)+1;
+    if (monsterAttack == 1) {
+        game.attack.push("Monster Blocks");
+    } else if(monsterAttack == 2) {
+        game.attack.push("Monster Attacks");
+    } else if(monsterAttack == 3) {
+        game.attack.push("Monster Hits");
+    }
+    return game.attack;
+}
+
+function block(){
+    fight();
+    if (game.attack.includes("Monster Blocks")) {
+        alert("You both block");
+    } else if (game.attack.includes("Monster Attacks")){
+        alert("You block the monster");
+    } else if (game.attack.includes("Monster Hits")){
+        alert("You try and block the monster but they're too fast");
+        game.health.splice[0];
+    }
+    game.attack = [];
+}
+
+function attack(){
+    fight();
+    if (game.attack.includes("Monster Blocks")) {
+        alert("The monster blocks your hit");
+    } else if (game.attack.includes("Monster Attacks")){
+        alert("The monster attacks but they're too slow");
+        game.monsterHealth - 1;
+    } else if (game.attack.includes("Monster Hits")){
+        alert("You try and hit the monster but they're too fast");
+        game.health.splice[0];
+    }
+    game.attack = [];
+}
   
  /**
  * This function will be called whenever the game needs to reset or when the user starts the game
