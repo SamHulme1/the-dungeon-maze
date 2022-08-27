@@ -122,7 +122,7 @@ function generateMonster() {
     } else if (randomMonster === 6){
         game.monster.push('red dragon smiling at you. How dare you try and steal his most treasured item a ');
     } else if (randomMonster === 7){
-        game.monster.push('ogre scratching its head and looks at you, "hey thats my "');
+        game.monster.push('ogre scratching its head and looking at you, "hey dont you touch my "');
     } else if (randomMonster === 8){
         game.monster.push('crawling out of a small hole emerges a warewolf he carrys a ');  
     } else {
@@ -137,7 +137,6 @@ function generateMonster() {
  */
 
 function createGameArea() {
-    drinkPotion();
     generateItem(); 
     generateRoom();
     generateMonster();
@@ -169,7 +168,7 @@ function addToInventory(){
             game.health.push('heart');
             let hp = document.getElementById('hp-remaining');
             let heart = document.createElement('i');
-            heart.innerHTML = `<i class="fa-solid fa-heart">`;
+            heart.className = "fa-solid fa-heart";
             hp.appendChild(heart);
           }
     } else {
@@ -177,6 +176,16 @@ function addToInventory(){
     }
     
   }
+
+function damage(){
+    game.health.pop();
+    let deltDamage = document.getElementById('hp-remaining');
+    deltDamage.removeChild(deltDamage.lastElementChild);
+
+
+}
+
+
  
 function fight (){
     let monsterAttack = Math.floor(Math.random()*3)+1;
@@ -199,13 +208,13 @@ function block(){
     fight();
     if (game.attack.includes("Monster Blocks")) {
         alert("You both block");
-        game.health.splice[0];
+        damage();
         game.monsterHealth --;
     } else if (game.attack.includes("Monster Attacks")){
         alert("You block the monster");
     } else if (game.attack.includes("Monster Hits")){
         alert("You try and block the monster but they're too fast");
-        game.health.splice[0];
+        damage();
     }
     game.attack = [];
 }
@@ -228,63 +237,6 @@ function attack(){
  /**
  * This function will be called whenever the game needs to reset or when the user starts the game
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- function startNewGame(){
-    game.inventory = [];
-    game.items = [];
-    game.room = [];
-    game.health = ['heart', 'heart','heart','heart','heart'];
- }
 
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
