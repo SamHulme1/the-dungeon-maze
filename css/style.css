@@ -129,6 +129,10 @@ body {
     color: white;
 }
 
+.monster-heart{
+    color: #671716;
+}
+
 .start-btn{
     width: 50%;
     display: block;

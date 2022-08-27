@@ -5,7 +5,7 @@ let game = {
     monster: [],
     attack: [],
     health : [],
-    monsterHealth : 0,
+    monsterHealth : [],
     score : 0
 }
 
@@ -106,8 +106,8 @@ function generateItem() {
 }
 
 function generateMonster() {
-    game.monsterHealth = 3;
     game.monster = [];
+    createMonsterHealth ();
     let randomMonster = Math.floor(Math.random()*10) +1;
     if (randomMonster === 1){
         game.monster.push('old goblin guarding a ');
@@ -137,14 +137,24 @@ function generateMonster() {
  */
 
 function createGameArea() {
+    drinkPotion();
     generateItem(); 
     generateRoom();
     generateMonster();
+    createMonsterHealth();
     let generatedOutput = document.getElementById("output-text");
     generatedOutput.innerHTML = `
     <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
-    let monsterHp =document.getElementById("monster-hp");
-    monsterHp.innerHTML = game.monsterHealth;
+}
+
+function newTurn(){
+    generateItem(); 
+    generateRoom();
+    generateMonster();
+    createMonsterHealth();
+    let generatedOutput = document.getElementById("output-text");
+    generatedOutput.innerHTML = `
+    <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
 }
 
 /**
@@ -157,6 +167,17 @@ function addToInventory(){
   userInventory.innerHTML = `${game.inventory}`;
 }
 
+
+function createMonsterHealth () {
+    while(game.monsterHealth.length < 3){
+        let monsterHp = document.getElementById("monster-hp");
+        let monsterHeart = document.createElement(`i`);
+        monsterHeart.className = "fa-solid fa-heart monster-heart";
+        monsterHp.appendChild(monsterHeart);
+        game.monsterHealth.push("Heart");
+    
+    }
+}
 /**
  * This function increases the health in the game key back to maximum, it's done by checking first if the user has a potion in their inventory and if their hearts are less than 5 in the game object it clones w
  */
@@ -165,26 +186,30 @@ function addToInventory(){
  function drinkPotion(){
     if(game.inventory.includes("potion")){
         while(game.health.length < 5){
-            game.health.push('heart');
             let hp = document.getElementById('hp-remaining');
             let heart = document.createElement('i');
             heart.className = "fa-solid fa-heart";
             hp.appendChild(heart);
+            game.health.push("Heart");
           }
     } else {
         alert("You don't have a potion");
     }
-    
   }
 
 function damage(){
     game.health.pop();
-    let deltDamage = document.getElementById('hp-remaining');
-    deltDamage.removeChild(deltDamage.lastElementChild);
-
-
+    let recievedDamage = document.getElementById('hp-remaining');
+    recievedDamage.removeChild(recievedDamage.lastElementChild);
+    console.log(game.health);
 }
 
+function monsterdamaged(){
+    game.monsterHealth.pop()
+    let deltDamage = document.getElementById("monster-hp");
+    deltDamage.removeChild(deltDamage.lastElementChild);
+    console.log(game.monsterHealth);
+}
 
  
 function fight (){
@@ -196,10 +221,6 @@ function fight (){
     } else if(monsterAttack == 3) {
         game.attack.push("Monster Hits");
     }
-        if(game.monsterHealth = 0){
-            alert("monster defeated");
-            addToInventory();
-        }
     return game.attack;
         
 }
@@ -208,8 +229,6 @@ function block(){
     fight();
     if (game.attack.includes("Monster Blocks")) {
         alert("You both block");
-        damage();
-        game.monsterHealth --;
     } else if (game.attack.includes("Monster Attacks")){
         alert("You block the monster");
     } else if (game.attack.includes("Monster Hits")){
@@ -225,18 +244,19 @@ function attack(){
         alert("The monster blocks your hit");
     } else if (game.attack.includes("Monster Attacks")){
         alert("The monster attacks but they're too slow");
-        game.monsterHealth - 1;
+        monsterdamaged();
     } else if (game.attack.includes("Monster Hits")){
         alert("You try and hit the monster but they're too fast");
-        game.health.splice[0];
+        damage();
     }
     game.attack = [];
-    return game.monsterHealth;
 }
+
   
  /**
  * This function will be called whenever the game needs to reset or when the user starts the game
  */
-
+ createGameArea();//will need to be changed later on to stop stats from reseting with every refresh
+ console.log(game);
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
