@@ -137,7 +137,7 @@ function generateMonster() {
  */
 
 function createGameArea() {
-    drinkPotion();
+    createHealth();
     generateItem(); 
     generateRoom();
     generateMonster();
@@ -178,6 +178,17 @@ function createMonsterHealth () {
     
     }
 }
+
+function createHealth () {
+    while(game.health.length < 5){
+        let hp = document.getElementById("hp-remaining");
+        let heart = document.createElement(`i`);
+        heart.className = "fa-solid fa-heart";
+        hp.appendChild(heart);
+        game.health.push("Heart");
+    
+    }
+}
 /**
  * This function increases the health in the game key back to maximum, it's done by checking first if the user has a potion in their inventory and if their hearts are less than 5 in the game object it clones w
  */
@@ -198,17 +209,32 @@ function createMonsterHealth () {
   }
 
 function damage(){
-    game.health.pop();
     let recievedDamage = document.getElementById('hp-remaining');
-    recievedDamage.removeChild(recievedDamage.lastElementChild);
-    console.log(game.health);
+    if (game.health.length >= 2){
+        game.health.pop();
+        recievedDamage.removeChild(recievedDamage.lastElementChild);
+        console.log(game.health);
+    } else {
+        game.health.pop();
+        recievedDamage.removeChild(recievedDamage.lastElementChild);
+        alert("you died");
+        dead();
+    }//you died doesn't work if there arn't already hearts in the health array?
 }
 
 function monsterdamaged(){
-    game.monsterHealth.pop()
     let deltDamage = document.getElementById("monster-hp");
-    deltDamage.removeChild(deltDamage.lastElementChild);
-    console.log(game.monsterHealth);
+    if (game.monsterHealth.length >= 2){
+        game.monsterHealth.pop();
+        deltDamage.removeChild(deltDamage.lastElementChild);
+        console.log(game.monsterHealth);
+    } else {
+        alert("monster slain");
+        game.monsterHealth.pop();
+        deltDamage.removeChild(deltDamage.lastElementChild);
+        addToInventory();
+        console.log(game.monsterHealth);
+    };
 }
 
  
@@ -252,11 +278,20 @@ function attack(){
     game.attack = [];
 }
 
+function dead(){
+    let deathScreen = document.getElementById("output-image");
+    deathScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
+    let generatedOutput = document.getElementById("output-text");
+    generatedOutput.innerHTML = `
+    <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score}</p>`;
+}
   
  /**
  * This function will be called whenever the game needs to reset or when the user starts the game
  */
- createGameArea();//will need to be changed later on to stop stats from reseting with every refresh
+ //will need to be changed later on to stop stats from reseting with every refresh
  console.log(game);
+ createGameArea();
+
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
