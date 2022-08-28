@@ -16,6 +16,74 @@ const attackButton = document.getElementById("attack");
 const blockButton = document.getElementById("block");
 const potionButton = document.getElementById("drink-potion");
 
+/**-----------------------------------------------------------------------------------game buttons functions */
+function createGameArea() {
+    createHealth();
+    generateItem(); 
+    generateRoom();
+    generateMonster();
+    createMonsterHealth();
+    let generatedOutput = document.getElementById("output-text");
+    generatedOutput.innerHTML = `
+    <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
+}
+
+function newTurn(){
+    generateItem(); 
+    generateRoom();
+    generateMonster();
+    createMonsterHealth();
+    nextRoomButton.disabled  = true;
+    let generatedOutput = document.getElementById("output-text");
+    if (game.room.includes(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')){
+        createBossHealth();
+        generatedOutput.innerHTML = `<p class="paragraph-text">${game.room}</p>`;
+    } else {
+        generatedOutput.innerHTML = `
+        <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
+    };
+}
+
+function drinkPotion(){
+    if(game.inventory.includes("potion")){
+        while(game.health.length < 5){
+            let hp = document.getElementById('hp-remaining');
+            let heart = document.createElement('i');
+            heart.className = "fa-solid fa-heart";
+            hp.appendChild(heart);
+            game.health.push("Heart");
+          }
+    } else {
+        alert("You don't have a potion");
+    }
+  }
+  function block(){
+    fight();
+    if (game.attack.includes("Monster Blocks")) {
+        alert("You both block");
+    } else if (game.attack.includes("Monster Attacks")){
+        alert("You block the monster");
+    } else if (game.attack.includes("Monster Hits")){
+        alert("You try and block the monster but they're too fast");
+        damage();
+    }
+    game.attack = [];
+}
+
+function attack(){
+    fight();
+    if (game.attack.includes("Monster Blocks")) {
+        alert("The monster blocks your hit");
+    } else if (game.attack.includes("Monster Attacks")){
+        alert("The monster attacks but they're too slow");
+        monsterdamaged();
+    } else if (game.attack.includes("Monster Hits")){
+        alert("You try and hit the monster but they're too fast");
+        damage();
+    }
+    game.attack = [];
+}
+
 /**
  * -----------------------------------------------------------------------------------Generator Functions
  */
@@ -142,46 +210,25 @@ function generateMonster() {
 }
 
 
-/**
- * This is the main function for the game it calls the functions generateItem and generateRoom and then uses their values to manipulate the text that the user see on screen.
- */
-
-function createGameArea() {
-    createHealth();
-    generateItem(); 
-    generateRoom();
-    generateMonster();
-    createMonsterHealth();
-    let generatedOutput = document.getElementById("output-text");
-    generatedOutput.innerHTML = `
-    <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
-}
-
-function newTurn(){
-    generateItem(); 
-    generateRoom();
-    generateMonster();
-    createMonsterHealth();
-    nextRoomButton.disabled  = true;
-    let generatedOutput = document.getElementById("output-text");
-    if (game.room.includes(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')){
-        createBossHealth();
-        generatedOutput.innerHTML = `<p class="paragraph-text">${game.room}</p>`;
-    } else {
-        generatedOutput.innerHTML = `
-        <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
-    };
-}
+/**Gameplay mechanics */
 
 /**
  * This function adds the item found to the inventory and then manipulates the DOM to display what the user has in their inventory to them on the webpage.
  */
 function addToInventory(){
+  //get the first item in the game array
   let itemFound = game.items[0];
-  game.inventory.push(itemFound);
-  let userInventory = document.getElementById("itemsInInventory");
-  userInventory.innerHTML = `${game.inventory}`;
-}
+  //take this item and add it to the inventory array at the index of 0 removing no other items
+  game.inventory.splice(0,0,itemFound);
+  // get the element with the id of inventory
+  let inventory = document.getElementById("inventory");
+  // create a new element li
+  let itemsInInventory = document.createElement("li");
+  // get the inner html to be the value of the inventory array at the index of 0
+  itemsInInventory.innerHTML = `${game.inventory[0]}`;
+  // add the created child to the element with the id of inventory
+  inventory.appendChild(itemsInInventory);
+} 
 
 
 function createMonsterHealth () {
@@ -215,95 +262,6 @@ function createBossHealth () {
         game.monsterHealth.push("Heart");
     
     }
-}
-/**
- * This function increases the health in the game key back to maximum, it's done by checking first if the user has a potion in their inventory and if their hearts are less than 5 in the game object it clones w
- */
- 
-
- function drinkPotion(){
-    if(game.inventory.includes("potion")){
-        while(game.health.length < 5){
-            let hp = document.getElementById('hp-remaining');
-            let heart = document.createElement('i');
-            heart.className = "fa-solid fa-heart";
-            hp.appendChild(heart);
-            game.health.push("Heart");
-          }
-    } else {
-        alert("You don't have a potion");
-    }
-  }
-
-function damage(){
-    let recievedDamage = document.getElementById('hp-remaining');
-    if (game.health.length >= 2){
-        game.health.pop();
-        recievedDamage.removeChild(recievedDamage.lastElementChild);
-        console.log(game.health);
-    } else {
-        game.health.pop();
-        recievedDamage.removeChild(recievedDamage.lastElementChild);
-        alert("you died");
-        dead();
-    }//you died doesn't work if there arn't already hearts in the health array?
-}
-
-function monsterdamaged(){
-    let deltDamage = document.getElementById("monster-hp");
-    if (game.monsterHealth.length >= 2){
-        game.monsterHealth.pop();
-        deltDamage.removeChild(deltDamage.lastElementChild);
-        console.log(game.monsterHealth);
-    } else {
-        alert("monster slain");
-        game.monsterHealth.pop();
-        deltDamage.removeChild(deltDamage.lastElementChild);
-        addToInventory();
-        console.log(game.monsterHealth);
-        nextRoomButton.disabled = false;
-    };
-}
-
- 
-function fight (){
-    let monsterAttack = Math.floor(Math.random()*3)+1;
-    if (monsterAttack == 1) {
-        game.attack.push("Monster Blocks");
-    } else if(monsterAttack == 2) {
-        game.attack.push("Monster Attacks");
-    } else if(monsterAttack == 3) {
-        game.attack.push("Monster Hits");
-    }
-    return game.attack;
-        
-}
-
-function block(){
-    fight();
-    if (game.attack.includes("Monster Blocks")) {
-        alert("You both block");
-    } else if (game.attack.includes("Monster Attacks")){
-        alert("You block the monster");
-    } else if (game.attack.includes("Monster Hits")){
-        alert("You try and block the monster but they're too fast");
-        damage();
-    }
-    game.attack = [];
-}
-
-function attack(){
-    fight();
-    if (game.attack.includes("Monster Blocks")) {
-        alert("The monster blocks your hit");
-    } else if (game.attack.includes("Monster Attacks")){
-        alert("The monster attacks but they're too slow");
-        monsterdamaged();
-    } else if (game.attack.includes("Monster Hits")){
-        alert("You try and hit the monster but they're too fast");
-        damage();
-    }
-    game.attack = [];
 }
 
 function calculateScore () {
@@ -347,6 +305,52 @@ function dead(){
     let generatedOutput = document.getElementById("output-text");
     generatedOutput.innerHTML = `
     <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score.valueOf()}</p>`;
+}
+
+/**gameplay combat mechanics */ 
+
+function damage(){
+    let recievedDamage = document.getElementById('hp-remaining');
+    if (game.health.length >= 2){
+        game.health.pop();
+        recievedDamage.removeChild(recievedDamage.lastElementChild);
+        console.log(game.health);
+    } else {
+        game.health.pop();
+        recievedDamage.removeChild(recievedDamage.lastElementChild);
+        alert("you died");
+        dead();
+    }//you died doesn't work if there arn't already hearts in the health array?
+}
+
+function monsterdamaged(){
+    let deltDamage = document.getElementById("monster-hp");
+    if (game.monsterHealth.length >= 2){
+        game.monsterHealth.pop();
+        deltDamage.removeChild(deltDamage.lastElementChild);
+        console.log(game.monsterHealth);
+    } else {
+        alert("monster slain");
+        game.monsterHealth.pop();
+        deltDamage.removeChild(deltDamage.lastElementChild);
+        addToInventory();
+        console.log(game.monsterHealth);
+        nextRoomButton.disabled = false;
+    };
+}
+
+ 
+function fight (){
+    let monsterAttack = Math.floor(Math.random()*3)+1;
+    if (monsterAttack == 1) {
+        game.attack.push("Monster Blocks");
+    } else if(monsterAttack == 2) {
+        game.attack.push("Monster Attacks");
+    } else if(monsterAttack == 3) {
+        game.attack.push("Monster Hits");
+    }
+    return game.attack;
+        
 }
 
 function winGame(){
