@@ -1,5 +1,6 @@
+/**-----------------------------------------------------------------------------------game object */ 
 let game = {
-    inventory: ['potion'],
+    inventory: ['potion','key'],
     items: [],
     room: [], 
     monster: [],
@@ -7,7 +8,13 @@ let game = {
     health : [],
     monsterHealth : [],
     score : 0
-}
+};
+
+/**-----------------------------------------------------------------------------------game buttons */ 
+const nextRoomButton = document.getElementById("next-room");
+const attackButton = document.getElementById("attack");
+const blockButton = document.getElementById("block");
+const potionButton = document.getElementById("drink-potion");
 
 /**
  * -----------------------------------------------------------------------------------Generator Functions
@@ -62,10 +69,13 @@ function generateRoom() {
         roomImage.innerHTML = ` <img class ="hero-image center" src="img/well.jpg" alt="the dugeon maze title image">`;
     } else if (randomRoom === 8){
         // push the room description to the room array
-        
-        game.room.push(' You come acoss a large stone locked door. You try everything but the door wont move without its proper key. Youre forced to turn back. On the plus side you find a ');
-         // assign the correct image to the correct room. change the innerHTML of roomImage to relect this
-        roomImage.innerHTML = ` <img class ="hero-image center" src="img/locked-door.jpg" alt="the dugeon maze title image">`;
+        if(game.inventory.includes("key")){
+            game.room.push(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!');
+        } else {
+            game.room.push(' You come acoss a large stone locked door. You try everything but the door wont move without its proper key. Youre forced to turn back. On the plus side you find a ');
+            // assign the correct image to the correct room. change the innerHTML of roomImage to relect this
+           roomImage.innerHTML = ` <img class ="hero-image center" src="img/locked-door.jpg" alt="the dugeon maze title image">`;
+        };
     } else {
         // push the room description to the room array
         game.room.push('You follow a long corridoor. On the walls hang metal lanterns the corridoor is make from rock, rock and somemore rock. Whilst you walk down the corridoor you find a ');
@@ -152,9 +162,15 @@ function newTurn(){
     generateRoom();
     generateMonster();
     createMonsterHealth();
+    nextRoomButton.disabled  = true;
     let generatedOutput = document.getElementById("output-text");
-    generatedOutput.innerHTML = `
-    <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
+    if (game.room.includes(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')){
+        createBossHealth();
+        generatedOutput.innerHTML = `<p class="paragraph-text">${game.room}</p>`;
+    } else {
+        generatedOutput.innerHTML = `
+        <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
+    };
 }
 
 /**
@@ -186,6 +202,17 @@ function createHealth () {
         heart.className = "fa-solid fa-heart";
         hp.appendChild(heart);
         game.health.push("Heart");
+    
+    }
+}
+
+function createBossHealth () {
+    while(game.monsterHealth.length < 10){
+        let monsterHp = document.getElementById("monster-hp");
+        let monsterHeart = document.createElement(`i`);
+        monsterHeart.className = "fa-solid fa-heart monster-heart";
+        monsterHp.appendChild(monsterHeart);
+        game.monsterHealth.push("Heart");
     
     }
 }
@@ -234,6 +261,7 @@ function monsterdamaged(){
         deltDamage.removeChild(deltDamage.lastElementChild);
         addToInventory();
         console.log(game.monsterHealth);
+        nextRoomButton.disabled = false;
     };
 }
 
@@ -278,12 +306,51 @@ function attack(){
     game.attack = [];
 }
 
+function calculateScore () {
+    console.log(game.score);
+    let totalScore = game.score;
+    for (let i = 0; i < game.inventory.length; i++) {
+        if (game.inventory.includes("diamond ring")){
+            200 + totalScore;
+            console.log(game.score);
+        } else if (game.inventory.includes("bag of gold coins")){
+            150 + totalScore;
+            console.log(game.score);
+        } else if (game.inventory.includes("bag of silver coins")){
+            50 + totalScore;
+            console.log(game.score);
+        }else if (game.inventory.includes("bronse statue")){
+            20 + totalScore;
+            console.log(game.score);
+        }else if (game.inventory.includes("bag of jemstones")){
+            500 + totalScore;
+            console.log(game.score);
+        }else if (game.inventory.includes("crystal dagger")){
+            20 + totalScore;
+            console.log(game.score);
+        }else if (game.inventory.includes("old pair of socks")){
+            0 + totalScore;
+            console.log(game.score);
+        };
+        
+    };
+}
+
 function dead(){
+    nextRoomButton.disabled = true;
+    attackButton.disabled = true;
+    blockButton.disabled = true;
+    potionButton.disabled = true;
+    calculateScore();
     let deathScreen = document.getElementById("output-image");
     deathScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
     let generatedOutput = document.getElementById("output-text");
     generatedOutput.innerHTML = `
-    <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score}</p>`;
+    <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score.valueOf()}</p>`;
+}
+
+function winGame(){
+
 }
   
  /**
@@ -291,7 +358,6 @@ function dead(){
  */
  //will need to be changed later on to stop stats from reseting with every refresh
  console.log(game);
- createGameArea();
 
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
