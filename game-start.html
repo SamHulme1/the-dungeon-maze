@@ -57,13 +57,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-6 col-md-3">
-                        <button class="game-btn" id="next-room" onclick="newTurn()"><i class="fa-solid fa-dungeon"></i></button>
+                        <button class="game-btn" id="next-room" onclick="newTurn();"><i class="fa-solid fa-dungeon"></i></button>
                     </div>
                     <div class="col-6 col-md-3">   
                         <button class="game-btn" id="drink-potion" onclick="drinkPotion();"><i class="fa-solid fa-heart-circle-plus"></i></button>
                     </div>
                     <div class="col-6 col-md-3">
-                        <button class="game-btn" id="attack" onclick="attack()"><i class="fa-solid fa-hand-fist"></i></button>
+                        <button class="game-btn" id="attack" onclick="attack();"><i class="fa-solid fa-hand-fist"></i></button>
                     </div>
                     <div class="col-6 col-md-3">
                         <button class="game-btn" id="block" onclick="block();"><i class="fa-solid fa-shield-halved"></i></button>
@@ -88,6 +88,11 @@
                         <p class="paragraph-text">Monster Health
                             <div id="monster-hp" class="paragraph-text"></div>
                         </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="game-btn paragraph-text" onclick="resetGame();">reset</button>
                     </div>
                 </div>
             </div>

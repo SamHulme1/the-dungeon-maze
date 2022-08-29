@@ -1,6 +1,6 @@
 /**-----------------------------------------------------------------------------------game object */ 
-let game = {
-    inventory: ['potion','key'],
+const game = {
+    inventory: [],
     items: [],
     room: [], 
     monster: [],
@@ -10,6 +10,8 @@ let game = {
     score : 0
 };
 
+
+
 /**-----------------------------------------------------------------------------------game buttons */ 
 const nextRoomButton = document.getElementById("next-room");
 const attackButton = document.getElementById("attack");
@@ -17,15 +19,37 @@ const blockButton = document.getElementById("block");
 const potionButton = document.getElementById("drink-potion");
 
 /**-----------------------------------------------------------------------------------game buttons functions */
-function createGameArea() {
+
+initiateGame();
+
+function resetGame() {
     createHealth();
-    generateItem(); 
-    generateRoom();
-    generateMonster();
-    createMonsterHealth();
+    game.inventory = [];
+    game.items = [];
+    game.room = [];
+    game.monster = [];
+    game.attack = [];
+    game.monsterHealth = [];
+    game.score = 0;
+    blockButton.disabled = true;
+    attackButton.disabled = true;
+    potionButton.disabled = true;
+    nextRoomButton.disabled = false;
+    let roomImage = document.getElementById("output-image");
+    roomImage.innerHTML = ` <img class ="hero-image center" src="img/tavern.jpg" alt="the dugeon maze title image">`;
     let generatedOutput = document.getElementById("output-text");
-    generatedOutput.innerHTML = `
-    <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
+    generatedOutput.innerHTML = `<p class="paragraph-text">
+    The dungeon of the once great king ... is renowned for it's many treasures but also it's deadly inhabitents. You've come across hard times in resent months, the harvests have been poor, and you have been forced to find other means of accumulating income. So you ended up here. In this inn on the otherside of the world. Many others like you have come to seek their fortune but many will fail. You decide to have one last ale before calling it a day. You'll enter the maze at first light. 
+    press continue to start your adventure. 
+</p> `
+
+}
+
+function initiateGame() {
+    createHealth();
+    blockButton.disabled = true;
+    attackButton.disabled = true;
+    potionButton.disabled = true;
 }
 
 function newTurn(){
@@ -34,6 +58,9 @@ function newTurn(){
     generateMonster();
     createMonsterHealth();
     nextRoomButton.disabled  = true;
+    blockButton.disabled = false;
+    attackButton.disabled = false;
+    potionButton.disabled = false;
     let generatedOutput = document.getElementById("output-text");
     if (game.room.includes(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')){
         createBossHealth();
@@ -45,29 +72,29 @@ function newTurn(){
 }
 
 function drinkPotion(){
-    if(game.inventory.includes("potion")){
-        while(game.health.length < 5){
-            let hp = document.getElementById('hp-remaining');
-            let heart = document.createElement('i');
-            heart.className = "fa-solid fa-heart";
-            hp.appendChild(heart);
-            game.health.push("Heart");
-          }
-    } else {
-        alert("You don't have a potion");
+  if(game.inventory.includes("potion")){
+    while(game.health.length < 5){
+        let hp = document.getElementById('hp-remaining');
+        let heart = document.createElement('i');
+        heart.className = "fa-solid fa-heart";
+        hp.appendChild(heart);
+        game.health.push("Heart");
     }
+  } else {
+    alert("You don't have a potion");
   }
-  function block(){
-    fight();
-    if (game.attack.includes("Monster Blocks")) {
-        alert("You both block");
-    } else if (game.attack.includes("Monster Attacks")){
-        alert("You block the monster");
-    } else if (game.attack.includes("Monster Hits")){
-        alert("You try and block the monster but they're too fast");
-        damage();
-    }
-    game.attack = [];
+}
+function block(){
+  fight();
+  if (game.attack.includes("Monster Blocks")) {
+    alert("You both block");
+  } else if (game.attack.includes("Monster Attacks")){
+    alert("You block the monster");
+  } else if (game.attack.includes("Monster Hits")){
+    alert("You try and block the monster but they're too fast");
+    damage();
+  }
+  game.attack = [];
 }
 
 function attack(){
@@ -361,7 +388,6 @@ function winGame(){
  * This function will be called whenever the game needs to reset or when the user starts the game
  */
  //will need to be changed later on to stop stats from reseting with every refresh
- console.log(game);
 
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };

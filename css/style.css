@@ -56,11 +56,6 @@ body {
 }
 
 .list-text {
-    font-size: 12px;
-    font-family: 'Press Start 2P', sans-serif;
-    letter-spacing: 1px;
-    padding: 20px;
-    color: white;
     list-style-type: lower-roman;
 }
 
