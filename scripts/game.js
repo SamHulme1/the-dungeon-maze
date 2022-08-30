@@ -23,6 +23,7 @@ const potionButton = document.getElementById("drink-potion");
 initiateGame();
 
 function resetGame() {
+    resetGameAreas();
     createHealth();
     game.inventory = [];
     game.items = [];
@@ -287,8 +288,10 @@ function createBossHealth () {
         monsterHeart.className = "fa-solid fa-heart monster-heart";
         monsterHp.appendChild(monsterHeart);
         game.monsterHealth.push("Heart");
+        game.monster = [];
+        game.monster.push("boss");
     
-    }
+    };
 }
 
 function calculateScore () {
@@ -331,7 +334,7 @@ function dead(){
     deathScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
     let generatedOutput = document.getElementById("output-text");
     generatedOutput.innerHTML = `
-    <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score.valueOf()}</p>`;
+    <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score}</p>`;
 }
 
 /**gameplay combat mechanics */ 
@@ -357,12 +360,19 @@ function monsterdamaged(){
         deltDamage.removeChild(deltDamage.lastElementChild);
         console.log(game.monsterHealth);
     } else {
-        alert("monster slain");
-        game.monsterHealth.pop();
-        deltDamage.removeChild(deltDamage.lastElementChild);
-        addToInventory();
-        console.log(game.monsterHealth);
-        nextRoomButton.disabled = false;
+        if(game.monster.includes("boss")){
+            alert("boss slain");
+            winGame();
+        } else {
+          alert("monster slain");
+          game.monsterHealth.pop();
+          deltDamage.removeChild(deltDamage.lastElementChild);
+          addToInventory();
+          console.log(game.monsterHealth);
+          nextRoomButton.disabled = false;
+          blockButton.disabled = true;
+          attackButton.disabled = true;
+        };
     };
 }
 
@@ -380,8 +390,26 @@ function fight (){
         
 }
 
-function winGame(){
+function resetGameAreas(){
+    let hp = document.getElementById("hp-remaining");
+    let monsterHp = document.getElementById("monster-hp");
+    let inventory = document.getElementById("inventory");
+    hp.innerHTML = "";
+    monsterHp.innerHTML = "";
+    inventory.innerHTML = "";
+}
 
+function winGame(){
+    nextRoomButton.disabled = true;
+    attackButton.disabled = true;
+    blockButton.disabled = true;
+    potionButton.disabled = true;
+    calculateScore();
+    let winScreen = document.getElementById("output-image");
+    winScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
+    let generatedOutput = document.getElementById("output-text");
+    generatedOutput.innerHTML = `
+    <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${game.score}</p>`;
 }
   
  /**
