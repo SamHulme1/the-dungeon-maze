@@ -22,24 +22,39 @@
                     <li class="nav-item score-board-nav mr-4 ml-4"><a class="nav-link" href="score-board.html">Score Board</a></li>
                 </ul>
             </nav>
-        </header>
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="heading">
-                            The Dungeon Maze
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </section>    
+        </header>   
         <section class="game-output-area">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
-                    <div class="col-12 nopadding">
+                    <div class="col-lg-5 col-sm-12 nopadding">
                         <div class="output-image-container" id="output-image">
                             <img class ="hero-image center" src="img/tavern.jpg" alt="the dugeon maze title image">
+                        </div>
+                    </div>
+                    <div class = "col-lg-7 col-sm-12 nopadding health-and-inventory-area">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-5">
+                                    <p class="paragraph-text health">Health:
+                                        <span id="hp-remaining" class="paragraph-text"></span>
+                                    </p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="paragraph-text health">Monster Health:
+                                        <span id="monster-hp" class="paragraph-text"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 inventory-area">
+                                    <p class="paragraph-text p-2">Inventory:
+                                        <ul id="inventory" class="paragraph-text list-text"></ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center reset">
+                            <button class="game-btn paragraph-text" onclick="resetGame();">reset</button>
                         </div>
                     </div>
                     <div class="col-12 nopadding">
@@ -52,47 +67,19 @@
                     </div>   
                 </div> 
             </div>
-        </section>
-        <section class="game-interaction-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 text-center">
                         <button class="game-btn" id="next-room" onclick="newTurn();"><i class="fa-solid fa-dungeon"></i></button>
                     </div>
-                    <div class="col-6 col-md-3">   
+                    <div class="col-6 col-md-3 text-center">   
                         <button class="game-btn" id="drink-potion" onclick="drinkPotion();"><i class="fa-solid fa-heart-circle-plus"></i></button>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 text-center">
                         <button class="game-btn" id="attack" onclick="attack();"><i class="fa-solid fa-hand-fist"></i></button>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 text-center">
                         <button class="game-btn" id="block" onclick="block();"><i class="fa-solid fa-shield-halved"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="health-and-inventory-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="paragraph-text">Health
-                            <div id="hp-remaining" class="paragraph-text"></div>
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <p class="paragraph-text">Inventory
-                            <ul id="inventory" class="paragraph-text list-text"></ul>
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <p class="paragraph-text">Monster Health
-                            <div id="monster-hp" class="paragraph-text"></div>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button class="game-btn paragraph-text" onclick="resetGame();">reset</button>
                     </div>
                 </div>
             </div>
@@ -110,6 +97,7 @@
                 </div>
             </div>
         </footer>
+        <script src="scripts/constants.js"></script>
         <script src="scripts/game.js"></script>
     </body>
 </html>

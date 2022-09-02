@@ -1,6 +1,6 @@
 /**-----------------------------------------------------------------------------------game object */ 
 const game = {
-    inventory: [],
+    inventory: ["potion"],
     items: [],
     room: [], 
     monster: [],
@@ -258,6 +258,10 @@ function addToInventory(){
   inventory.appendChild(itemsInInventory);
 } 
 
+function stackItems(){
+    //stack items in the array to dispaly to the user as x1 x2 etc to the user
+}
+
 
 function createMonsterHealth () {
     while(game.monsterHealth.length < 3){
@@ -295,34 +299,13 @@ function createBossHealth () {
 }
 
 function calculateScore () {
-    console.log(game.score);
     let totalScore = game.score;
-    for (let i = 0; i < game.inventory.length; i++) {
-        if (game.inventory.includes("diamond ring")){
-            200 + totalScore;
-            console.log(game.score);
-        } else if (game.inventory.includes("bag of gold coins")){
-            150 + totalScore;
-            console.log(game.score);
-        } else if (game.inventory.includes("bag of silver coins")){
-            50 + totalScore;
-            console.log(game.score);
-        }else if (game.inventory.includes("bronse statue")){
-            20 + totalScore;
-            console.log(game.score);
-        }else if (game.inventory.includes("bag of jemstones")){
-            500 + totalScore;
-            console.log(game.score);
-        }else if (game.inventory.includes("crystal dagger")){
-            20 + totalScore;
-            console.log(game.score);
-        }else if (game.inventory.includes("old pair of socks")){
-            0 + totalScore;
-            console.log(game.score);
-        };
-        
+    for (items in game.inventory){
+        totalScore += gameInventoryScoreMapper[game.inventory[items]];
     };
+    
 }
+
 
 function dead(){
     nextRoomButton.disabled = true;
@@ -368,6 +351,7 @@ function monsterdamaged(){
           game.monsterHealth.pop();
           deltDamage.removeChild(deltDamage.lastElementChild);
           addToInventory();
+          stackItems();
           console.log(game.monsterHealth);
           nextRoomButton.disabled = false;
           blockButton.disabled = true;
@@ -411,11 +395,6 @@ function winGame(){
     generatedOutput.innerHTML = `
     <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${game.score}</p>`;
 }
-  
- /**
- * This function will be called whenever the game needs to reset or when the user starts the game
- */
- //will need to be changed later on to stop stats from reseting with every refresh
 
 
 module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
