@@ -14,15 +14,20 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-sm fixed-top ">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="logo r-4 ml-4" href=""><i class="fa-solid fa-dungeon"></i><span class ="sr-only">Click to go back to the home page</span></a>
-                <ul class="navbar-nav navbar-heading nopadding">
-                    <li class="nav-item home-nav mr-4 ml-4"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item htplay-nav mr-4 ml-4"><a class ="nav-link" href="">How To Play</a></li>
-                    <li class="nav-item score-board-nav mr-4 ml-4"><a class="nav-link" href="score-board.html">Score Board</a></li>
-                </ul>
-            </nav>
-        </header>   
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link mr-4 ml-4" href="index.html">Home</a>
+                    <a class="nav-item nav-link mr-4 ml-4" href="#">How To Play</a>
+                    <a class="nav-item nav-link mr-4 ml-4" href="score-board.html">Scoreboard</a>
+                  </div>
+                </div>
+              </nav>
+        </header>  
         <section class="game-output-area">
             <div class="container">
                 <div class="row">
@@ -99,5 +104,7 @@
         </footer>
         <script src="scripts/constants.js"></script>
         <script src="scripts/game.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>

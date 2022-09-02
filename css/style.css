@@ -15,17 +15,20 @@ body {
 }
 
 .navbar {
-    width: 100%;
     background-color: rgba(0,0,0,0.2);
 }
 
-.navbar li a {
+.navbar-light .navbar-nav .nav-link {
     font-family: 'Press Start 2P', sans-serif;
     color: #671716;
     letter-spacing: 10px;
-    height: 100%;
-    text-align: right;
 }
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+}
+
+
 
 .heading {
     text-align: center;
