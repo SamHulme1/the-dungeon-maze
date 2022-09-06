@@ -238,7 +238,6 @@ window.onload = (event) => {
             game.monsterHealth.pop();
             deltDamage.removeChild(deltDamage.lastElementChild);
             addToInventory();
-            stackItems();
             console.log(game.monsterHealth);
             nextRoomButton.disabled = false;
             blockButton.disabled = true;
