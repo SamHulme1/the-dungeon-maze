@@ -63,10 +63,7 @@ body {
 
 .game-output-area{
     background-color: rgba(0,0,0, 0.7);
-    border-style:solid;
-    border-color: rgba(255,255,255, 0.5);
     border-width: 5px;
-    margin-top: 137px;
 
 }
 
@@ -76,9 +73,6 @@ body {
 
 .score-area {
     background-color: rgba(0,0,0, 0.7);
-    border-style:solid;
-    border-color: rgba(255,255,255, 0.5);
-    border-width: 5px;
     margin-left: 80px;
     margin-right: 80px;
     height: 40rem;
@@ -100,7 +94,7 @@ body {
     width:31em;
 }
 .output-image-container{
-    overflow: hidden;
+    overflow:hidden;
 }
 
 .output-text-container {
@@ -108,9 +102,6 @@ body {
     width: 100%;
 }
 
-.reset {
-    margin-top: 35vh;
-}
 .health{
     margin-top: 20px;
 }
@@ -163,7 +154,7 @@ footer {
 }
 
 
-@media (max-width: 778px){
+@media (min-width: 641px)and(max-width:1180px){
     .inventory, .health{
         float: none;
         text-align: center;
@@ -171,6 +162,9 @@ footer {
     .health-and-inventory-area {
         margin-left: 0; 
         margin-right: 0;
+    }
+    .hero-image {
+        width: 23em;
     }
 }
 
@@ -187,6 +181,10 @@ footer {
     }
     .contact-icons{
         font-size: 20px;
+    }
+    .hero-image {
+        margin-top: 20px;
+        width: 22em;
     }
 
 }
