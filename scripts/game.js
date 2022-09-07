@@ -108,6 +108,7 @@ window.onload = (event) => {
         if (randomRoom === 8) {
             if(game.inventory.includes("key")){
                 turnText = imageInfo.sentence1
+                roomImage = imageInfo.imageName2
             } else {
                 turnText = imageInfo.sentence2
             };
@@ -201,7 +202,7 @@ window.onload = (event) => {
         potionButton.disabled = true;
         calculateScore();
         let deathScreen = document.getElementById("output-image");
-        deathScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
+        deathScreen.innerHTML = `<img class ="hero-image center" src="img/death-screen.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
         <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score}</p>`;

@@ -97,12 +97,14 @@ const roomIdToImageObjectMapper = {
     }, 
     8: {
         "imageName": "img/locked-door.jpg",
-        "imageAlt": "Image of a large room in a pixelated art style",
+        "imageAlt": "Image of a locked door in a pixelated art style",
+        "imageName2": "img/boss-room.jpg",
+        "imageAlt2": "Image of a boss area in a pixelated art style",
         "sentence1": " You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!",
         "sentence2": " You come acoss a large stone locked door. You try everything but the door wont move without its proper key. Youre forced to turn back. On the plus side you find a "
     },
     9: {
-        "imageName": "img/tavern.jpg",
+        "imageName": "img/cave-in.jpg",
         "imageAlt": "Image of a cavein in a pixelated art style",
         "sentence1": "You come accross a partial cave-in, after moving some of the rubble, you discover a small passageway 'I shouldnt have had that extra large breakfast' you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a ",
     },
