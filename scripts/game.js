@@ -102,21 +102,22 @@ window.onload = (event) => {
      */
     function generateRoom() {
         game.room = [];
-        let randomRoom = Math.floor(Math.random()*10) +1;
+        let randomRoom = Math.floor(Math.random()*9) +1;
         let roomImage = document.getElementById("output-image");
         imageInfo = roomIdToImageObjectMapper[randomRoom] // Image Object
         if (randomRoom === 8) {
             if(game.inventory.includes("key")){
                 turnText = imageInfo.sentence1
-                roomImage = imageInfo.imageName2
+                roomImage.innerHTML = `<img class ="hero-image center" src="${imageInfo.imageName2}" alt="${imageInfo.imageAlt2}">` 
             } else {
                 turnText = imageInfo.sentence2
+                roomImage.innerHTML = `<img class ="hero-image center" src="${imageInfo.imageName1}" alt="${imageInfo.imageAlt1}">`
             };
         } else {
             turnText = imageInfo.sentence1
+            roomImage.innerHTML = `<img class ="hero-image center" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">` 
         }
-        game.room.push(turnText)
-        roomImage.innerHTML = `<img class ="hero-image center" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">`   
+        game.room.push(turnText) 
         return game.room;
     }
 
@@ -187,12 +188,14 @@ window.onload = (event) => {
     }
 
     function calculateScore () {
-        let totalScore = game.score;
-        for (items in game.inventory){
+        let totalScore = game.score; 
+        for (let items in game.inventory){
             totalScore += gameInventoryScoreMapper[game.inventory[items]];
-        };
+        }
+        return game.score;
         
     }
+
 
 
     function dead(){
@@ -276,6 +279,9 @@ window.onload = (event) => {
         <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${game.score}</p>`;
     }
 
-
+    calculateScore();
+    console.log(typeof game.score);
+    
     // module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
 };
+

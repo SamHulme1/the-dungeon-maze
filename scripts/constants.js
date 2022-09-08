@@ -96,7 +96,7 @@ const roomIdToImageObjectMapper = {
         "sentence1": "You approach two large ajar doors, which guard a large room. Inside the room sits a large retangular table infront of a roaring fireplace. On the table rest a number of plates a goblets with what smell like some sort of ale inside. Opposite the fire there is a larger throne sized chair made of old weponry. The room also features several small paintings and a cupboard containing strange victuals 'guess ill skip lunch then' you think to yourself after smelling some of the food. After searching the room you find a ",
     }, 
     8: {
-        "imageName": "img/locked-door.jpg",
+        "imageName1": "img/locked-door.jpg",
         "imageAlt": "Image of a locked door in a pixelated art style",
         "imageName2": "img/boss-room.jpg",
         "imageAlt2": "Image of a boss area in a pixelated art style",
