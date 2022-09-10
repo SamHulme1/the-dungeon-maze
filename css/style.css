@@ -5,6 +5,10 @@ body {
     user-select: none;
 }
 
+.navbar-light .navbar-toggler-icon{
+    background-color: white;
+}
+
 .nopadding {
     padding:0;
 }
@@ -133,8 +137,17 @@ body {
     margin-top: 20px;
 }
 
-.health-and-inventory-area{
+.health-and-inventory-area {
     margin-top: 20px;
+}
+
+.btn-reset {
+    color: #fff;
+    background-color: #a35321;
+    border-radius: 5px;
+}
+
+.game-output-background{
     background-color: rgba(0,0,0, 0.7);
 }
 

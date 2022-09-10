@@ -3,6 +3,7 @@ window.onload = (event) => {
     initiateGame();
 
     document.getElementById("reset-game-btn").addEventListener("click", function resetGame(){
+        score = 0;
         game.health = [];
         game.inventory = [];
         game.items = [];
@@ -10,7 +11,6 @@ window.onload = (event) => {
         game.monster = [];
         game.attack = [];
         game.monsterHealth = [];
-        game.score = 0;
         resetGameAreas();
         createHealth();
         blockButton.disabled = true;
@@ -92,6 +92,7 @@ window.onload = (event) => {
         }
         game.attack = [];
     })
+
 
     /**
      * -----------------------------------------------------------------------------------Generator Functions
@@ -188,11 +189,12 @@ window.onload = (event) => {
     }
 
     function calculateScore () {
-        let totalScore = game.score; 
+        let totalScore = score;
         for (let items in game.inventory){
             totalScore += gameInventoryScoreMapper[game.inventory[items]];
         }
-        return game.score;
+        score = totalScore;
+        console.log(score)
         
     }
 
@@ -208,7 +210,7 @@ window.onload = (event) => {
         deathScreen.innerHTML = `<img class ="hero-image center" src="img/death-screen.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
-        <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${game.score}</p>`;
+        <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${score}</p>`;
     }
 
     /**gameplay combat mechanics */ 
@@ -276,12 +278,12 @@ window.onload = (event) => {
         winScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
-        <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${game.score}</p>`;
+        <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${score}</p>`;
     }
 
-    calculateScore();
-    console.log(typeof game.score);
+    
+}
     
     // module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
-};
+
 

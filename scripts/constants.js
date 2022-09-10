@@ -1,5 +1,6 @@
 /**-----------------------------------------------------------------------------------game object */ 
- const game = {
+let score = 0; 
+const game = {
     inventory: ["potion"],
     items: [],
     room: [], 
@@ -7,7 +8,6 @@
     attack: [],
     health : [],
     monsterHealth : [],
-    score : 0
 };
 
 /**-----------------------------------------------------------------------------------game buttons */ 
@@ -15,6 +15,7 @@ const nextRoomButton = document.getElementById("next-room");
 const attackButton = document.getElementById("attack");
 const blockButton = document.getElementById("block");
 const potionButton = document.getElementById("drink-potion");
+
 
 const attackToMessageMapper = {
     1 : "Monster Blocks",
@@ -30,20 +31,23 @@ const gameInventoryScoreMapper = {
     "bag of jemstones": 500,
     "crystal dagger": 30,
     "old pair of socks": 0,
+    "potion": 0,
+    "ruby": 700,
+    "key": 0
 
 };
 
 const inventoryIdMapper = {
     1: "potion",
-    2: "diamong ring",
-    3: "bag of gold Coins",
+    2: "diamond ring",
+    3: "bag of gold coins",
     4: "key",
     5: "bag of silver coins",
     6: "bronse statue",
     7: "bag of jemstones",
     8: "crystal dagger",
     9: "old pair of socks",
-    10: "slightly older pair of socks with holes"
+    10: "ruby"
 
 }
 
@@ -109,3 +113,4 @@ const roomIdToImageObjectMapper = {
         "sentence1": "You come accross a partial cave-in, after moving some of the rubble, you discover a small passageway 'I shouldnt have had that extra large breakfast' you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a ",
     },
 }
+
