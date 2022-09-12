@@ -1,5 +1,4 @@
 /**-----------------------------------------------------------------------------------game object */ 
-let score = 0; 
 const game = {
     inventory: ["potion"],
     items: [],
@@ -114,3 +113,17 @@ const roomIdToImageObjectMapper = {
     },
 }
 
+const rankMapper = {
+    0 : "Cannon fodder",
+    100 : "Still poor go back in again", 
+    200 : "Rat slayer", 
+    300 : "Dungeon explorer", 
+    400 : "Goblin slayer", 
+    500 : "Dungeon veteran",
+    600 : "Orc slayer", 
+    700 : "War hero", 
+    800 : "Ogre slayer", 
+    900 : "Dragon Slayer"
+}
+
+//function needs to round the number to the neaest 100 if over 1000 dungeon master

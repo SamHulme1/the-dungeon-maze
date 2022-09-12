@@ -1,9 +1,12 @@
+let score = 0; 
+let rank = "";
 window.onload = (event) => {
     /**-----------------------------------------------------------------------------------game buttons functions */
     initiateGame();
 
     document.getElementById("reset-game-btn").addEventListener("click", function resetGame(){
         score = 0;
+        rank = ""
         game.health = [];
         game.inventory = [];
         game.items = [];
@@ -57,9 +60,12 @@ window.onload = (event) => {
             while(game.health.length < 5){
                 let hp = document.getElementById('hp-remaining');
                 let heart = document.createElement('i');
+                let removePotion = game.inventory.indexOf("potion");
                 heart.className = "fa-solid fa-heart";
                 hp.appendChild(heart);
                 game.health.push("Heart");
+                game.inventory.splice(removePotion, 1);
+
             }
         } else {
             alert("You don't have a potion");
@@ -194,8 +200,19 @@ window.onload = (event) => {
             totalScore += gameInventoryScoreMapper[game.inventory[items]];
         }
         score = totalScore;
-        console.log(score)
+        storeScore();
+        calculateRank ();
+        storeRank();
         
+    }
+
+    function calculateRank () {
+        let scoreToRank = Math.ceil(score/100)*100;
+        if (scoreToRank >= 1000) {
+            rank = 1000
+        } else {
+            rank = rankMapper[scoreToRank];
+        }
     }
 
 
@@ -210,7 +227,7 @@ window.onload = (event) => {
         deathScreen.innerHTML = `<img class ="hero-image center" src="img/death-screen.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
-        <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${score}</p>`;
+        <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${score} Rank: ${rank}</p>`;
     }
 
     /**gameplay combat mechanics */ 
@@ -278,7 +295,7 @@ window.onload = (event) => {
         winScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
-        <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${score}</p>`;
+        <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${score} Rank: ${rank}</p>`;
     }
 
     
