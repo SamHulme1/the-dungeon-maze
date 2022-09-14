@@ -203,18 +203,34 @@ window.onload = (event) => {
         storeScore();
         calculateRank ();
         storeRank();
+        scoreIsReady();
         
     }
 
     function calculateRank () {
         let scoreToRank = Math.ceil(score/100)*100;
         if (scoreToRank >= 1000) {
-            rank = 1000
+            rank = "Dungeon Master";
         } else {
             rank = rankMapper[scoreToRank];
         }
     }
 
+    
+    function storeScore() {
+        let highScore = score;
+        window.localStorage.setItem("highScore", JSON.stringify(highScore));
+    }
+
+    function storeRank() {
+        let ranking = rank;
+        window.localStorage.setItem("rank", JSON.stringify(ranking));
+    }
+
+    function scoreIsReady() {
+        let scoreReady = true;
+        window.sessionStorage.setItem("ScoreReady", JSON.stringify(scoreReady));
+    }
 
 
     function dead(){
