@@ -65,6 +65,9 @@ window.onload = (event) => {
                 hp.appendChild(heart);
                 game.health.push("Heart");
                 game.inventory.splice(removePotion, 1);
+                let inventory = document.getElementById("inventory");
+                let potionRemove = document.getElementById("potionInInventory");
+                inventory.removeChild(potionRemove);
 
             }
         } else {
@@ -156,8 +159,15 @@ window.onload = (event) => {
     game.inventory.splice(0,0,itemFound);
     let inventory = document.getElementById("inventory");
     let itemsInInventory = document.createElement("li");
-    itemsInInventory.innerHTML = `${game.inventory[0]}`;
-    inventory.appendChild(itemsInInventory);
+    if (itemFound == "potion") {
+        itemsInInventory.innerHTML = `${game.inventory[0]}`;
+        itemsInInventory.id = "potionInInventory"
+        inventory.appendChild(itemsInInventory);
+    } else {
+        itemsInInventory.innerHTML = `${game.inventory[0]}`;
+        inventory.appendChild(itemsInInventory);
+    }
+    
     } 
 
     function createMonsterHealth () {

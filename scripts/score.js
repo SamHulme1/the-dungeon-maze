@@ -1,6 +1,6 @@
-const scoreBoardArrayName = [];
-const ScoreBoardArrayScore = [];
-const ScoreBoardArrayRank = [];
+let scoreBoardArrayName = [];
+let ScoreBoardArrayScore = [];
+let ScoreBoardArrayRank = [];
 localStorage.setItem("nameArray", JSON.stringify(scoreBoardArrayName));
 localStorage.setItem("scoreArray", JSON.stringify(ScoreBoardArrayScore));
 localStorage.setItem("rankArray", JSON.stringify(ScoreBoardArrayRank));

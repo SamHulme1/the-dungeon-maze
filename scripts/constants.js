@@ -1,6 +1,6 @@
 /**-----------------------------------------------------------------------------------game object */ 
 const game = {
-    inventory: ["potion"],
+    inventory: [],
     items: [],
     room: [], 
     monster: [],
