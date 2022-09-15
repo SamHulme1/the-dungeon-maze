@@ -5,8 +5,31 @@ body {
     user-select: none;
 }
 
+.logo:hover {
+    color: white;
+}
+
+.footer-icon:hover {
+    color: white;
+}
+
+.btn-reset:hover {
+    background-color:white;
+    color:#c82305; 
+}
+
+.start-btn:hover {
+    background-color:white;
+    color:#c82305; 
+}
+
 .navbar-light .navbar-toggler-icon{
     background-color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: white;
+    outline: none;
 }
 
 .nopadding {
@@ -15,7 +38,7 @@ body {
 
 .logo {
     font-size: 80px;
-    color: #671716;
+    color: #c82305;
 }
 
 .navbar {
@@ -24,7 +47,7 @@ body {
 
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Press Start 2P', sans-serif;
-    color: #671716;
+    color: #c82305;
     letter-spacing: 10px;
     background-color: rgba(0,0,0,0.0);
     border: none;
@@ -46,15 +69,17 @@ body {
 .heading {
     text-align: center;
     font-size: 80px;
-    margin-bottom: 5%;
     font-family: 'Press Start 2P', sans-serif;
     color:white;
     letter-spacing: 2px;
 }
 
+.area-wrapper{
+    background-color:  black;
+}
 .heading-two {
     text-align: center;
-    font-size: 40px;
+    font-size: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'Press Start 2P', sans-serif;
@@ -69,7 +94,7 @@ body {
     text-align: center;
 }
 .paragraph-text-modal {
-    font-size: 12px;
+    font-size: 16px;
     font-family: 'Press Start 2P', sans-serif;
     letter-spacing: 1px;
     color: black;
@@ -111,7 +136,8 @@ body {
 
 .player-input {
     background-color: rgba(0,0,0, 0.5);
-    border-style: none;
+    border-style: solid;
+    border-color: white;
     margin-bottom: 10px;
 }
 
@@ -120,10 +146,18 @@ body {
     margin-left: auto;
     margin-right:auto;
 }
-.hero-image {
+.game-image {
     margin-top: 20px;
     width:31em;
+    border-radius: 8px;
 }
+
+.hero-image {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 8px;
+}
+
 .output-image-container{
     overflow:hidden;
 }
@@ -143,7 +177,7 @@ body {
 
 .btn-reset {
     color: #fff;
-    background-color: #a35321;
+    background-color: #c82305;
     border-radius: 5px;
 }
 
@@ -159,12 +193,11 @@ body {
 
 }
 .game-btn i {
-    font-size: 60px;
-    color: white;
+    font-size: 40px;
 }
 
 .htp {
-    font-size: 60px;
+    font-size: 40px;
     color: black;
 }
 
@@ -173,17 +206,20 @@ background-color: rgba(255,255,255,0.9);
 }
 
 .monster-heart{
-    color: #671716;
+    color: #c82305;
 }
 
 .text-center{
     text-align: center;
 }
 .start-btn{
-    width: 50%;
+    width: 15em;
     display: block;
     margin-left: auto;
     margin-right:auto;
+    border-style: solid;
+    border-color: white;
+    background-color: #c82305;
 }
 
 .contact-icons{
@@ -194,7 +230,7 @@ background-color: rgba(255,255,255,0.9);
 .contact-icons i {
     margin-left:10%;
     margin-right:10%;
-    color: #671716;
+    color: #c82305;
 }
 
 footer {

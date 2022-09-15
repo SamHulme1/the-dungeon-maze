@@ -17,9 +17,13 @@ window.onload = (event) => {
         resetGameAreas();
         createHealth();
         blockButton.disabled = true;
+        blockButton.style.color = "#812b09";
         attackButton.disabled = true;
+        attackButton.style.color = "#812b09";
         potionButton.disabled = true;
-        nextRoomButton.disabled = false;
+        potionButton.style.color = "#812b09";
+        nextRoomButton.disabled= false;
+        nextRoomButton.style.color = "#3da861";
         roomImage = document.getElementById("output-image");
         roomImage.innerHTML = ` <img class="hero-image center" src="img/tavern.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
@@ -32,8 +36,13 @@ window.onload = (event) => {
     function initiateGame() {
         createHealth();
         blockButton.disabled = true;
+        blockButton.style.color = "#812b09";
         attackButton.disabled = true;
+        attackButton.style.color = "#812b09";
         potionButton.disabled = true;
+        potionButton.style.color = "#812b09";
+        nextRoomButton.disabled= false;
+        nextRoomButton.style.color = "#3da861";
     }
 
     document.getElementById("next-room").addEventListener("click", function newTurn(){
@@ -42,9 +51,13 @@ window.onload = (event) => {
         generateMonster();
         createMonsterHealth();
         nextRoomButton.disabled  = true;
+        nextRoomButton.style.color = "#812b09";
         blockButton.disabled = false;
+        blockButton.style.color = "#3da861";
         attackButton.disabled = false;
+        attackButton.style.color = "#3da861";
         potionButton.disabled = false;
+        potionButton.style.color = "#3da861";
         let generatedOutput = document.getElementById("output-text");
         if (game.room.includes(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')){
             createBossHealth();
@@ -118,14 +131,14 @@ window.onload = (event) => {
         if (randomRoom === 8) {
             if(game.inventory.includes("key")){
                 turnText = imageInfo.sentence1
-                roomImage.innerHTML = `<img class ="hero-image center" src="${imageInfo.imageName2}" alt="${imageInfo.imageAlt2}">` 
+                roomImage.innerHTML = `<img class ="game-image center" src="${imageInfo.imageName2}" alt="${imageInfo.imageAlt2}">` 
             } else {
                 turnText = imageInfo.sentence2
-                roomImage.innerHTML = `<img class ="hero-image center" src="${imageInfo.imageName1}" alt="${imageInfo.imageAlt1}">`
+                roomImage.innerHTML = `<img class ="game-image center" src="${imageInfo.imageName1}" alt="${imageInfo.imageAlt1}">`
             };
         } else {
             turnText = imageInfo.sentence1
-            roomImage.innerHTML = `<img class ="hero-image center" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">` 
+            roomImage.innerHTML = `<img class ="game-image center" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">` 
         }
         game.room.push(turnText) 
         return game.room;
@@ -245,12 +258,16 @@ window.onload = (event) => {
 
     function dead(){
         nextRoomButton.disabled = true;
+        nextRoomButton.style.color = "#812b09";
         attackButton.disabled = true;
+        attackButton.style.color ="#812b09";
         blockButton.disabled = true;
+        blockButton.style.color="#812b09";
         potionButton.disabled = true;
+        potionButton.style.color= "#812b09"
         calculateScore();
         let deathScreen = document.getElementById("output-image");
-        deathScreen.innerHTML = `<img class ="hero-image center" src="img/death-screen.jpg" alt="the dugeon maze title image">`;
+        deathScreen.innerHTML = `<img class ="game-image center" src="img/death-screen.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
         <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${score} Rank: ${rank}</p>`;
@@ -289,8 +306,11 @@ window.onload = (event) => {
             addToInventory();
             console.log(game.monsterHealth);
             nextRoomButton.disabled = false;
+            nextRoomButton.style.color = "#3da861";
             blockButton.disabled = true;
+            blockButton.style.color = "#812b09";
             attackButton.disabled = true;
+            attackButton.style.color ="#812b09";
             };
         };
     }
@@ -313,12 +333,16 @@ window.onload = (event) => {
 
     function winGame(){
         nextRoomButton.disabled = true;
+        nextRoomButton.style.color = "#812b09";
         attackButton.disabled = true;
+        attackButton.style.color = "#812b09";
         blockButton.disabled = true;
+        blockButton.style.color="#812b09";
         potionButton.disabled = true;
+        potionButton.style.color="#812b09";
         calculateScore();
         let winScreen = document.getElementById("output-image");
-        winScreen.innerHTML = `<img class ="hero-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
+        winScreen.innerHTML = `<img class ="game-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
         <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${score} Rank: ${rank}</p>`;

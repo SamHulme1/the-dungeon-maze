@@ -15,7 +15,6 @@ const attackButton = document.getElementById("attack");
 const blockButton = document.getElementById("block");
 const potionButton = document.getElementById("drink-potion");
 
-
 const attackToMessageMapper = {
     1 : "Monster Blocks",
     2 : "Monster Attacks",
@@ -126,4 +125,3 @@ const rankMapper = {
     900 : "Dragon Slayer"
 }
 
-//function needs to round the number to the neaest 100 if over 1000 dungeon master

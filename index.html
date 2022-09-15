@@ -15,7 +15,7 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="logo r-4 ml-4" href="index.html"><i class="fa-solid fa-dungeon"></i><span class ="sr-only">Click to go back to the home page</span></a>
+                <a class="logo mr-4 ml-4" href="index.html"><i class="fa-solid fa-dungeon"></i><span class ="sr-only">Click to go back to the home page</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -97,37 +97,39 @@
         </section>    
         <section class="game-output-area">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 nopadding center">
-                        <div class="output-image-container">
-                            <img class ="hero-image" src="img/dungeon-maze-title-image.jpg" alt="the dugeon maze title image">
-                        </div>
-                    </div>
-                    <div class="col-12 nopadding">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12 nopadding">
-                                    <form class="text-center" id="game-form" action="game-start.html">
-                                        <label class="paragraph-text" for="adventurer-name">Adventurer Name: </label>
-                                        <br>
-                                        <input type="text" id="adventurer-name" name="adventurer-name" class="player-input center paragraph-text" required></input>
-                                        <input type="submit" class="game-btn start-btn heading-two" name="Start game">
-                                    </form>
-                                </div>
+                <div class="area-wrapper container">
+                    <div class="row">
+                        <div class="col-12 nopadding">
+                            <div class="center">
+                                <img class ="hero-image" src="img/dungeon-maze-title-image.jpg" alt="the dugeon maze title image">
                             </div>
                         </div>
-                    </div>   
-                </div> 
+                        <div class="col-12 nopadding">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 nopadding">
+                                        <form class="text-center" id="game-form" action="game-start.html">
+                                            <label class="paragraph-text" for="adventurer-name">Adventurer Name: </label>
+                                            <br>
+                                            <input type="text" id="adventurer-name" name="adventurer-name" class="player-input center paragraph-text" required></input>
+                                            <input type="submit" class="start-btn heading-two" name="Start game">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div> 
+                </div>
             </div>
-        </section>
+        </section>    
         <footer>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <h3 class="contact-icons">
-                            <a><i class="fa-brands fa-twitter"></i></a>
-                            <a><i class="fa-brands fa-facebook"></i></a>
-                            <a><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter footer-icon" arria-hidden="true"></i><span class="sr-only">twitter link</span></a>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook footer-icon" arria-hidden="true"></i><span class="sr-only">facebook link</span></a>
+                            <a href="https://www.linkedin.com/" target="_blank" ><i class="fa-brands fa-linkedin footer-icon" arria-hidden="true"></i><span class="sr-only">linkedin link</span></a>
                         </h3>
                     </div>
                 </div>
