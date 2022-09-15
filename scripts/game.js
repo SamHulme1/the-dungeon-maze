@@ -43,6 +43,12 @@ window.onload = (event) => {
         potionButton.style.color = "#812b09";
         nextRoomButton.disabled= false;
         nextRoomButton.style.color = "#3da861";
+        welcomeMessage();
+    }
+
+    function welcomeMessage() {
+        let username = localStorage.getItem("username");
+        alert(`Welcome to the dungeon ${username}`);
     }
 
     document.getElementById("next-room").addEventListener("click", function newTurn(){

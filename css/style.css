@@ -2,7 +2,6 @@ body {
     background : url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    user-select: none;
 }
 
 .logo:hover {
@@ -43,6 +42,7 @@ body {
 
 .navbar {
     background-color: rgba(0,0,0,0.2);
+    font-size: 16px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -139,22 +139,18 @@ body {
     border-style: solid;
     border-color: white;
     margin-bottom: 10px;
+    border-width:1px;
 }
 
-.center {
-    width: 50%;
-    margin-left: auto;
-    margin-right:auto;
-}
 .game-image {
     margin-top: 20px;
-    width:31em;
+    width:100%;
     border-radius: 8px;
 }
 
 .hero-image {
     margin-top: 20px;
-    width: 100%;
+    width:50%;
     border-radius: 8px;
 }
 
@@ -209,11 +205,11 @@ background-color: rgba(255,255,255,0.9);
     color: #c82305;
 }
 
-.text-center{
-    text-align: center;
+.game-btn i {
+    font-size: 40px;
 }
+
 .start-btn{
-    width: 15em;
     display: block;
     margin-left: auto;
     margin-right:auto;
@@ -224,7 +220,7 @@ background-color: rgba(255,255,255,0.9);
 
 .contact-icons{
     text-align: center;
-    font-size: 80px;
+    font-size: 40px;
 }
 
 .contact-icons i {
@@ -239,61 +235,168 @@ footer {
 }
 
 
-@media (min-width: 641px)and(max-width:1180px){
-    .inventory, .health{
-        float: none;
+/* larger screen sizes */
+
+@media (min-width: 1920px) {
+    .heading{
+        font-size: 60px;
+    }
+    .heading-two{
+        font-size: 32px;
+    }
+    .paragraph-text{
+        font-size: 25px;
+    }
+    .logo{
+        font-size: 120px;
+    }
+    .navbar {
+        font-size: 40px;
         text-align: center;
     }
-    .health-and-inventory-area {
-        margin-left: 0; 
-        margin-right: 0;
+    .contact-icons{
+        font-size: 80px;
     }
     .hero-image {
-        width: 23em;
+        width: max-content;
+    }
+    .game-btn i {
+        font-size: 120px;
+    }
+}
+@media (min-width: 769px) and (max-width:1919px){
+    
+    .modal-heading{
+        font-size: 60px;
+    }
+    .paragraph-text-modal{
+        font-size: 15px;
+    }
+    .heading{
+        font-size: 60px;
+    }
+    .heading-two{
+        font-size: 32px;
+    }
+    .paragraph-text{
+        font-size: 15px;
+    }
+    .logo{
+        font-size: 60px;
+    }
+    .navbar {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .game-btn i {
+        font-size: 60px;
     }
 }
 
-@media (max-width: 600px){
-    .heading {
+/* smaller screen sizes */
+@media (min-width: 320px) and (max-width:768px){
+    .modal-heading{
         font-size: 30px;
-        margin-top: 30%;
     }
-    .navbar li a {
+    .paragraph-text-modal{
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+    .heading{
+        font-size: 30px;
+        letter-spacing: 0;
+    }
+    .heading-two{
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+    .paragraph-text{
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+    .logo{
+        font-size: 30px;
+    }
+    .navbar {
         font-size: 10px;
-    }
-    .heading-two {
-        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0;
     }
     .contact-icons{
         font-size: 20px;
     }
     .hero-image {
-        margin-top: 20px;
-        width: 22em;
+        width: 70%;
     }
 
-}
-
-@media (max-width: 620px){
-    .heading {
-        font-size: 30px;
-        margin-top: 30%;
+    .game-image{
+        width: 50%;
+        margin-bottom: 20px;
     }
-    .navbar li a {
-        font-size: 10px;
-    }
-}
 
-@media (max-width: 428px){
-    .heading {
+    .health{
+        margin-top: 0;
+    }
+    .inventory-area{
+        padding-top: 0;
+    }
+    .game-btn i {
         font-size: 20px;
-        margin-top: 35%;
+    }
+    .game-btn {
+        margin:0;
+    }
+}
+
+@media (max-width: 319px){
+    .modal-heading{
+        font-size: 15px;
+    }
+    .paragraph-text-modal{
+        font-size: 4px;
+        letter-spacing: 0;
+    }
+    .heading{
+        font-size: 15px;
+    }
+    .heading-two{
+        font-size: 5px;
+        letter-spacing: 0;
+    }
+    .paragraph-text{
+        font-size:4px;
+        letter-spacing: 0;
+    }
+    .health{
+        margin-top: 0;
+    }
+    .inventory-area{
+        padding-top: 0;
+    }
+    .hero-image {
+        width: 70%;
+    }
+
+    .game-image{
+        width: 50%;
+        margin-bottom: 20px;
     }
     .logo {
-        display: none;
+        font-size: 30px;
     }
-}
-
-.hover-effect:hover {
-    text-decoration: none;
+    .navbar {
+        font-size: 5px;
+        text-align: center;
+        letter-spacing: 0;
+    }
+    .contact-icons{
+        font-size: 20px;
+    }
+    .game-btn i {
+        font-size: 20px;
+    }
+    .game-btn {
+        margin:0;
+    }
 }
