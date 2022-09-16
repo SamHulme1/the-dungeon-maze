@@ -1,12 +1,14 @@
 let score = 0; 
 let rank = "";
+let mobileFeedbackDisplay = document.getElementById("small-screen-output");
 window.onload = (event) => {
     /**-----------------------------------------------------------------------------------game buttons functions */
     initiateGame();
 
     document.getElementById("reset-game-btn").addEventListener("click", function resetGame(){
         score = 0;
-        rank = ""
+        rank = "";
+        mobileFeedbackDisplay.innerHTML="";
         game.health = [];
         game.inventory = [];
         game.items = [];
@@ -25,9 +27,9 @@ window.onload = (event) => {
         nextRoomButton.disabled= false;
         nextRoomButton.style.color = "#3da861";
         roomImage = document.getElementById("output-image");
-        roomImage.innerHTML = ` <img class="hero-image center" src="img/tavern.jpg" alt="the dugeon maze title image">`;
+        roomImage.innerHTML = ` <img class="game-image fade-in" src="img/tavern.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
-        generatedOutput.innerHTML = `<p class="paragraph-text">
+        generatedOutput.innerHTML = `<p class="paragraph-text fade-in">
         The dungeon of the once great king ... is renowned for it's many treasures but also it's deadly inhabitents. You've come across hard times in resent months, the harvests have been poor, and you have been forced to find other means of accumulating income. So you ended up here. In this inn on the otherside of the world. Many others like you have come to seek their fortune but many will fail. You decide to have one last ale before calling it a day. You'll enter the maze at first light. 
         press continue to start your adventure. 
     </p> `
@@ -49,6 +51,7 @@ window.onload = (event) => {
     function welcomeMessage() {
         let username = localStorage.getItem("username");
         alert(`Welcome to the dungeon ${username}`);
+        mobileFeedbackDisplay.innerHTML= `<p class="paragraph-text fade-in">Welcome to the dungeon ${username}</p>`;
     }
 
     document.getElementById("next-room").addEventListener("click", function newTurn(){
@@ -67,10 +70,10 @@ window.onload = (event) => {
         let generatedOutput = document.getElementById("output-text");
         if (game.room.includes(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')){
             createBossHealth();
-            generatedOutput.innerHTML = `<p class="paragraph-text">${game.room}</p>`;
+            generatedOutput.innerHTML = `<p class="paragraph-text fade-in">${game.room}</p>`;
         } else {
             generatedOutput.innerHTML = `
-            <p class="paragraph-text"> ${game.room} ${game.monster} ${game.items}</p> `;
+            <p class="paragraph-text fade-in"> ${game.room} ${game.monster} ${game.items}</p> `;
         };
     })
     
@@ -91,6 +94,7 @@ window.onload = (event) => {
             }
         } else {
             alert("You don't have a potion");
+            mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">You don't have a potion</p>`;
         }
     })
 
@@ -111,11 +115,14 @@ window.onload = (event) => {
         fight();
         if (game.attack.includes("Monster Blocks")) {
             alert("The monster blocks your hit");
+            mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">The monster blocks your hit</p>`;
         } else if (game.attack.includes("Monster Attacks")){
             alert("The monster attacks but they're too slow");
+            mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">The monster attacks but they're too slow</p>`;
             monsterdamaged();
         } else if (game.attack.includes("Monster Hits")){
             alert("You try and hit the monster but they're too fast");
+            mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">You try and hit the monster but they're too fast</p>`;
             damage();
         }
         game.attack = [];
@@ -137,14 +144,14 @@ window.onload = (event) => {
         if (randomRoom === 8) {
             if(game.inventory.includes("key")){
                 turnText = imageInfo.sentence1
-                roomImage.innerHTML = `<img class ="game-image center" src="${imageInfo.imageName2}" alt="${imageInfo.imageAlt2}">` 
+                roomImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName2}" alt="${imageInfo.imageAlt2}">` 
             } else {
                 turnText = imageInfo.sentence2
-                roomImage.innerHTML = `<img class ="game-image center" src="${imageInfo.imageName1}" alt="${imageInfo.imageAlt1}">`
+                roomImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName1}" alt="${imageInfo.imageAlt1}">`
             };
         } else {
             turnText = imageInfo.sentence1
-            roomImage.innerHTML = `<img class ="game-image center" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">` 
+            roomImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">` 
         }
         game.room.push(turnText) 
         return game.room;
@@ -273,10 +280,10 @@ window.onload = (event) => {
         potionButton.style.color= "#812b09"
         calculateScore();
         let deathScreen = document.getElementById("output-image");
-        deathScreen.innerHTML = `<img class ="game-image center" src="img/death-screen.jpg" alt="the dugeon maze title image">`;
+        deathScreen.innerHTML = `<img class ="game-image fade-in" src="img/death-screen.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
-        <p class="paragraph-text"> The dungeon claims another victim. Better luck next time! Score: ${score} Rank: ${rank}</p>`;
+        <p class="paragraph-text fade-in"> The dungeon claims another victim. Better luck next time! Score: ${score} Rank: ${rank}</p>`;
     }
 
     /**gameplay combat mechanics */ 
@@ -291,6 +298,7 @@ window.onload = (event) => {
             game.health.pop();
             recievedDamage.removeChild(recievedDamage.lastElementChild);
             alert("you died");
+            mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">you died</p>`;
             dead();
         }//you died doesn't work if there arn't already hearts in the health array?
     }
@@ -348,15 +356,11 @@ window.onload = (event) => {
         potionButton.style.color="#812b09";
         calculateScore();
         let winScreen = document.getElementById("output-image");
-        winScreen.innerHTML = `<img class ="game-image center" src="img/endgame.jpg" alt="the dugeon maze title image">`;
+        winScreen.innerHTML = `<img class ="game-image fade-in" src="img/endgame.jpg" alt="the dugeon maze title image">`;
         let generatedOutput = document.getElementById("output-text");
         generatedOutput.innerHTML = `
-        <p class="paragraph-text"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${score} Rank: ${rank}</p>`;
+        <p class="paragraph-text fade-in"> The dungeon bosses lifeless corpse falls to the ground. You search around the room and discover a hidden door behind the throne. The door opens into a passage leading to the dungeons exit. Congradulations you beat the dungeon Score: ${score} Rank: ${rank}</p>`;
     }
-
-    
 }
-    
-    // module.exports = { game, generateItem, generateRoom, addToInventory, drinkPotion, startNewGame, startNewTurn };
 
 
