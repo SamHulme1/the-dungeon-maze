@@ -1,4 +1,4 @@
-/**-----------------------------------------------------------------------------------game object */ 
+/**game object */ 
 const game = {
     inventory: [],
     items: [],
@@ -8,19 +8,18 @@ const game = {
     health : [],
     monsterHealth : [],
 };
-
-/**-----------------------------------------------------------------------------------game buttons */ 
+/**game buttons */ 
 const nextRoomButton = document.getElementById("next-room");
 const attackButton = document.getElementById("attack");
 const blockButton = document.getElementById("block");
 const potionButton = document.getElementById("drink-potion");
-
+/**attack to message mapper */ 
 const attackToMessageMapper = {
     1 : "Monster Blocks",
     2 : "Monster Attacks",
     3 : "Monster Hits",
 }
-
+/**inventory score mapper */ 
 const gameInventoryScoreMapper = {
     "diamond ring": 200,
     "bag of gold coins": 150,
@@ -32,9 +31,8 @@ const gameInventoryScoreMapper = {
     "potion": 0,
     "ruby": 700,
     "key": 0
-
 };
-
+/**inventory id mapper */ 
 const inventoryIdMapper = {
     1: "potion",
     2: "diamond ring",
@@ -46,9 +44,8 @@ const inventoryIdMapper = {
     8: "crystal dagger",
     9: "old pair of socks",
     10: "ruby"
-
 }
-
+/**generate monster mapper */ 
 const generateMonsterToMapper = {
     1 : "old goblin guarding a ",
     2 : "giant rat guarding a ",
@@ -56,11 +53,11 @@ const generateMonsterToMapper = {
     4 : "zombie who has a ",
     5 : "fearsome orc, he fights fearsly over a ",
     6 : "red dragon smiling at you. How dare you try and steal his most treasured item a ",
-    7 : "ogre scratching its head and looking at you, 'hey dont you touch my '",
-    8 : "crawling out of a small hole emerges a warewolf he carrys a ",
+    7 : "ogre scratching its head and looking at you, 'hey dont you touch my ",
+    8 : "a scary looking warewolf, he carrys a ",
     9 : "spectral Karen hovering towards you, she's enraged that you wont let her return a ",
 }
-
+/**room Id to image object mapper */ 
 const roomIdToImageObjectMapper = {
     1: {
         "imageName": "img/corridoor.jpg",
@@ -103,7 +100,7 @@ const roomIdToImageObjectMapper = {
         "imageName2": "img/boss-room.jpg",
         "imageAlt2": "Image of a boss area in a pixelated art style",
         "sentence1": " You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!",
-        "sentence2": " You come acoss a large stone locked door. You try everything but the door wont move without its proper key. Youre forced to turn back. On the plus side you find a "
+        "sentence2": " You come acoss a large stone locked door. You try everything but the door wont move without its proper key. Youre forced to turn back.  you notice a "
     },
     9: {
         "imageName": "img/cave-in.jpg",
@@ -111,7 +108,7 @@ const roomIdToImageObjectMapper = {
         "sentence1": "You come accross a partial cave-in, after moving some of the rubble, you discover a small passageway 'I shouldnt have had that extra large breakfast' you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a ",
     },
 }
-
+/**rank mapper */ 
 const rankMapper = {
     0 : "Cannon fodder",
     100 : "Still poor go back in again", 
@@ -124,4 +121,3 @@ const rankMapper = {
     800 : "Ogre slayer", 
     900 : "Dragon Slayer"
 }
-
