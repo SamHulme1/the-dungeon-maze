@@ -1,108 +1,229 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Dungeon Maze
+To see the live version of the site click [here!](https://samhulme1.github.io/the-dungeon-maze/)
 
-Welcome SamHulme1,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![mockup-image]()
 
 ---
+## Contents
 
-Happy coding!
+### [UX](#ux)
+### [User Requirements and Expectations](#user-requirements-and-expectations-1) 
+### [Developer goals](#developer-goals-1) 
+### [User Stories/scenarios](#user-storiesscenarios-1)
+### [Design Choices](#design-choices-1) 
+### [Wireframes](#wireframes-1)
+### [Features](#features-1)
+### [Technologies Used](#technologies-used-1)
+### [Depolyment](#deployment) 
+### [Testing](#testing-1) 
+### [Bugs](#bugs-1)
+### [Credits](#credits-1)
+---
+## UX:
+
+### Project goals: 
+- To create a fun interact game based upon classic board game mechanics
+- To expermiment with Javascript 
+
+---
+### Target Auidence: 
+- The website is targeted at people of all ages who enjoy playing games
+- Users who enjoy the classic fantasy genre
+
+---
+### Target Audience goals: 
+- To be able to clearly navigate around the site and access the right information the need to play the game
+- To be able to interact with the website and play the game
+---
+## User Requirements and Expectations 
+The website feature both visual and written content with interactive elements. Feedback will be give to the user whenever they make a decision and there will be clear descriptions of how to play the game. The web content will be structured into different webpages that display appropriate information to the user. There will be social links in the footer for the user to visit. 
+
+The dungeon maze is a great website for this as it give good feedback to the user through the use of alerts on larger screens and outputting text into a div to display alerts users on smaller screens where alerts are disabled. The webpages contents follow a nice structured flow. Creating a nice pathways for the users to follow.
+
+---
+## Developer goals: 
+
+- To create a fun and engaging site for users to visit
+- To experiment with JavaScript and create an interactive front end project
+- To build on and develop a better understaing of javascript
+
+---
+## User Stories/scenarios: 
+
+### First-Time users:
+
+- As a first time user I want to be able to interact with the website and play the game
+- I need to be able to find the information I need to play the game easily
+- I want to know how my decisions impact the game
+- When I play the game i want the game information both written and visual displayed to me in an easy to follow format
+- I need to be able to reset the game when I need to
+
+### Returning users:
+
+- I want to be able to replay the game
+- I want to be able to beat my old score
+
+## Design Choices 
+
+---
+### Colors: 
+I used this colour palette on the site. The colors from this pallete came from the images I generated. I also used colour which I thought contrasted well with the other colours such as whites and blacks. 
+
+---
+### Fonts:
+ 
+I used the google font Press Start 2P across the website. I decided to use this font for both the titles and 
+then other text to keep consistency and because it built upon the retro style that I wanted to create. Another reason was that the font was easily readable in smaller sizes. 
+---
+### Imagery: 
+
+The images for the website were created using an online ai art generation tool. I then used another tool to pixalate them. I chose to use the image title dungeon maze title image because it was the most unique image that I generated. Injecting a unique fantasy feeling to the site to try and get an get an emotional response from the user when they first land on the site. The emotion I wanted to capture was nustalia. The other images that are on the site in the generated image section were created using the same approch as the hero image. I matched the images to the text descriptions to create a nice flow of written and visual information and so that the images displayed made sense visually as to what the text was descibing. I took quite a loose approch to this on some of the image. However, this was to create a retro/unique feeling and because of what the ai art genertor created. 
+---
+### Styling: 
+
+All the containers on the site are set to be fluid so that they cover the screen size. Which creates a more modern look than other retro games, were the game is in a normal container. The area behind the images was set to black to emulate a small screen. The information given to the user in all areas follows the format of image then written information so that the image is the first piece of information the user sees. On smaller screens an output area was created in order for the user to be given feedback from the game. Javascript alerts replace this on larger screens. The buttons are colour cordinated so that the user can see which buttons can be pressed at different stages of the game. The how to play modal is styled to contrast with the rest of game. 
+---
+## WireFrames: 
+
+![wireframes]()
+---
+## Features: 
+
+### Current Features:
+
+### Navbar
+
+
+### About information
+
+### Interactive gallery
+![gallery-feature]
+
+---
+### Future Features:
+
+### Naming Conventions and Structure of Files 
+
+
+## Technologies used: 
+
+### Languages: 
+
+1. [HTML5](https://www.w3schools.com/html/default.asp) To create the structure and the content of the website
+
+2. [CSS3](https://www.w3schools.com/css/) To create the style for the website and its content
+---
+### Tools and libraries:
+
+1. [Gitpod](https://www.gitpod.io/) To create the code for the website
+
+
+
+---
+## Deployment
+
+### This site is deployed in Github pages. These steps were taken on deployment
+
+1. Login and locate the repository titled [the dungeon maze](https://github.com/SamHulme1/the-dungeon-maze).
+2. Locate the settings at the top of the repository menu. Make sure not to click the settings at the top of the page
+3. Scroll down the page, to the left you should be able to see pages under Code and Automation click pages
+4. Change the source branch from none to main using the dropdown menu
+5. Doing this will refresh the page, scroll back down and locate the link to the active page. Click the link to see the deployed site!
+
+### This site was developed using Git. Here is the development lifecycle:
+
+1. I created a new repository from using Code Institutes template
+2. In the terminal, I typed git init to initialise
+3. I created all the files and folders for the project
+4. I used the command git add . in the terminal to add the files to the repository
+5. I enter git commit and wrote a commit message in "" 
+6. For each change that I made I used the git add . and commit commands
+7. I used git push to push the changes in Git to Github
+
+## Testing 
+
+### Testing User's Stories 
+
+
+
+---
+### Developer goals have been met by: 
+
+---
+### Site responsiveness and compatibility 
+
+#### Dev Tools
+
+- Blackberry Z30
+- Blackberry PlayBook
+- Galaxy Note 3
+- Galaxy Note 2
+- Galaxy S3 
+- Galaxy S8
+- Galaxy S9 Plus
+- Galaxy Tab S4 
+- Galaxy S20 Ultra
+- Galaxy Fold
+- Galaxy A51
+- Kindle Fire HDX
+- LG Optimus L70
+- Microsoft Lumia 550
+- Microsoft Lumia 950
+- Moto G4 
+- Nexus 10, 4, 5, 5X, 6, 6P, 7, 
+- Nokia Lumia 520
+- Nokia N9
+- Pixel 3, 4, 3 XL, 5
+- Ipad mini, Ipad, Ipad Pro
+- iPhone 4, SE, XR, 12 Pro
+- JioPhone 2
+- Ipad air, mini
+- Surface Pro 7, Duo
+- Nest Hub, Hub Max
+- iPhone 5, SE, 6, 7, 8, X
+
+---
+#### LightHouse 
+
+---
+### Online validators 
+
+The final validator results can be seen here:
+
+
+---
+### Manual Tests run on site
+
+
+---
+### Browser testing 
+
+## Bugs 
+Here are some of the bugs that I've found and fixed throughout development: 
+
+
+
+### Bugs Left in Code:
+To my knowledge there are no bugs left in the code!
+
+## Credits 
+
+### Code
+
+- Bootstrap 4 was used throughout development to make the site responsive, I used this for layout and used some of Bootstraps classes
+
+
+### Content 
+
+- All written content for the site came from me the developer
+- The images for the site were created using an online ai image generator (https://nightcafe.studio/)
+
+### Media 
+
+
+
+### Acknowledgements 
+
+- My mentor for the amazing help and support 
+- Other students on slack for their support 
+- Code Institute for the helpful materials and support

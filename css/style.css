@@ -121,7 +121,7 @@ body {
 }
 .heading {
     text-align: center;
-    font-size: 80px;
+    font-size: 70px;
     font-family: 'Press Start 2P', sans-serif;
     color:white;
     letter-spacing: 2px;
@@ -158,8 +158,6 @@ body {
 
 .game-output-area{
     background-color: rgba(0,0,0, 0.7);
-    margin-bottom: 30%;
-    margin-top: 10%;
 
 }
 .game-modal-content {
@@ -197,13 +195,14 @@ body {
 
 .game-image {
     margin-top: 20px;
-    width:50%;
+    width:27em;
     border-radius: 8px;
 }
 
 .hero-image {
-    margin-top: 20px;
-    width:40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:30em;
     border-radius: 8px;
 }
 
@@ -269,10 +268,6 @@ background-color: rgba(255,255,255,0.9);
     font-size: 20px;
 }
 
-footer{
-    margin-top: 20%;
-}
-
 .contact-icons i {
     margin-left:10%;
     margin-right:10%;
@@ -286,192 +281,231 @@ footer {
     width: 100%;
 }
 
-
-/* larger screen sizes */
-
-@media (min-width: 1920px) {
-    .game-image{
-        width: 40%;
+@media (max-width:279px){
+    .hero-image  {
+        width:8em;
     }
     .heading{
+        font-size: 10px;
+    }
+    .game-image{
+        width: 7em;
+    }
+    .paragraph-text{
+        font-size: 4px;
+    }
+    .logo {
+        font-size: 20px;
+    }
+
+    .game-btn i {
+        font-size: 10px;
+    }
+    .navbar {
+        font-size: 5px;
+        text-align: center;
+    }
+    .modal-heading{
+        font-size: 10px;
+    }
+    .paragraph-text-modal{
+        font-size: 4px;
+    }
+
+}
+@media (min-width: 414px) and (max-width: 896px){
+    .game-image{
+        width: 12em;
+    }
+    .hero-image{
+        width:20em;
+    }
+    .logo{
+        font-size: 40px;
+    }
+
+    .heading{
+        font-size: 40px;
+    }
+
+    .heading-two{
+        font-size: 10px;
+    }
+    .paragraph-text{
+        font-size: 8px;
+    }
+    .navbar {
+        font-size: 15px;
+        text-align: center;
+    }
+    .modal-heading{
+        font-size: 40px;
+    }
+    .paragraph-text-modal{
+        font-size: 8px;
+    }
+}
+
+@media (min-width:640px) and (max-height: 360px){
+    .hero-image{
+        width:20em;
+    }
+    .game-image{
+        width:20em;
+    }
+    .logo{
+        font-size: 40px;
+    }
+
+    .heading{
+        font-size: 40px;
+    }
+
+    .heading-two{
+        font-size: 10px;
+    }
+    .paragraph-text{
+        font-size: 8px;
+    }
+    .navbar {
+        font-size: 15px;
+        text-align: center;
+    }
+    .modal-heading{
+        font-size: 40px;
+    }
+    .paragraph-text-modal{
+        font-size: 8px;
+    }
+
+}
+
+@media (min-width:280px) and (max-height: 915px){
+    .hero-image{
+        width:15em;
+    }
+    .game-image{
+        width:10em;
+    }
+    .logo{
+        font-size: 40px;
+    }
+
+    .heading{
+        font-size: 40px;
+    }
+
+    .heading-two{
+        font-size: 10px;
+    }
+    .paragraph-text{
+        font-size: 6px;
+    }
+    .navbar {
+        font-size: 15px;
+        text-align: center;
+    }
+    .modal-heading{
+        font-size: 40px;
+    }
+    .paragraph-text-modal{
+        font-size: 5px;
+    }
+    .game-btn i {
+        font-size: 30px;
+    }
+
+}
+@media (min-width:800px) and (max-height: 1280px){
+    .game-image{
+        width: 30em;
+    }
+    .hero-image{
+        width: 30em;
+    }
+    .logo {
         font-size: 60px;
+    }
+    .navbar {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px){
+    .game-image{
+        width:20em;
+    }
+    .logo{
+        font-size: 40px;
+    }
+
+    .heading{
+        font-size: 45px;
+    }
+
+    .heading-two{
+        font-size: 15px;
+    }
+    .paragraph-text{
+        font-size: 8px;
+    }
+    .navbar {
+        font-size: 20px;
+        text-align: center;
+    }
+    .modal-heading{
+        font-size: 45px;
+    }
+    .paragraph-text-modal{
+        font-size: 12px;
+    }
+
+}
+
+@media (min-width: 1280px){
+    .game-image{
+        width: 25em;
+    }
+    .hero-image{
+        width: 25em;
+    }
+    .logo {
+        font-size: 60px;
+    }
+    .navbar {
+        font-size: 20px;
     }
     .heading-two{
         font-size: 32px;
     }
     .paragraph-text{
-        font-size: 25px;
+        font-size: 15px;
     }
-    .logo{
-        font-size: 120px;
+    .game-btn i {
+        font-size: 50px;
     }
-    .navbar {
-        font-size: 40px;
-        text-align: center;
+}
+@media (min-width: 1920px){
+    .game-image{
+        width: 50em;
     }
-    .contact-icons{
+    .hero-image{
+        width: 50em;
+    }
+    .logo {
         font-size: 80px;
     }
-    .game-btn i {
-        font-size: 120px;
+    .navbar {
+        font-size: 40px;
     }
-}
-@media (min-width: 769px) and (max-width:1919px){
-    .modal-heading{
+    .heading-two{
         font-size: 60px;
     }
-    .paragraph-text-modal{
-        font-size: 10px;
-    }
-    .heading{
-        font-size: 20px;
-    }
-    .heading-two{
-        font-size: 15px;
-    }
     .paragraph-text{
-        font-size: 10px;
-    }
-    .logo{
-        font-size: 40px;
-    }
-    .navbar {
-        font-size: 15px;
-        text-align: center;
-    }
-    
-    .game-btn i {
-        font-size: 40px;
-    }
-}
-
-/* smaller screen sizes range */
-@media (min-width: 320px) and (max-width:768px){
-    .game-image{
-        width: 100%;
-    }
-    .modal-heading{
-        font-size: 12px;
-    }
-    .paragraph-text-modal{
-        font-size: 8px;
-        letter-spacing: 0;
-    }
-    .heading{
-        font-size: 12px;
-        letter-spacing: 0;
-    }
-    .heading-two{
-        font-size: 10px;
-        letter-spacing: 0;
-    }
-    .paragraph-text{
-        font-size: 8px;
-        letter-spacing: 0;
-    }
-    .logo{
         font-size: 30px;
     }
-    .navbar {
-        font-size: 12px;
-        text-align: center;
-        letter-spacing: 0;
-    }
-    .health{
-        margin-top: 0;
-    }
-    .inventory-area{
-        padding-top: 0;
-    }
     .game-btn i {
-        font-size: 20px;
-    }
-    .game-btn {
-        margin:0;
-    }
-}
-
-@media (max-width: 319px){
-    .game-image{
-        width: 100%;
-    }
-    .modal-heading{
-        font-size: 8px;
-    }
-    .paragraph-text-modal{
-        font-size: 4px;
-        letter-spacing: 0;
-    }
-    .heading{
-        font-size: 8px;
-    }
-    .heading-two{
-        font-size: 6px;
-        letter-spacing: 0;
-    }
-    .paragraph-text{
-        font-size:4px;
-        letter-spacing: 0;
-    }
-    .health{
-        margin-top: 0;
-    }
-    .inventory-area{
-        padding-top: 0;
-    }
-    .logo {
-        font-size: 15px;
-    }
-    .navbar {
-        font-size: 5px;
-        text-align: center;
-        letter-spacing: 0;
-    }
-    .game-btn i {
-        font-size: 15px;
-    }
-    .game-btn {
-        margin:0;
-    }
-}
-@media (min-height: 240px) and (max-height: 320px ){
-    .modal-heading{
-        font-size: 8px;
-    }
-    .paragraph-text-modal{
-        font-size: 4px;
-        letter-spacing: 0;
-    }
-    .heading{
-        font-size: 8px;
-    }
-    .heading-two{
-        font-size: 6px;
-        letter-spacing: 0;
-    }
-    .paragraph-text{
-        font-size:4px;
-        letter-spacing: 0;
-    }
-    .inventory-area{
-        padding-top: 0;
-    }
-    .logo {
-        font-size: 30px;
-    }
-    .navbar {
-        font-size: 7px;
-        text-align: center;
-        letter-spacing: 0;
-    }
-    .contact-icons{
-        font-size: 10px;
-    }
-    .game-btn i {
-        font-size: 10px;
-    }
-    .game-btn {
-        margin:0;
+        font-size: 80px;
     }
 }
 
