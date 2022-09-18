@@ -18,7 +18,7 @@ const attackToMessageMapper = {
     1 : "Monster Blocks",
     2 : "Monster Attacks",
     3 : "Monster Hits",
-}
+};
 /**inventory score mapper */ 
 const gameInventoryScoreMapper = {
     "diamond ring": 200,
@@ -44,7 +44,7 @@ const inventoryIdMapper = {
     8: "crystal dagger",
     9: "old pair of socks",
     10: "ruby"
-}
+};
 /**generate monster mapper */ 
 const generateMonsterToMapper = {
     1 : "old goblin guarding a ",
@@ -56,7 +56,7 @@ const generateMonsterToMapper = {
     7 : "ogre scratching its head and looking at you, 'hey dont you touch my ",
     8 : "a scary looking warewolf, he carrys a ",
     9 : "spectral Karen hovering towards you, she's enraged that you wont let her return a ",
-}
+};
 /**room Id to image object mapper */ 
 const roomIdToImageObjectMapper = {
     1: {
@@ -107,7 +107,7 @@ const roomIdToImageObjectMapper = {
         "imageAlt": "Image of a cavein in a pixelated art style",
         "sentence1": "You come accross a partial cave-in, after moving some of the rubble, you discover a small passageway 'I shouldnt have had that extra large breakfast' you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a ",
     },
-}
+};
 /**rank mapper */ 
 const rankMapper = {
     0 : "Cannon fodder",
@@ -120,4 +120,4 @@ const rankMapper = {
     700 : "War hero", 
     800 : "Ogre slayer", 
     900 : "Dragon Slayer"
-}
+};

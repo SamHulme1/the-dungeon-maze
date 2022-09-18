@@ -151,9 +151,7 @@ body {
     pointer-events: auto;
     background-color: rgba(0,0,0, 0.3);
     background-clip: padding-box;
-    border: 1pxsolidrgba(0,0,0,.5);
-    border-radius: 0.3rem;
-    outline: 0;
+    border-radius: 0;
 }
 /*user input */
 .player-input {
@@ -167,12 +165,14 @@ body {
 .game-image {
     margin-top: 20px;
     width:27em;
+    height: auto;
     border-radius: 8px;
 }
 .hero-image {
     margin-top: 10px;
     margin-bottom: 10px;
     width:30em;
+    height: auto;
     border-radius: 8px;
 }
 /* containers and areas */
@@ -278,12 +278,14 @@ due to the small amout of content on the site */
     }
     .hero-image {
         width:15em;
+        height: auto;
     }
     .contact-icons {
         font-size: 10px;
     }
     .game-image{
         width:15em;
+        height: auto;
     }
     .game-btn i {
         font-size: 10px;
@@ -301,9 +303,11 @@ due to the small amout of content on the site */
 @media (max-width:240px){
     .hero-image{
         width:10em;
+        height: auto;
     }
     .game-image{
         width: 10em;
+        height: auto;
     }
     .logo{
         font-size: 20px;
@@ -325,12 +329,14 @@ due to the small amout of content on the site */
     }
     .hero-image {
         width:15em;
+        height: auto;
     }
     .contact-icons {
         font-size: 10px;
     }
     .game-image{
         width:15em;
+        height: auto;
     }
     .game-btn i {
         font-size: 20px;
@@ -360,12 +366,14 @@ due to the small amout of content on the site */
     }
     .hero-image {
         width:20em;
+        height: auto;
     }
     .contact-icons {
         font-size: 15px;
     }
     .game-image{
         width:13em;
+        height: auto;
     }
     .game-btn i {
         font-size: 30px;
@@ -394,12 +402,14 @@ due to the small amout of content on the site */
     }
     .hero-image {
         width:23em;
+        height: auto;
     }
     .contact-icons {
         font-size: 18px;
     }
     .game-image{
         width:23em;
+        height: auto;
     }
     .game-btn i {
         font-size: 35px;
@@ -431,9 +441,11 @@ due to the small amout of content on the site */
 @media (min-width:800px){
     .game-image{
         width: 30em;
+        height: auto;
     }
     .hero-image{
         width: 30em;
+        height: auto;
     }
     .navbar {
         font-size: 15px;
@@ -471,12 +483,14 @@ due to the small amout of content on the site */
     }
     .hero-image {
         width:100em;
+        height: auto;
     }
     .contact-icons {
         font-size: 80px;
     }
     .game-image{
         width:100em;
+        height: auto;
         margin:0;
     }
     .game-btn i {

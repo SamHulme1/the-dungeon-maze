@@ -3,7 +3,36 @@ let rank = "";
 let mobileFeedbackDisplay = document.getElementById("small-screen-output");
 let outputText = document.getElementById("output-text");
 let outputImage = document.getElementById("output-image");
-window.addEventListener * ("load", initiateGame());
+window.addEventListener("load", initiateGame());
+window.addEventListener("load", welcomeMessage());
+/**-initiabte game funtion
+ * called when the user first enters the gamepage 
+ * this function creates the users health for the first time
+ * sets the button values for page
+ * displays a welcome message to the user
+ */
+ function initiateGame() {
+    createHealth();
+    blockButton.disabled = true;
+    blockButton.style.color = "#812b09";
+    attackButton.disabled = true;
+    attackButton.style.color = "#812b09";
+    potionButton.disabled = true;
+    potionButton.style.color = "#812b09";
+    nextRoomButton.disabled = false;
+    nextRoomButton.style.color = "#3da861";
+}
+/**-Welcome message
+ * gets the users name from local storage assigns it to a variable and then uses
+ * template literals to pass the value to an alert message. On smaller screens were alert messages 
+ * dont display. Outputs the message to a seperate div called small-screen-output and stored in the global variable
+ * mobileFeedbackDisplay
+ */
+ function welcomeMessage() {
+    let username = localStorage.getItem("username");
+    alert(`Welcome to the dungeon ${username}`);
+    mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">Welcome to the dungeon ${username}</p>`;
+}
 /**-game buttons functions */
 /**-reset buttons functions
  * sets all arrays and values back to zero or empty
@@ -35,8 +64,8 @@ document.getElementById("reset-game-btn").addEventListener("click", function res
     outputText.innerHTML = `<p class="paragraph-text fade-in">
     The dungeon of the once great king Aleon is renowned for it's many treasures but also it's deadly inhabitents. You've come across hard times in resent months, the harvests have been poor, and you have been forced to find other means of accumulating income. So you ended up here. In this inn on the otherside of the world. Many others like you have come to seek their fortune but many will fail. You decide to have one last ale before calling it a day. You'll enter the maze at first light. 
     press the room button to start your adventure. 
-    </p> `
-})
+    </p> `;
+});
 /**-new turn event/function
  * called when the user presses the next room button
  * calls the functions to generate the items, rooms, monsters. and create the monsters health.
@@ -66,8 +95,8 @@ document.getElementById("next-room").addEventListener("click", function newTurn(
     } else {
         outputText.innerHTML = `
             <p class="paragraph-text fade-in"> ${game.room} ${game.monster} ${game.items}</p> `;
-    };
-})
+    }
+});
 /**-This function is used whenever the user presses the drink potion button
  * it first checks to see if a potion is in the inventory. If it and the users health is less than 5 
  * hearts in the health array then it adds hearts to the array up to a maxium of 5 using iteration and
@@ -97,7 +126,7 @@ document.getElementById("drink-potion").addEventListener("click", function drink
         alert("You don't have a potion");
         mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">You don't have a potion</p>`;
     }
-})
+});
 /**-Block and attack functions
  * activate when the block button/attack button is clicked
  * call the fight fuctions to generate the attack array
@@ -115,7 +144,7 @@ document.getElementById("block").addEventListener("click", function block() {
         alert("You try and block the monster but they're too fast");
         damage();
     }
-})
+});
 document.getElementById("attack").addEventListener("click", function attack() {
     fight();
     if (game.attack.includes("Monster Blocks")) {
@@ -130,37 +159,7 @@ document.getElementById("attack").addEventListener("click", function attack() {
         mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">You try and hit the monster but they're too fast</p>`;
         damage();
     }
-})
-/**-initiabte game funtion
- * called when the user first enters the gamepage 
- * this function creates the users health for the first time
- * sets the button values for page
- * displays a welcome message to the user
- */
-function initiateGame() {
-    createHealth();
-    blockButton.disabled = true;
-    blockButton.style.color = "#812b09";
-    attackButton.disabled = true;
-    attackButton.style.color = "#812b09";
-    potionButton.disabled = true;
-    potionButton.style.color = "#812b09";
-    nextRoomButton.disabled = false;
-    nextRoomButton.style.color = "#3da861";
-    welcomeMessage();
-}
-/**-Welcome message
- * gets the users name from local storage assigns it to a variable and then uses
- * template literals to pass the value to an alert message. On smaller screens were alert messages 
- * dont display. Outputs the message to a seperate div called small-screen-output and stored in the global variable
- * mobileFeedbackDisplay
- */
-function welcomeMessage() {
-    let username = localStorage.getItem("username");
-    alert(`Welcome to the dungeon ${username}`);
-    mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">Welcome to the dungeon ${username}</p>`;
-}
-
+});
 /**
  * -----------------------------------------------------------------------------------Generator Functions
  */
@@ -175,20 +174,21 @@ function welcomeMessage() {
 function generateRoom() {
     game.room = [];
     let randomRoom = Math.floor(Math.random() * 9) + 1;
-    imageInfo = roomIdToImageObjectMapper[randomRoom];
+    let imageInfo = roomIdToImageObjectMapper[randomRoom];
+    let turnText;
     if (randomRoom === 8) {
         if (game.inventory.includes("key")) {
-            turnText = imageInfo.sentence1
-            outputImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName2}" alt="${imageInfo.imageAlt2}">`
+            turnText = imageInfo.sentence1;
+            outputImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName2}" alt="${imageInfo.imageAlt2}">`;
         } else {
-            turnText = imageInfo.sentence2
-            outputImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName1}" alt="${imageInfo.imageAlt1}">`
-        };
+            turnText = imageInfo.sentence2;
+            outputImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName1}" alt="${imageInfo.imageAlt1}">`;
+        }
     } else {
-        turnText = imageInfo.sentence1
-        outputImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">`
+        turnText = imageInfo.sentence1;
+        outputImage.innerHTML = `<img class ="game-image fade-in" src="${imageInfo.imageName}" alt="${imageInfo.imageAlt}">`;
     }
-    game.room.push(turnText)
+    game.room.push(turnText);
     return game.room;
 }
 /** generate item function 
@@ -224,7 +224,7 @@ function addToInventory() {
     let itemsInInventory = document.createElement("li");
     if (itemFound == "potion") {
         itemsInInventory.innerHTML = `${game.inventory[0]}`;
-        itemsInInventory.id = "potionInInventory"
+        itemsInInventory.id = "potionInInventory";
         inventory.appendChild(itemsInInventory);
     } else {
         itemsInInventory.innerHTML = `${game.inventory[0]}`;
@@ -273,7 +273,7 @@ function createBossHealth() {
         game.monsterHealth.push("Heart");
         game.monster = [];
         game.monster.push("boss");
-    };
+    }
 }
 /**calculate score function
  * sets total score to equal score 
@@ -285,7 +285,9 @@ function createBossHealth() {
 function calculateScore() {
     let totalScore = score;
     for (let items in game.inventory) {
+      if(totalScore == 0){
         totalScore += gameInventoryScoreMapper[game.inventory[items]];
+      }
     }
     score = totalScore;
     calculateRank();
@@ -317,7 +319,7 @@ function dead() {
     blockButton.disabled = true;
     blockButton.style.color = "#812b09";
     potionButton.disabled = true;
-    potionButton.style.color = "#812b09"
+    potionButton.style.color = "#812b09";
     calculateScore();
     outputImage.innerHTML = `<img class ="game-image fade-in" src="img/death-screen.jpg" alt="the dugeon maze death image">`;
     outputText.innerHTML = `
@@ -363,15 +365,15 @@ function monsterdamaged() {
             game.monsterHealth.pop();
             deltDamage.removeChild(deltDamage.lastElementChild);
             addToInventory();
-            console.log(game.monsterHealth);
+            mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">Monster slain</p>`;
             nextRoomButton.disabled = false;
             nextRoomButton.style.color = "#3da861";
             blockButton.disabled = true;
             blockButton.style.color = "#812b09";
             attackButton.disabled = true;
             attackButton.style.color = "#812b09";
-        };
-    };
+        }
+    }
 }
 /**Fight Function 
  * resets the game attack array to empty
