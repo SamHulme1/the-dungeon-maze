@@ -13,126 +13,130 @@
         <title>The Dungeon Maze</title>
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="logo mr-4 ml-4" href="index.html"><i class="fa-solid fa-dungeon"></i><span class ="sr-only">Click to go back to the home page</span></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                    <a class="nav-item nav-link active mr-4 ml-4" href="#">Home<span class="sr-only">(current)</span></a>
-                    <button type="button" class="nav-item nav-link mr-4 ml-4" data-toggle="modal" data-target=".bd-example-modal-xl">How To Play</button>
-                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                        <div class="modal-content modal-color">
-                            <h2 class="modal-heading">Controls<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button></h2>
-                            <br>
-                            <section>
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <i class="fa-solid fa-dungeon htp"></i>
-                                        </div>
-                                        <div class="col-6">
-                                            <p class="paragraph-text-modal">Press the dungeon button when you first start the game and after you defeat a monster to move to the next room</p>
-                                        </div>
-                                    </div>
+        <div id="page-container">
+            <div id="content-wrap">
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="logo mr-4 ml-4" href="index.html"><i class="fa-solid fa-dungeon"></i><span class ="sr-only">Click to go back to the home page</span></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                          <div class="navbar-nav">
+                            <a class="nav-item nav-link active mr-4 ml-4" href="#">Home<span class="sr-only">(current)</span></a>
+                            <button type="button" class="nav-item nav-link mr-4 ml-4" data-toggle="modal" data-target=".bd-example-modal-xl">How To Play</button>
+                            <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                <div class="modal-content modal-color">
+                                    <h2 class="modal-heading">Controls<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button></h2>
                                     <br>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <i class="fa-solid fa-heart-circle-plus htp"></i>
+                                    <section>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <i class="fa-solid fa-dungeon modal-icon"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <p class="paragraph-text-modal">Press the dungeon button when you first start the game and after you defeat a monster to move to the next room</p>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <i class="fa-solid fa-heart-circle-plus modal-icon"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <p class="paragraph-text-modal">When you have a potion, press this button to heal yourself back to your maximum hit points</p>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <i class="fa-solid fa-hand-fist modal-icon"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <p class="paragraph-text-modal">When you encounter a monster, press the attack button to try and hit the monster</p>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <i class="fa-solid fa-shield-halved modal-icon"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <p class="paragraph-text-modal">You can also press the block button to try and block the monsters attack, there is a higher chance that your block will be sucessful.However, you can't do any damage this way</p>
+                                                </div>
+                                            </div>
+                                            <br>
                                         </div>
-                                        <div class="col-6">
-                                            <p class="paragraph-text-modal">When you have a potion, press this button to heal yourself back to your maximum hit points</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <i class="fa-solid fa-hand-fist htp"></i>
-                                        </div>
-                                        <div class="col-6">
-                                            <p class="paragraph-text-modal">When you encounter a monster, press the attack button to try and hit the monster</p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <i class="fa-solid fa-shield-halved htp"></i>
-                                        </div>
-                                        <div class="col-6">
-                                            <p class="paragraph-text-modal">You can also press the block button to try and block the monsters attack, there is a higher chance that your block will be sucessful.However, you can't do any damage this way</p>
-                                        </div>
-                                    </div>
-                                    <br>
+                                    </section>
                                 </div>
-                            </section>
+                                </div>
+                            </div>
+                            <a class="nav-item nav-link mr-4 ml-4" href="score-board.html">Scoreboard</a>
+                          </div>
                         </div>
-                        </div>
-                    </div>
-                    <a class="nav-item nav-link mr-4 ml-4" href="score-board.html">Scoreboard</a>
-                  </div>
-                </div>
-              </nav>
-        </header>
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="heading m-0">
-                            The Dungeon Maze
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </section>    
-        <section class="game-output-area">
-            <div class="container-fluid">
-                <div class="area-color">
-                    <div class="row">
-                        <div class="col-12 nopadding">
-                            <div class="text-center">
-                                <img class ="hero-image fade-in" src="img/dungeon-maze-title-image.jpg" alt="the dugeon maze title image">
+                      </nav>
+                </header>
+                <section>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="heading m-0">
+                                    The Dungeon Maze
+                                </h1>
                             </div>
                         </div>
-                    </div> 
+                    </div>
+                </section>    
+                <section class="game-output-area">
+                    <div class="container-fluid">
+                        <div class="area-color">
+                            <div class="row">
+                                <div class="col-12 nopadding">
+                                    <div class="text-center">
+                                        <img class ="hero-image fade-in" src="img/dungeon-maze-title-image.jpg" alt="the dugeon maze title image">
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-12 nopadding">
+                                    <form class="text-center" id="game-form" action="game-start.html">
+                                        <label class="paragraph-text" for="adventurer-name">Adventurer Name: </label>
+                                        <input type="text" id="adventurer-name" name="adventurer-name" class="player-input text-center paragraph-text" required></input>
+                                        <input type="submit" class="start-btn paragraph-text" value="Start game">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                          
+                </section>   
+                <section>
+                    <div class="container-fluid game-output-background mt-3 mb-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="paragraph-text">Welcome to the Dungeon maze, The rules are simple, explore different rooms in the dungeon, fight monsters and collect their treasures.To win the game you must find the key and defeat the dungeon boss.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+            </div>
+            <footer id="footer">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 nopadding">
-                            <form class="text-center" id="game-form" action="game-start.html">
-                                <label class="paragraph-text" for="adventurer-name">Adventurer Name: </label>
-                                <input type="text" id="adventurer-name" name="adventurer-name" class="player-input text-center paragraph-text" required></input>
-                                <input type="submit" class="start-btn paragraph-text" value="Start game">
-                            </form>
+                            <h3 class="contact-icons">
+                                <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter footer-icon" arria-hidden="true"></i><span class="sr-only">twitter link</span></a>
+                                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook footer-icon" arria-hidden="true"></i><span class="sr-only">facebook link</span></a>
+                                <a href="https://www.linkedin.com/" target="_blank" ><i class="fa-brands fa-linkedin footer-icon" arria-hidden="true"></i><span class="sr-only">linkedin link</span></a>
+                            </h3>
                         </div>
                     </div>
                 </div>
-            </div>                          
-        </section>   
-        <section>
-            <div class="container game-output-background mt-3 mb-5">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="paragraph-text">Welcome to the Dungeon maze, The rules are simple, explore different rooms in the dungeon, fight monsters and collect their treasures.To win the game you must find the key and defeat the dungeon boss.</p>
-                    </div>
-                </div>
-            </div>
-        </section> 
-        <footer>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 nopadding">
-                        <h3 class="contact-icons">
-                            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter footer-icon" arria-hidden="true"></i><span class="sr-only">twitter link</span></a>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook footer-icon" arria-hidden="true"></i><span class="sr-only">facebook link</span></a>
-                            <a href="https://www.linkedin.com/" target="_blank" ><i class="fa-brands fa-linkedin footer-icon" arria-hidden="true"></i><span class="sr-only">linkedin link</span></a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
         <script src="scripts/index.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

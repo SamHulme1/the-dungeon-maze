@@ -1,6 +1,7 @@
 body {
     background : url(../img/background.jpg);
-    background-size:200%;
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
 /* fade animation credit from https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08 */
@@ -130,13 +131,11 @@ body {
 .area-color{
     background-color:  black;
 }
-.heading-two {
-    text-align: center;
-    font-size: 25px;
-    font-family: 'Press Start 2P', sans-serif;
-    color:white;
-    letter-spacing: 10px;
+
+.smallscreenMessage{
+    background-color:#3da8611a;
 }
+
 .paragraph-text {
     font-size: 12px;
     font-family: 'Press Start 2P', sans-serif;
@@ -215,32 +214,14 @@ body {
     width: 100%;
 }
 
-.btn-reset {
-    color: #fff;
-    background-color: #c82305;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
+
 
 .game-output-background{
     background-color: rgba(0,0,0, 0.7);
 }
 
-.game-btn{
-    background-color: rgba(0,0,0,0);
-    font-family: 'Press Start 2P', sans-serif;
-    margin: 10px;
-    border: none;
 
-}
-.game-btn i {
-    font-size: 40px;
-}
 
-.htp {
-    font-size: 40px;
-    color: black;
-}
 
 .modal-color{
 background-color: rgba(255,255,255,0.9);
@@ -249,11 +230,19 @@ background-color: rgba(255,255,255,0.9);
 .monster-heart{
     color: #c82305;
 }
-
-.game-btn i {
-    font-size: 40px;
+/* buttons */
+.btn-reset {
+    color: #fff;
+    background-color: #c82305;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
-
+.game-btn{
+    background-color: rgba(0,0,0,0);
+    font-family: 'Press Start 2P', sans-serif;
+    margin: 10px;
+    border: none;
+}
 .start-btn{
     display: block;
     margin-left: auto;
@@ -262,249 +251,278 @@ background-color: rgba(255,255,255,0.9);
     border-color: white;
     background-color: #c82305;
 }
-
+/* icons */
 .contact-icons{
     text-align: center;
     font-size: 20px;
 }
-
 .contact-icons i {
     margin-left:10%;
     margin-right:10%;
     color: #c82305;
 }
-
-footer {
-    background-color:rgba(0,0,0, 0.7);
-    position: fixed;
-    bottom:0;
-    width: 100%;
+.game-btn i {
+    font-size: 40px;
 }
 
-@media (max-width:279px){
-    .hero-image  {
-        width:8em;
+.modal-icon {
+    font-size: 40px;
+    color: black;
+}
+/*page-container, content-wrap and footer classes came from 
+https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+I needed to find a solution to my footer not sticking to the bottom of the page
+due to the small amout of content on the site */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;   
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:rgba(0,0,0, 0.7);
+}
+
+/*media screens */
+@media (max-width: 359px){
+    .logo{
+        font-size: 30px;
+    }
+    .navbar{
+        font-size:6px;
+        text-align: center;
+    }
+    .navbar-nav a {
+        margin:0;
     }
     .heading{
         font-size: 10px;
     }
-    .game-image{
-        width: 7em;
-    }
     .paragraph-text{
         font-size: 4px;
     }
-    .logo {
-        font-size: 20px;
+    .hero-image {
+        width:15em;
     }
-
+    .contact-icons {
+        font-size: 10px;
+    }
+    .game-image{
+        width:15em;
+    }
     .game-btn i {
         font-size: 10px;
     }
-    .navbar {
-        font-size: 5px;
-        text-align: center;
+    .game-btn {
+        margin:0;
     }
-    .modal-heading{
-        font-size: 10px;
-    }
-    .paragraph-text-modal{
-        font-size: 4px;
-    }
-
-}
-@media (min-width: 414px) and (max-width: 896px){
-    .game-image{
-        width: 12em;
-    }
-    .hero-image{
-        width:20em;
-    }
-    .logo{
-        font-size: 40px;
-    }
-
-    .heading{
-        font-size: 40px;
-    }
-
-    .heading-two{
-        font-size: 10px;
-    }
-    .paragraph-text{
-        font-size: 8px;
-    }
-    .navbar {
-        font-size: 15px;
-        text-align: center;
-    }
-    .modal-heading{
-        font-size: 40px;
+    .modal-heading {
+        font-size: 6px;
     }
     .paragraph-text-modal{
-        font-size: 8px;
+        font-size:4px; 
     }
 }
-
-@media (min-width:640px) and (max-height: 360px){
+@media (max-width:240px){
     .hero-image{
-        width:20em;
-    }
-    .game-image{
-        width:20em;
-    }
-    .logo{
-        font-size: 40px;
-    }
-
-    .heading{
-        font-size: 40px;
-    }
-
-    .heading-two{
-        font-size: 10px;
-    }
-    .paragraph-text{
-        font-size: 8px;
-    }
-    .navbar {
-        font-size: 15px;
-        text-align: center;
-    }
-    .modal-heading{
-        font-size: 40px;
-    }
-    .paragraph-text-modal{
-        font-size: 8px;
-    }
-
-}
-
-@media (min-width:280px) and (max-height: 915px){
-    .hero-image{
-        width:15em;
-    }
-    .game-image{
         width:10em;
     }
+    .game-image{
+        width: 10em;
+    }
     .logo{
-        font-size: 40px;
+        font-size: 20px;
     }
-
+}
+@media (min-width:360px){
+    .logo{
+        font-size: 30px;
+    }
+    .navbar{
+        font-size:7px;
+        text-align: center;
+    }
     .heading{
-        font-size: 40px;
-    }
-
-    .heading-two{
         font-size: 10px;
     }
     .paragraph-text{
         font-size: 6px;
     }
-    .navbar {
-        font-size: 15px;
-        text-align: center;
+    .hero-image {
+        width:15em;
     }
-    .modal-heading{
-        font-size: 40px;
+    .contact-icons {
+        font-size: 10px;
     }
-    .paragraph-text-modal{
-        font-size: 5px;
+    .game-image{
+        width:15em;
     }
     .game-btn i {
-        font-size: 30px;
+        font-size: 20px;
+    }
+    .modal-heading {
+        font-size: 10px;
+    }
+    .paragraph-text-modal{
+        font-size:6px; 
     }
 
 }
-@media (min-width:800px) and (max-height: 1280px){
-    .game-image{
-        width: 30em;
-    }
-    .hero-image{
-        width: 30em;
-    }
-    .logo {
-        font-size: 60px;
-    }
-    .navbar {
-        font-size: 30px;
-    }
-}
 
-@media (min-width: 600px) and (max-width: 1024px){
-    .game-image{
-        width:20em;
-    }
+@media (min-width:375px){
     .logo{
-        font-size: 40px;
+        font-size: 30px;
     }
-
+    .navbar{
+        font-size:12px;
+        text-align: center;
+    }
     .heading{
-        font-size: 45px;
-    }
-
-    .heading-two{
         font-size: 15px;
     }
     .paragraph-text{
         font-size: 8px;
     }
-    .navbar {
-        font-size: 20px;
-        text-align: center;
+    .hero-image {
+        width:20em;
     }
-    .modal-heading{
-        font-size: 45px;
+    .contact-icons {
+        font-size: 15px;
+    }
+    .game-image{
+        width:13em;
+    }
+    .game-btn i {
+        font-size: 30px;
+    }
+    .modal-heading {
+        font-size: 15px;
     }
     .paragraph-text-modal{
-        font-size: 12px;
+        font-size: 8px; 
     }
-
 }
 
-@media (min-width: 1280px){
-    .game-image{
-        width: 25em;
+@media (min-width: 411px){
+    .logo{
+        font-size: 30px;
     }
-    .hero-image{
-        width: 25em;
+    .navbar{
+        font-size:15px;
+        text-align: center;
     }
-    .logo {
-        font-size: 60px;
-    }
-    .navbar {
-        font-size: 20px;
-    }
-    .heading-two{
-        font-size: 32px;
+    .heading{
+        font-size: 30px;
     }
     .paragraph-text{
-        font-size: 15px;
+        font-size: 10px;
+    }
+    .hero-image {
+        width:23em;
+    }
+    .contact-icons {
+        font-size: 18px;
+    }
+    .game-image{
+        width:23em;
+    }
+    .game-btn i {
+        font-size: 35px;
+    }
+    .modal-heading {
+        font-size: 18px;
+    }
+    .paragraph-text-modal{
+        font-size: 10px; 
+    }
+}
+
+@media(min-width:768px){
+    .contact-icons {
+        font-size: 30px;
     }
     .game-btn i {
         font-size: 50px;
     }
-}
-@media (min-width: 1920px){
-    .game-image{
-        width: 50em;
-    }
-    .hero-image{
-        width: 50em;
-    }
     .logo {
-        font-size: 80px;
+        font-size: 50px;
     }
     .navbar {
-        font-size: 40px;
+        text-align: center;
+        font-size: 25px;
     }
-    .heading-two{
-        font-size: 60px;
+}
+
+@media (min-width:800px){
+    .game-image{
+        width: 30em;
     }
-    .paragraph-text{
+    .hero-image{
+        width: 30em;
+    }
+    .navbar {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1366px){
+    .contact-icons {
         font-size: 30px;
     }
     .game-btn i {
+        font-size: 50px;
+    }
+    .logo {
+        font-size: 50px;
+    }
+    .navbar {
+        text-align: center;
+        font-size: 25px;
+    }
+}
+@media (min-width: 1920px){
+    .logo{
+        font-size: 80px;
+    }
+    .navbar{
+        font-size:50px;
+        text-align: center;
+    }
+    .heading{
+        font-size: 80px;
+    }
+    .paragraph-text{
+        font-size: 40px;
+    }
+    .hero-image {
+        width:100em;
+    }
+    .contact-icons {
+        font-size: 80px;
+    }
+    .game-image{
+        width:100em;
+        margin:0;
+    }
+    .game-btn i {
+        font-size: 100px;
+    }
+    .modal-heading {
+        font-size: 80px;
+    }
+    .paragraph-text-modal{
+        font-size: 40px; 
+    }    
+    .modal-icon{
+        font-size: 80px;
+    }
+    .close {
         font-size: 80px;
     }
 }
