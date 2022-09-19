@@ -92,16 +92,48 @@ All the containers on the site are set to be fluid so that they cover the screen
 ### Current Features:
 
 ### Navbar
+- The navbar includes the links to all the different pages on the site and a logo which links to the home page
+- On smaller screens the navbar collapses behind a burger icon making it responsive across screen sizes
+- The navbar has a modal built into the how to play link which gives users accurate descriptions of how to play the game without having to leave the page they're on. 
+- The navbar for this site is not fixed to the top of the page to save screen space and because the site doesn't have much vertical content
 
+### Footer 
+- The footer includes links to external sources in particluar social media links that all open on seperate web tabs
+- The footer is responsive across all screen sizes 
 
-### About information
+### User Form 
+- The form element on the site allows the user to access the game page through interacting with the input and submitting their name
+- Uses local storage to validate input information and store the users name. This later results in the user recieving an alert message when they enter the game. 
+- The form is responsve accross all device sizes
 
-### Interactive gallery
-![gallery-feature]
-
+### Reset Button
+- The reset button resets all the game areas and game js ready for the user to start over
+- Is responsive across all device sizes 
+### Small screen text output area and alerts 
+- The small screen text output area works as a way of dispalying alerts to users who are on smaller devices or using browsers where alert messages are not supported 
+- The alerts give feedback to the user based on their actions and decisions in the game
+- On larger screens the small screen output is hidden. 
+### Health areas and inventory area
+- The health and inventory areas allow the user to see their status in the game. How many hearts they have left, how many the monster has and which items they have in their inventory. 
+- The health and inventory areas are resonsive across all devices
+### Gameplay buttons 
+- The gameplay buttons allow the user to interact and progress in the game. The have the option of moving to the next room, drinking a potion to heal their hit points back up and attacking/blocking. 
+- The buttons are colour coded to show the user which actions they can take at a certain time. For example when they go to a new room. They have to fight and beat the monster in order to progress. 
+### Game image output area 
+- Outputs an image to the user that is generated and assigned with the matching output text giving them a visual decription of what's happening in the game
+- When the images are generated the alt attributes are also changed for good practice and also to give an alternative discription to visually impared users
+- The images are responsive across all device sizes
+- Changes to reflect if they die or or when they lose the game
+### Game text output area
+- Outputs text to the user giving them descriptions of whats happening in the game 
+- Changes to reflect if they die or or when they lose the game
+- Tells the user their score and rank at the end of the game 
 ---
 ### Future Features:
 
+- Due to the time restraint I had to remove the scoreboard page from the site. However, this will be fixed in the future 
+- Id like to add different classes for the user to select. Different classes will do more damage and have differnet abilities and vunerablitites. Such as a wizard that can do 2 damage on attacking but only has 3 life 
+- Id like to add a shop so that the users can purchace upgrades for their character such as better weapons and more life 
 ### Naming Conventions and Structure of Files 
 
 
@@ -112,6 +144,8 @@ All the containers on the site are set to be fluid so that they cover the screen
 1. [HTML5](https://www.w3schools.com/html/default.asp) To create the structure and the content of the website
 
 2. [CSS3](https://www.w3schools.com/css/) To create the style for the website and its content
+
+3. [JAVASCRIPT](https://www.w3schools.com/js/)To create the functionality for the website 
 ---
 ### Tools and libraries:
 

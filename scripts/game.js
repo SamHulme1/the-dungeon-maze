@@ -113,15 +113,11 @@ document.getElementById("drink-potion").addEventListener("click", function drink
         while (game.health.length < 5) {
             let hp = document.getElementById('hp-remaining');
             let heart = document.createElement('i');
-            let removePotion = game.inventory.indexOf("potion");
             heart.className = "fa-solid fa-heart";
             hp.appendChild(heart);
             game.health.push("Heart");
-            game.inventory.splice(removePotion, 1);
-            let inventory = document.getElementById("inventory");
-            let potionRemove = document.getElementById("potionInInventory");
-            inventory.removeChild(potionRemove);
         }
+        removePotion();
     } else {
         alert("You don't have a potion");
         mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">You don't have a potion</p>`;
@@ -374,6 +370,18 @@ function monsterdamaged() {
             attackButton.style.color = "#812b09";
         }
     }
+}
+/**Remove Potion Function
+ * gets the inventory id and the id of an element with potion from the inventory
+ * removes the potion from the inventory array
+ * removes the potion from the inventory html
+ */
+function removePotion(){
+    let inventory = document.getElementById("inventory");
+    let potionRemovefromHtml = document.getElementById("potionInInventory");
+    let removePotionfromArray = game.inventory.indexOf("potion");
+    inventory.removeChild(potionRemovefromHtml);
+    game.inventory.splice(removePotionfromArray, 1);
 }
 /**Fight Function 
  * resets the game attack array to empty
