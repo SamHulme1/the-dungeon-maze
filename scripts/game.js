@@ -101,12 +101,6 @@ document.getElementById("next-room").addEventListener("click", function newTurn(
  * it first checks to see if a potion is in the inventory. If it and the users health is less than 5 
  * hearts in the health array then it adds hearts to the array up to a maxium of 5 using iteration and
  * prints new hearts using the appendchild technique as children of the element with the id of hp-remaining
- * when the user drinks the potion the index of the potion is gained using the indexOf array method
- * the potion is then removed using the splice method by passing it the stored index of the potion.
- * the potion is removed from displayed html inventory by first gaining the id of the inventory
- * then getting the id of potionInInventory and using the remove child method.
- * finally if the user doesn't have a potion an alert/message is displayed to them informing them that they
- * don't have a potion.
  */
 document.getElementById("drink-potion").addEventListener("click", function drinkPotion() {
     if (game.inventory.includes("potion")) {

@@ -58,7 +58,7 @@ body {
     color: white;
 }
 .footer-icon:hover {
-    color: white;
+    color: black;
 }
 .btn-reset:hover {
     background-color:white;
@@ -199,6 +199,11 @@ background-color: rgba(255,255,255,0.9);
 .game-output-area{
     background-color: rgba(0,0,0, 0.7);
 }
+
+/*margin*/
+.margin {
+    margin-bottom: 5%;
+}
 /*buttons */
 .btn-reset {
     color: #fff;
@@ -255,7 +260,8 @@ due to the small amout of content on the site */
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color:rgba(0,0,0, 0.7);
+    background-color:white;
+    z-index: 1;
 }
 
 /*media screens */
