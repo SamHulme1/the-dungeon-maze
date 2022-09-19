@@ -60,14 +60,11 @@ body {
 .footer-icon:hover {
     color: black;
 }
-.btn-reset:hover {
+.btn-reset:hover, .start-btn:hover {
     background-color:white;
     color:#c82305; 
 }
-.start-btn:hover {
-    background-color:white;
-    color:#c82305; 
-}
+
 /*remove styles */
 .nopadding {
     padding:0;
@@ -165,14 +162,14 @@ body {
 .game-image {
     margin-top: 20px;
     width:27em;
-    height: auto;
+    height: 100%;
     border-radius: 8px;
 }
 .hero-image {
     margin-top: 10px;
     margin-bottom: 10px;
     width:30em;
-    height: auto;
+    height: 100%;
     border-radius: 8px;
 }
 /* containers and areas */
@@ -193,10 +190,7 @@ background-color: rgba(255,255,255,0.9);
 .monster-heart{
     color: #c82305;
 }
-.game-output-background{
-    background-color: rgba(0,0,0, 0.7);
-}
-.game-output-area{
+.game-output-background, .game-output-area {
     background-color: rgba(0,0,0, 0.7);
 }
 
@@ -324,21 +318,21 @@ due to the small amout of content on the site */
         font-size: 30px;
     }
     .navbar{
-        font-size:7px;
+        font-size:12px;
         text-align: center;
     }
     .heading{
-        font-size: 10px;
+        font-size: 12px;
     }
     .paragraph-text{
-        font-size: 6px;
+        font-size: 12px;
     }
     .hero-image {
         width:15em;
         height: auto;
     }
     .contact-icons {
-        font-size: 10px;
+        font-size: 12px;
     }
     .game-image{
         width:15em;
@@ -351,7 +345,7 @@ due to the small amout of content on the site */
         font-size: 10px;
     }
     .paragraph-text-modal{
-        font-size:6px; 
+        font-size:12px; 
     }
 
 }
@@ -366,9 +360,6 @@ due to the small amout of content on the site */
     }
     .heading{
         font-size: 15px;
-    }
-    .paragraph-text{
-        font-size: 8px;
     }
     .hero-image {
         width:20em;
@@ -387,9 +378,6 @@ due to the small amout of content on the site */
     .modal-heading {
         font-size: 15px;
     }
-    .paragraph-text-modal{
-        font-size: 8px; 
-    }
 }
 
 @media (min-width: 411px){
@@ -402,9 +390,6 @@ due to the small amout of content on the site */
     }
     .heading{
         font-size: 30px;
-    }
-    .paragraph-text{
-        font-size: 10px;
     }
     .hero-image {
         width:23em;
@@ -422,9 +407,6 @@ due to the small amout of content on the site */
     }
     .modal-heading {
         font-size: 18px;
-    }
-    .paragraph-text-modal{
-        font-size: 10px; 
     }
 }
 
@@ -488,14 +470,14 @@ due to the small amout of content on the site */
         font-size: 40px;
     }
     .hero-image {
-        width:100em;
+        width:73em;
         height: auto;
     }
     .contact-icons {
         font-size: 80px;
     }
     .game-image{
-        width:100em;
+        width:73em;
         height: auto;
         margin:0;
     }

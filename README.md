@@ -1,7 +1,7 @@
 # The Dungeon Maze
 To see the live version of the site click [here!](https://samhulme1.github.io/the-dungeon-maze/)
 
-![mockup-image](../the-dungeon-maze/img/readme-img/dungeon-maze-mockup.png)
+![mockup-image](./readme-img/dungeon-maze-mockup.png)
 
 ---
 ## Contents
@@ -157,7 +157,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 ---
 ### Tools and libraries:
 1. [Gitpod](https://www.gitpod.io/) To create and code the site
-2. [Github]()
+2. [Github](https://github.com/) To host, deploy and store the site
 3. [Balsamiq]() To create the wireframes for the site
 4. [Bootstrap]() Used to create site reponsivness across different screen sizes
 5. [Tinypng]() To compress images for better page load times 
@@ -170,9 +170,6 @@ All the containers on the site are set to be fluid so that they cover the screen
 12. [JigSaw]() To validate CSS
 13. [Jshint](https://jshint.com/) To validate Javascript 
 14. [NightCafe](https://nightcafe.studio/) To created the images used on the site
-15. [Lunapic](https://www4.lunapic.com/editor/) To pixalate the images on the site, creating a retro effect
-
-
 
 ---
 ## Deployment
@@ -207,13 +204,12 @@ As a first time user, the first time I land on the site I can gain an understand
 
 #### Returning User
 As a returning user my main focus is to replay the game and try and beat my old highscore I can do this by:
-
-- Entering the website
-- Seeing m
+- Re entering the website and replaying the game 
+- Seeing my highscore displayed to them when they first play the game and coming back onto the site to beat it(the score is displayed to the user when they beat the game or die. Future versions of the game will include a scoreboard to display the data or all users who play the game)
 ---
 ### Developer goals have been met by: 
 - I have creating an interactive and engaging front end website for users and to put in my portfolio
-- Developing this site has allowed me to develop a much better understanding of Javascript through experimenting a trial and error
+- Developing this site has allowed me to develop a much better understanding of Javascript through experimenting and trial and error
 ---
 ### Site responsiveness and compatibility 
 The site has been tested for responsiveness on the following devices using Google Developer tools:
@@ -252,41 +248,71 @@ Bootstrap as well as media queries were used to achieve responsiveness
 ### Online validators 
 The final validator results can be seen here:
 
+#### Javascript Validation
+![js-validation-const-game](../the-dungeon-maze/img/readme-img/js-val-const-game.jpg)
+![js-validation-index](../the-dungeon-maze/img/readme-img/js-val-index.jpg)
 
+#### CSS Validation
+![css-validation](../the-dungeon-maze/img/readme-img/css-validation.jpg)
+
+#### HTML Validation
+![html-validation-index](../the-dungeon-maze/img/readme-img/js-val-index.jpg)
+![html-validation-game-start](../the-dungeon-maze/img/readme-img/js-val-index.jpg)
 ---
 ### Manual Tests run on site
-
-
+1. Do all the navigation elements work on the site?
+    -Result: All the navigation element work as intended 
+2. Do all the buttons work on the site?
+    -Result: All of the buttons work as intended
+3. Does the website give the correct feedback?
+    -Result: The website gives the correct feedback to the user through alerts and the small screen feedback screen. The buttons and game areas dsplay different colours to reflect stages of the game and the text and images change. The code works as intended
+4. What happens when I drink a potion?
+    -Result: The health array is passed more hearts and the user gains more hearts in the html. The code works as intended
+5. What happens when I beat the game? 
+    -Result: I'm given the endgame screen with the correct text and image content. The score and rank is displayed to me. The code works as intended.
+6. What happens when I lose the game?
+    -Result: I'm given the death screen with the correct text and image content. The score and rank is displayed to me. The code works as intended.
+7. What happens when I attack? 
+    -Result: I can damage or be damaged by the moster.Code works as expected
+8. What happens when I block?
+    Result: I can block or be damaged by the moster.Code works as expected
+9. What happens when I drink a potion?
+    -Result: My health increases back to maximum. Code works as intended
+10. Can I have more than one potion in my inventory?
+    -Old result: All my potions were removed from my inventory. New result: I can have multiple potions in my inventory at the same time. Code now works as intended. I can still drink a potion when i'm at max health but this was intended.
+11. Do all the external links open in seperate tabs?
+    -result: All the links open in seperate tabs as intended
+12. Does the input work on the idex page?
+    -result: The input works as intended 
 ---
 ### Unit Testing
 
 
 ---
 ### Browser testing 
-
+The site has been tested on Chrome, Firefox, Safari and Microsoft Edge
 ## Bugs 
 Here are some of the bugs that I've found and fixed throughout development: 
 
 
 
 ### Bugs Left in Code:
-To my knowledge there are no bugs left in the code!
-
+- Sometimes the score doesn't map correctly for certain items inparticlar the gold coins.
+- In chrome the website gives a violation warning when clicking the attack and block buttons because of the length of the code. I've left this in because its not an error but I wanted to mention it and so that I can refer back to this in the future 
 ## Credits 
 
 ### Code
 - Bootstrap 4 was used throughout development to make the site responsive, I used this for layout and used some of Bootstraps classes
-
+- I used code from this source to fix a bug with my footer not sticking to the bottom of the webpage https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+- I used an animation from this source in my code to create the fade effects on the text and images https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08
 
 ### Content 
 - All written content for the site came from me the developer
-- The images for the site were created using an online ai image generator (https://nightcafe.studio/)
-
 ### Media 
-
-
-
+- The images for the site were created using an online AI image generator [NightCafe](https://nightcafe.studio/)
+- The favicon was created using [Favicon Io](https://favicon.io/favicon-converter/)
 ### Acknowledgements 
 - My mentor for the amazing help and support 
 - Other students on slack for their support 
 - Code Institute for the helpful materials and support
+- W3C for their library of informations when I needed to a refresher on content I'd learnt about during the course

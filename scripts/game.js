@@ -214,7 +214,7 @@ function addToInventory() {
     let itemsInInventory = document.createElement("li");
     if (itemFound == "potion") {
         itemsInInventory.innerHTML = `${game.inventory[0]}`;
-        itemsInInventory.id = "potionInInventory";
+        itemsInInventory.className = "potionInInventory";
         inventory.appendChild(itemsInInventory);
     } else {
         itemsInInventory.innerHTML = `${game.inventory[0]}`;
@@ -372,9 +372,9 @@ function monsterdamaged() {
  */
 function removePotion(){
     let inventory = document.getElementById("inventory");
-    let potionRemovefromHtml = document.getElementById("potionInInventory");
+    let potionRemovefromHtml = document.getElementsByClassName("potionInInventory");
     let removePotionfromArray = game.inventory.indexOf("potion");
-    inventory.removeChild(potionRemovefromHtml);
+    inventory.removeChild(potionRemovefromHtml[0]);
     game.inventory.splice(removePotionfromArray, 1);
 }
 /**Fight Function 
