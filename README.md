@@ -115,6 +115,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 ![footer](img/readme-img/dungeon-maze-footer.png)
 - The footer includes links to external sources in particular social media links that all open on separate web tabs
 - The footer is responsive across all screen sizes 
+
 ### Load Screen 
 ![load-screen](img/readme-img/dungeon-maze-load.jpg)
 - Stays in place until the web page content has been loaded for the game

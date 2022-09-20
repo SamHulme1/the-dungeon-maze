@@ -8,6 +8,7 @@ window.addEventListener("load", function() {
     removeLoadScreen();
     welcomeMessage();
 });
+
 /**-initiabte game funtion
  * called when the user first enters the gamepage 
  * this function creates the users health for the first time
@@ -25,6 +26,7 @@ window.addEventListener("load", function() {
     nextRoomButton.disabled = false;
     nextRoomButton.style.color = "#3da861";
 }
+
 /**-Welcome message
  * gets the users name from local storage assigns it to a variable and then uses
  * template literals to pass the value to an alert message. On smaller screens were alert messages 
@@ -42,6 +44,7 @@ window.addEventListener("load", function() {
         mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">Welcome to the dungeon ${username}</p>`;
     }
 }
+
 /**-remove load screen function
  * removes the loadscreen by setting its display to none
  */
@@ -49,6 +52,7 @@ function removeLoadScreen() {
     let loadingScreen = document.getElementById("loading-screen");
     loadingScreen.style.display="none";
 }
+
 /**-game buttons functions */
 /**-reset buttons functions
  * sets all arrays and values back to zero or empty
@@ -82,6 +86,7 @@ document.getElementById("reset-game-btn").addEventListener("click", function res
     Press the room button to start your adventure. 
     </p> `;
 });
+
 /**-new turn event/function
  * called when the user presses the next room button
  * calls the functions to generate the items, rooms, monsters. and create the monsters health.
@@ -113,6 +118,7 @@ document.getElementById("next-room").addEventListener("click", function newTurn(
             <p class="paragraph-text fade-in"> ${game.room} ${game.monster} ${game.items}</p> `;
     }
 });
+
 /**-This function is used whenever the user presses the drink potion button
  * it first checks to see if a potion is in the inventory. If it and the users health is less than 5 
  * hearts in the health array then it adds hearts to the array up to a maxium of 5 using iteration and
@@ -133,6 +139,7 @@ document.getElementById("drink-potion").addEventListener("click", function drink
         mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">You don't have a potion</p>`;
     }
 });
+
 /**-Block and attack functions
  * activate when the block button/attack button is clicked
  * call the fight fuctions to generate the attack array
@@ -151,6 +158,7 @@ document.getElementById("block").addEventListener("click", function block() {
         damage();
     }
 });
+
 document.getElementById("attack").addEventListener("click", function attack() {
     fight();
     if (game.attack.includes("Monster Blocks")) {
@@ -166,6 +174,7 @@ document.getElementById("attack").addEventListener("click", function attack() {
         damage();
     }
 });
+
 /**
  * -----------------------------------------------------------------------------------Generator Functions
  */
@@ -197,6 +206,7 @@ function generateRoom() {
     game.room.push(turnText);
     return game.room;
 }
+
 /** generate item function 
  * This function generates a number and then maps that number to an item using dictionaries and the inventoryIdMapper 
  * the item is then pushed to the items array in the game object.
@@ -207,6 +217,7 @@ function generateItem() {
     game.items.push(inventoryIdMapper[randomItem]);
     return game.items;
 }
+
 /**generate monster function
  * works in exactly the same way as the generate item funtion
  */
@@ -216,6 +227,7 @@ function generateMonster() {
     game.monster.push(generateMonsterToMapper[randomMonster]);
     return game.monster;
 }
+
 /** add to inventory function
  * This function adds the item found to the inventory and then manipulates the DOM using the append child method
  * to display what the user has in their inventory to them on the webpage.
@@ -237,6 +249,7 @@ function addToInventory() {
         inventory.appendChild(itemsInInventory);
     }
 }
+
 /**create monster health function
  * this function creates the monsters health by passing hearts to the monster health array
  * when the array length is less than 3    
@@ -251,6 +264,7 @@ function createMonsterHealth() {
         game.monsterHealth.push("Heart");
     }
 }
+
 /**create player health function
  * this function creates the player health by passing hearts to the health array
  * when the array length is less than 5    
@@ -265,6 +279,7 @@ function createHealth() {
         game.health.push("Heart");
     }
 }
+
 /**create boss health function
  * this function creates the boss health by passing hearts to the monster health array
  * when the array length is less than 10    
@@ -281,6 +296,7 @@ function createBossHealth() {
         game.monster.push("boss");
     }
 }
+
 /**calculate score function
  * sets total score to equal score 
  * iterates through the items in the inventory and adds them to total score based on their value in
@@ -299,6 +315,7 @@ function calculateScore() {
     storeScore();
     calculateRank();
 }
+
 /**calculate rank function
  * rounds the score value to the nearest 100 by using math.ceil method
  * if score to rank is greater than or equal to 1000 sets the rank to dungeon master
@@ -313,11 +330,13 @@ function calculateRank() {
     }
     storeRank();
 }
+
 /**-Storage functions these functions store the users score and rank */
 function storeScore() {
     let highScore = score;
     window.localStorage.setItem("highScore", JSON.stringify(highScore));
 }
+
 function storeRank() {
     let ranking = rank;
     window.localStorage.setItem("rank", JSON.stringify(ranking));
@@ -342,6 +361,7 @@ function dead() {
     outputText.innerHTML = `
         <p class="paragraph-text fade-in"> The dungeon claims another victim. Better luck next time! Score: ${score} Rank: ${rank}</p>`;
 }
+
 /**damage functions
  * get the elements with the ids of hp-remaing and monster-hp 
  * if the health values are less than or equal to 2 
@@ -392,6 +412,7 @@ function monsterdamaged() {
         }
     }
 }
+
 /**Remove Potion Function
  * gets the inventory id and the id of an element with potion from the inventory
  * removes the potion from the inventory array
@@ -404,6 +425,7 @@ function removePotion(){
     inventory.removeChild(potionRemovefromHtml[0]);
     game.inventory.splice(removePotionfromArray, 1);
 }
+
 /**Fight Function 
  * resets the game attack array to empty
  * creates a random number between 1 and 3
@@ -417,6 +439,7 @@ function fight() {
     game.attack.push(attackToMessageMapper[monsterAttack]);
     return game.attack;
 }
+
 /**resetGameAreas funcition
  * resets the html in the elements of hp-remaining, monster-hp and inventory 
  */
@@ -429,6 +452,7 @@ function resetGameAreas() {
     inventory.innerHTML = "";
     mobileFeedbackDisplay.innerHTML = "";
 }
+
 /**Win game function
  * sets all the buttons to their disabled state
  * calls the calculate score function

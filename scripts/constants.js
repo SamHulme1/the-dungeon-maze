@@ -8,6 +8,7 @@ const game = {
     health : [],
     monsterHealth : [],
 };
+
 /**game buttons */ 
 const nextRoomButton = document.getElementById("next-room");
 const attackButton = document.getElementById("attack");
@@ -19,6 +20,7 @@ const attackToMessageMapper = {
     2 : "Monster Attacks",
     3 : "Monster Hits",
 };
+
 /**inventory score mapper */ 
 const gameInventoryScoreMapper = {
     "diamond ring": 200,
@@ -32,6 +34,7 @@ const gameInventoryScoreMapper = {
     "ruby": 700,
     "key": 0
 };
+
 /**inventory id mapper */ 
 const inventoryIdMapper = {
     1: "potion",
@@ -45,6 +48,7 @@ const inventoryIdMapper = {
     9: "old pair of socks",
     10: "ruby"
 };
+
 /**generate monster mapper */ 
 const generateMonsterToMapper = {
     1 : "old goblin guarding a ",
@@ -57,6 +61,7 @@ const generateMonsterToMapper = {
     8 : "a scary looking warewolf, he carrys a ",
     9 : "spectral Karen hovering towards you, she's enraged that you wont let her return a ",
 };
+
 /**room Id to image object mapper */ 
 const roomIdToImageObjectMapper = {
     1: {
@@ -108,6 +113,7 @@ const roomIdToImageObjectMapper = {
         "sentence1": "You come across a partial cave-in, and after moving some of the rubble, you discover a small passageway 'I shouldn't have had that extra large breakfast' you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a ",
     },
 };
+
 /**rank mapper */ 
 const rankMapper = {
     0 : "Cannon fodder",

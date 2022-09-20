@@ -5,6 +5,7 @@ body {
     background-size:cover;
     background-repeat: no-repeat;
 }
+
 .page-loader{
     width: 100%;
     height: 100%;
@@ -16,6 +17,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 /* I used this source to help me learn about the content loader animation https://www.w3schools.com/howto/howto_css_loader.asp */
 .loader-content{
     border: 5px solid #c82305;
@@ -26,6 +28,7 @@ body {
     animation: spin 3s linear infinite;
     position: relative;
 }
+
 /*animations*/
 /*fade animation credit from https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08 */
 .fade-in {
@@ -75,17 +78,21 @@ body {
       opacity:1;
   }
 }
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
+
 /*psuedo effects*/
 .logo:hover {
     color: white;
 }
+
 .footer-icon:hover {
     color: black;
 }
+
 .btn-reset:hover, .start-btn:hover {
     background-color:white;
     color:#c82305; 
@@ -95,15 +102,18 @@ body {
 .nopadding {
     padding:0;
 }
+
 /*navigation and logo */
 .logo {
     font-size: 80px;
     color: #c82305;
 }
+
 .navbar {
     background-color: rgba(0,0,0,0.2);
     font-size: 16px;
 }
+
 /*overidden bootstrap classes */
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Press Start 2P', sans-serif;
@@ -112,23 +122,29 @@ body {
     background-color: rgba(0,0,0,0.0);
     border: none;
 }
+
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: white;
 }
+
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
     color: white;
     outline: none;
 }
+
 .navbar-light .navbar-toggler-icon{
     background-color: white;
 }
+
 /*colours */
 .area-color{
     background-color:  black;
 }
+
 .smallscreenMessage{
     background-color:#3da8611a;
 }
+
 /*text styles */
 .modal-heading {
     text-align: center;
@@ -139,6 +155,7 @@ body {
     color: black;
     letter-spacing: 2px;
 }
+
 .heading {
     text-align: center;
     font-size: 70px;
@@ -146,6 +163,7 @@ body {
     color:white;
     letter-spacing: 2px;
 }
+
 .paragraph-text {
     font-size: 12px;
     font-family: 'Press Start 2P', sans-serif;
@@ -153,6 +171,7 @@ body {
     color: white;
     text-align: center;
 }
+
 .paragraph-text-modal {
     font-size: 16px;
     font-family: 'Press Start 2P', sans-serif;
@@ -160,9 +179,11 @@ body {
     color: black;
     text-align: left;
 }
+
 .list-text {
     list-style-type: lower-roman;
 }
+
 /*modal css class below originally from bootstrap, customised for this website */
 .game-modal-content {
     position: relative;
@@ -176,6 +197,7 @@ body {
     background-clip: padding-box;
     border-radius: 0;
 }
+
 /*user input */
 .player-input {
     background-color: rgba(0,0,0, 0.5);
@@ -184,6 +206,7 @@ body {
     margin-bottom: 10px;
     border-width:1px;
 }
+
 /*images */
 .game-image {
     margin-top: 20px;
@@ -191,6 +214,7 @@ body {
     height: 100%;
     border-radius: 8px;
 }
+
 .hero-image {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -198,24 +222,30 @@ body {
     height: 100%;
     border-radius: 8px;
 }
+
 /* containers and areas */
 .output-image-container{
     overflow:hidden;
 }
+
 .output-text-container {
     height: 100%;
     width: 100%;
 }
+
 .inventory-area{
     padding-top: 50px;
 }
+
 /*colours */
 .modal-color{
 background-color: rgba(255,255,255,0.9);
 }
+
 .monster-heart{
     color: #c82305;
 }
+
 .game-output-background, .game-output-area {
     background-color: rgba(0,0,0, 0.7);
 }
@@ -227,6 +257,7 @@ background-color: rgba(255,255,255,0.9);
 .margin-top {
     margin-top: 10%;
 }
+
 /*buttons */
 .btn-reset {
     color: #fff;
@@ -234,12 +265,14 @@ background-color: rgba(255,255,255,0.9);
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
 .game-btn{
     background-color: rgba(0,0,0,0);
     font-family: 'Press Start 2P', sans-serif;
     margin: 10px;
     border: none;
 }
+
 .start-btn{
     display: block;
     margin-left: auto;
@@ -248,16 +281,19 @@ background-color: rgba(255,255,255,0.9);
     border-color: white;
     background-color: #c82305;
 }
+
 /*icons */
 .contact-icons{
     text-align: center;
     font-size: 20px;
 }
+
 .contact-icons i {
     margin-left:10%;
     margin-right:10%;
     color: #c82305;
 }
+
 .game-btn i {
     font-size: 40px;
 }
@@ -266,6 +302,7 @@ background-color: rgba(255,255,255,0.9);
     font-size: 40px;
     color: black;
 }
+
 /*page-container, content-wrap and footer classes came from 
 https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
 I needed to find a solution to my footer not sticking to the bottom of the page
@@ -329,6 +366,7 @@ due to the small amout of content on the site */
         font-size:4px; 
     }
 }
+
 @media (max-width:240px){
     .hero-image{
         width:10em;
@@ -342,6 +380,7 @@ due to the small amout of content on the site */
         font-size: 20px;
     }
 }
+
 @media (min-width:360px){
     .logo{
         font-size: 30px;
@@ -484,6 +523,7 @@ due to the small amout of content on the site */
         font-size: 25px;
     }
 }
+
 @media (min-width: 1920px){
     .logo{
         font-size: 80px;
