@@ -1,7 +1,7 @@
 # The Dungeon Maze
 To see the live version of the site click [here!](https://samhulme1.github.io/the-dungeon-maze/)
 
-![mockup-image](img/readme-img/dungeon-maze-mockup.png)
+![mockup-image](img/readme-img/dungeon-maze-mockup.jpg)
 
 ---
 ## Contents
@@ -70,13 +70,17 @@ The dungeon maze is a great website for this as it give good feedback to the use
 ## Design Choices 
 
 ---
-(img/readme-img/dungeon-maze-mockup.png)
+
 ### Colors:
+
+![colours](img/readme-img/dungeon-maze-color-scheme.jpg)
 
 I used this colour palette on the site. The colors from this pallete came from the images I generated. I also used colour which I thought contrasted well with the other colours such as whites and blacks. 
 
 ---
 ### Fonts
+
+![fonts](img/readme-img/dungeon-maze-font.jpg)
 
 I used the google font Press Start 2P across the website. I decided to use this font for both the titles and 
 then other text to keep consistency and because it built upon the retro style that I wanted to create. Another reason was that the font was easily readable in smaller sizes. 
@@ -84,7 +88,8 @@ then other text to keep consistency and because it built upon the retro style th
 ---
 ### Imagery
 
-The images for the website were created using an online ai art generation tool. I then used another tool to pixalate them. I chose to use the image title dungeon maze title image because it was the most unique image that I generated. Injecting a unique fantasy feeling to the site to try and get an get an emotional response from the user when they first land on the site. The emotion I wanted to capture was nustalia. The other images that are on the site in the generated image section were created using the same approch as the hero image. I matched the images to the text descriptions to create a nice flow of written and visual information and so that the images displayed made sense visually as to what the text was descibing. I took quite a loose approch to this on some of the image. However, this was to create a retro/unique feeling and because of what the ai art genertor created. 
+The images for the website were created using an online ai art generation tool. I chose to use the image title dungeon maze title image because it was the most unique image that I generated. Injecting a unique fantasy feeling to the site to try and get an get an emotional response from the user when they first land on the site. The emotion I wanted to capture was nustalia. The other images that are on the site in the generated image section were created using the same approch as the hero image. I matched the images to the text descriptions to create a nice flow of written and visual information and so that the images displayed made sense visually as to what the text was descibing. I took quite a loose approch to this on some of the images. However, this was to create a retro/unique feeling and because of what the ai art genertor created.
+I used a blurred effect on the background image to create a reto game effect whist keeping the other images to a more modern high quality. 
 
 ---
 ### Styling 
@@ -94,7 +99,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 ---
 ## WireFrames: 
 
-![wireframes]()
+![wireframe](img/readme-img/dungeon-maze-wireframe.jpg)
 
 ---
 ## Features: 
@@ -115,8 +120,8 @@ All the containers on the site are set to be fluid so that they cover the screen
 - The footer is responsive across all screen sizes 
 ### Hero Image
 
-![hero-image](img/readme-img/dungeon-maze-hero-img.png)
-- creates an emotional resonsive of wonder and nostalgia when the user first lands on the site because of the nature of the image and the retro stlying 
+![hero-image](img/readme-img/dungeon-maze-hero-image.jpg)
+- creates an emotional resonsive of wonder and nostalgia when the user first lands on the site because of the nature of the image and the contrast with the retro background.
 - Is responsive across all devices
 ### User Form 
 
@@ -148,7 +153,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 
 ### Game image output area 
 
-![game-image-output-area](img/readme-img/dungeon-maze-img-output.jpg)
+![game-image-output-area](img/readme-img/dungeon-maze-image-output.jpg)
 - Outputs an image to the user that is generated and assigned with the matching output text giving them a visual decription of what's happening in the game
 - When the images are generated the alt attributes are also changed for good practice and also to give an alternative discription to visually impared users
 - The images are responsive across all device sizes
@@ -175,6 +180,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 - Javascript variables follow the format of camelsCase
 - Images have been organise into different sections, the first image folder contains all the images used on the site and the nested folder contains all the images used on the readme 
 - Seperate Javascript files have been created for the different webpages, constant variables have been structured into a seperate const.js file 
+- Theres a seperate file for removed features that I plan to implement in the future
 
 ## Technologies used: 
 
@@ -189,7 +195,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 1. [Gitpod](https://www.gitpod.io/) To create and code the site
 2. [Github](https://github.com/) To host, deploy and store the site
 3. [Balsamiq](https://balsamiq.com/wireframes/?gclid=CjwKCAjwpqCZBhAbEiwAa7pXeX1wZJAVRJoBFg6LSTf1Nr4XKXuI4jzQYJKS4xrcwxdCR318YRSoRxoCKo4QAvD_BwE) To create the wireframes for the site
-4. [Bootstrap](https://getbootstrap.com/) Used to create site reponsivness across different screen sizes
+4. [Bootstrap](https://getbootstrap.com/) Used to create site reponsivness across different screen sizes and for the modal and navbar
 5. [Tinypng](https://tinypng.com/) To compress images for better page load times 
 6. [Google Fonts](https://fonts.google.com/about) To import fonts to the site
 7. [Grammarly](https://app.grammarly.com/) To correct spelling, punctuation and grammar
@@ -199,6 +205,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 11. [nu Html Checker](https://validator.w3.org/) To validate HTML 
 13. [Jshint](https://jshint.com/) To validate Javascript 
 14. [NightCafe](https://nightcafe.studio/) To created the images used on the site
+15. [Luapic](https://www4.lunapic.com/editor/) To create the pixalated effect on the bcakground image
 
 ---
 ## Deployment
@@ -276,29 +283,45 @@ The site has been tested for responsiveness on the following devices using Googl
 - Surface Pro 7, Duo
 - Nest Hub, Hub Max
 - iPhone 5, SE, 6, 7, 8, X
+- larger screen sizes such as 4k have also been tested
 Bootstrap as well as media queries were used to achieve responsiveness
 
 ---
 #### LightHouse 
 
+Lighthouse scores for the project are below slower performace on the mobile are caused by the document 
+having to load code from external sources such as bootstrap.
+![lighthouse-desktop-index](img/readme-img/lighthouse-index-desktop.jpg)
+![lighthouse-mobile-index](img/readme-img/lighthouse-index-mobile.jpg)
+![lighthouse-desktop-game-start](img/readme-img/lighthouse-game-start-desktop.jpg)
+![lighthouse-desktop-game-start](img/readme-img/lighthouse-game-start-mobile.jpg)
 ---
 ### Online validators 
 
 The final validator results can be seen here:
 
-#### Javascript Validation
+---
+### Javascript Validation
 
+#### Game cont and game-start 
 ![js-validation-const-game](img/readme-img/js-val-const-game.jpg)
+
+#### Game index 
 ![js-validation-index](img/readme-img/js-val-index.jpg)
 
-#### CSS Validation
+---
+### CSS Validation
 
 ![css-validation](img/readme-img/css-validation.jpg)
 
-#### HTML Validation
+---
+### HTML Validation
 
-![html-validation-index](/img/readme-img/js-val-index.jpg)
-![html-validation-game-start](img/readme-img/js-val-index.jpg)
+#### Game-start
+![html-validation-index](/img/readme-img/html-val-game-start.jpg)
+
+#### index
+![html-validation-game-start](img/readme-img/html-val-index.jpg)
 
 ---
 ### Manual Tests run on site
@@ -340,7 +363,7 @@ The final validator results can be seen here:
 ---
 ### Unit Testing
 
-Unit testing done at the start of the development to ensure that the core functions worked as intended. Some of the function names have changed and there are a few functions that were added later and tested using other means like [Pythontutor](https://pythontutor.com/) but these tests helped me to build a solid foundation for the game 
+Unit testing done at the start of the development to ensure that the core functions worked as intended. Some of the function names have changed and there are a few functions that were added later and tested using other means like [Pythontutor](https://pythontutor.com/) but these tests helped me to build a solid foundation for the game.
 
 ---
 ### Browser testing 
@@ -373,9 +396,9 @@ Other known bugs have been fixed and documented in commmit messages.
 
 ### Code
 
-- Bootstrap 4 was used throughout development to make the site responsive, I used this for layout and used some of Bootstraps classes
-- I used code from this source to fix a bug with my footer not sticking to the bottom of the webpage https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
-- I used an animation from this source in my code to create the fade effects on the text and images https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08
+- Bootstrap 4 was used throughout development to make the site responsive, I used this for layout and used some of Bootstraps classes, I also used it for the navbar and modal
+- I used code from this source to fix a bug with my footer not sticking to the bottom of the webpage which can be found [here](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/)
+- I used an animation from this source in my code to create the fade effects on the text and images which can be found [here](https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08)
 
 ---
 ### Content 
@@ -392,4 +415,4 @@ Other known bugs have been fixed and documented in commmit messages.
 - My mentor for the amazing help and support 
 - Other students on slack for their support 
 - Code Institute for the helpful materials and support
-- W3C for their library of informations when I needed to a refresher on content I'd learnt about during the course
+- W3C for their library of informations when I needed a quick refresher on content I'd learnt about during the course
