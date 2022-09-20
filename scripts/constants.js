@@ -53,7 +53,7 @@ const generateMonsterToMapper = {
     4 : "zombie who has a ",
     5 : "fearsome orc, he fights fearsly over a ",
     6 : "red dragon smiling at you. How dare you try and steal his most treasured item a ",
-    7 : "ogre scratching its head and looking at you, 'hey dont you touch my ",
+    7 : "ogre scratching its head and looking at you, hey dont you touch my ",
     8 : "a scary looking warewolf, he carrys a ",
     9 : "spectral Karen hovering towards you, she's enraged that you wont let her return a ",
 };

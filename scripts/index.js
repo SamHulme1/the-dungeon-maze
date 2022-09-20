@@ -19,9 +19,11 @@ function updateScoreArea (){
     let score = JSON.parse(localStorage.getItem("highScore"));
     let rank = localStorage.getItem("rank");
     if (score == null){
-        scoreArea.style.display="none";
+        scoreArea.innerHTML=`<p>You don't have a score yet</p>`;
     } else {
         scoreArea.innerHTML= `<p class=paragraph-text> Last user highscore <br> Name:${name} <br> Score:${score} <br> Rank:${rank} <br> can you beat them? </p>`;
+
     }
+
 }
 

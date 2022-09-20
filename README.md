@@ -118,6 +118,18 @@ All the containers on the site are set to be fluid so that they cover the screen
 ![footer](img/readme-img/dungeon-maze-footer.png)
 - The footer includes links to external sources in particluar social media links that all open on seperate web tabs
 - The footer is responsive across all screen sizes 
+### Load Screen 
+[load-screen](img/readme-img/dungeon-maze-load.jpg)
+- stays inplace until the web page content has been loaded for the game
+- The load screen is responsive across all devices, the image doesn't stretch
+
+### High Score Area
+[high-score](img/readme-img/dungeon-maze-score-area.jpg)
+- The high score area allows the user to see the highscore of the person who last played so that they can 
+compete against them
+- The high score area is responsive across all devices
+- Prevents default data from being stored by displaying a message when no score has been recored yet
+
 ### Hero Image
 
 ![hero-image](img/readme-img/dungeon-maze-hero-image.jpg)
@@ -129,6 +141,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 - The form element on the site allows the user to access the game page through interacting with the input and submitting their name
 - Uses local storage to validate input information and store the users name. This later results in the user recieving an alert message when they enter the game. 
 - The form is responsve accross all device sizes
+- validates data preventing default values
 ### Reset Button
 
 ![reset-button](img/readme-img/dungeon-maze-reset-button.jpg)
@@ -177,7 +190,7 @@ All the containers on the site are set to be fluid so that they cover the screen
 - Javascript variables follow the format of camelsCase
 - Images have been organise into different sections, the first image folder contains all the images used on the site and the nested folder contains all the images used on the readme 
 - Seperate Javascript files have been created for the different webpages, constant variables have been structured into a seperate const.js file 
-- Theres a seperate file for removed features that I plan to implement in the future
+
 
 ## Technologies used: 
 
@@ -241,9 +254,9 @@ As a first time user, the first time I land on the site I can gain an understand
 
 #### Returning User
 
-As a returning user my main focus is to replay the game and try and beat my old highscore I can do this by:
+As a returning user my main focus is to replay the game and try and beat a highscore I can do this by:
 - Re entering the website and replaying the game 
-- Seeing my highscore displayed to them when they first play the game and coming back onto the site to beat it(the score is displayed to the user when they beat the game or die. Future versions of the game will include a scoreboard to display the data or all users who play the game)
+- Seeing the highscore of the person who most recently played the game at trying to beat it (the score is displayed to the user when they beat the game or die and is updated on the indexpage. Future versions of the game will include a scoreboard to display the data or all users who play the game not just the most recent player I ran out of time to develop this feature)
 ---
 ### Developer goals have been met by
 
@@ -361,7 +374,7 @@ The final validator results can be seen here:
 ---
 ### Unit Testing
 
-Unit testing done at the start of the development to ensure that the core functions worked as intended. Some of the function names have changed and there are a few functions that were added later and tested using other means like [Pythontutor](https://pythontutor.com/) but these tests helped me to build a solid foundation for the game.
+Unit testing done at the start of the development to ensure that the core functions worked as intended. Some of the function names have changed and there are a few functions that were added later and tested using other means like [Pythontutor](https://pythontutor.com/) but these tests helped me to build a solid foundation for the game. Old unit tests can be found [here](scripts/tests/game.test.js).
 
 ---
 ### Browser testing 
@@ -387,7 +400,7 @@ Other known bugs have been fixed and documented in commmit messages.
 ### Bugs Left in Code:
 
 - Sometimes the score doesn't map correctly for certain items inparticlar the gold coins.
-- In chrome the website gives a violation warning when clicking the attack and block buttons because of the length of the code. I've left this in because its not an error but I wanted to mention it and so that I can refer back to this in the future 
+- In chrome the website gives a violation warning when clicking the attack and block buttons because of the length of the code. I've left this in because its not an error but I wanted to mention it and so that I can refer back to this in the future. I've added a load screen to the page incase it takes longer to load.
 
 ---
 ## Credits 
