@@ -25,6 +25,9 @@ describe('game has the correct keys', () => {
     test('health key exists', () => {
         expect('health' in game).toBe(true);
     });
+    test('monsterHealth key exists', () => {
+        expect('monsterHealth' in game).toBe(true);
+    });
   });
 
 describe('item generators works correctly', () => {

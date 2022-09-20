@@ -1,3 +1,4 @@
+/* Unfinished Javascript for future scoreboard feature 
 let scoreBoardArrayName = [];
 let ScoreBoardArrayScore = [];
 let ScoreBoardArrayRank = [];
@@ -58,6 +59,23 @@ function updateScoreBoard(){
     }
 }
 
+The bellow was removed from game.js when I realised I wouldn't have enough time to finish. 
+I've kept all the files for referance and for if I want to finish this feature in the future:
+
+function storeScore() {
+        let highScore = score;
+        window.localStorage.setItem("highScore", JSON.stringify(highScore));
+    }
+function storeRank() {
+        let ranking = rank;
+        window.localStorage.setItem("rank", JSON.stringify(ranking));
+    }
+function scoreIsReady() {
+        let scoreReady = true;
+        window.sessionStorage.setItem("ScoreReady", JSON.stringify(scoreReady));
+    }
+
+*/
 
 
 
