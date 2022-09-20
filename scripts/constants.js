@@ -61,8 +61,8 @@ const generateMonsterToMapper = {
 const roomIdToImageObjectMapper = {
     1: {
         "imageName": "img/corridoor.jpg",
-        "imageAlt": "Image of a corridoor in a pixelated art style",
-        "sentence1": "You follow a long corridoor. On the walls hang metal lanterns the corridoor is make from rock, rock and somemore rock. Whilst you walk down the corridoor you find a ",
+        "imageAlt": "Image of a coridoor in a pixelated art style",
+        "sentence1": "You follow a long corridor. On the walls hang metal lanterns the corridor is made from rock, rock and some more rock. Whilst you walk down the corridor you find a ",
     },
     2: {
         "imageName": "img/well.jpg",
@@ -72,40 +72,40 @@ const roomIdToImageObjectMapper = {
     3: {
         "imageName": "img/bedroom.jpg",
         "imageAlt": "Image of a bedroom in a pixelated art style",
-        "sentence1": "You enter a medium sized room, inside the room are several small sized beds. At the bottom of each bed sits a small wooden trunk. The walls are decorated with colourful dyed fabrics. Mainly green though. Afterall, it is a goblins favorite colour. There are several small hanging lanterns making sure that the room is well lit. You look through the trunks and discover a ",
+        "sentence1": "You enter a medium-sized room, inside the room are several small-sized beds. At the bottom of each bed sits a small wooden trunk. The walls are decorated with colourfully dyed fabrics. Mainly green though. After all, it is a goblin's favourite colour. There are several small hanging lanterns making sure that the room is well lit. You look through the trunks and discover a ",
     },
     4: {
         "imageName": "img/small-room-2.jpg",
         "imageAlt": "Image of a bedroom in a pixelated art style",
-        "sentence1": "At the end of the path you see a small closed door, you knock a few times and to your suprise ... nobody answers. 'well at least I tried' you think to yourself as you try the handle. The door falls open and inside you can see large crates, barrels and other storage containers you decide to open them. Inside you find a ",
+        "sentence1": "At the end of the path you see a small closed door, you knock a few times and to your surprise ... nobody answers. 'well at least I tried' you think to yourself as you try the handle. The door falls open and inside you can see large crates, barrels and other storage containers you decide to open them. Inside you find a ",
     },
     5: {
         "imageName": "img/small-room-1.jpg",
         "imageAlt": "Image of a small room in a pixelated art style",
-        "sentence1": "After following a long corridoor for sometime, you come across a small dimply lit room. Inside the room is a small round table with cards layed out ontop of it. Further back in the room are two small size jail cells with the remains of somesort of humanoid creatures inside. It looks like whoever locked these poor souls inside didnt like loosing after inspecting the room further you find a ",
+        "sentence1": "After following a long corridor for some time, you come across a small dimly lit room. Inside the room is a small round table with cards laid out on top of it. Further back in the room are two small size jail cells with the remains of some sort of humanoid creatures inside. It looks like whoever locked these poor souls inside didn't like losing after inspecting the room further you find a ",
     },
     6: {
         "imageName": "img/large-room-2.jpg",
         "imageAlt": "Image of a large room in a pixelated art style",
-        "sentence1": "The passageway suddenly opens up into a large carved out room. Inside the room you can see an alter and what look like small wooden benches. 'Maybe this used to be some kind of worshiping area' you think to yourself as you move further into the room. On the walls hang several small daggers and a number of simialrly sized painting depicting some sort of goblin god. There is a large pipe organ. several disguarded sheets with what looks like music written on them line the floor 'or tourture chamber you laugh to yourself as you imagine goblins singing' After looking around some more you find a ",
+        "sentence1": "The passageway suddenly opens up into a large carved-out room. Inside the room, you can see an altar and what looks like small wooden benches. 'Maybe this used to be some kind of worshipping area' you think to yourself as you move further into the room. On the walls hang several small daggers and several similarly sized paintings depicting some sort of goblin god. There is a large pipe organ. several discarded sheets with what looks like music written on them line the floor 'or torture chamber you laugh to yourself as you imagine goblins singing' After looking around some more you find a ",
     },
     7: {
         "imageName": "img/largeroom-1.jpg",
         "imageAlt": "Image of a large room in a pixelated art style",
-        "sentence1": "You approach two large ajar doors, which guard a large room. Inside the room sits a large retangular table infront of a roaring fireplace. On the table rest a number of plates a goblets with what smell like some sort of ale inside. Opposite the fire there is a larger throne sized chair made of old weponry. The room also features several small paintings and a cupboard containing strange victuals 'guess ill skip lunch then' you think to yourself after smelling some of the food. After searching the room you find a ",
+        "sentence1": "You approach two large ajar doors, which guard a large room. Inside the room sits a large rectangular table in front of a roaring fireplace. On the table rests several plates and goblets with what smells like some sort of ale inside. Opposite the fire, there is a larger throne-sized chair made of old weaponry. The room also features several small paintings and a cupboard containing strange victuals 'guess ill skip lunch then' you think to yourself after smelling some of the food. After searching the room you find a ",
     }, 
     8: {
         "imageName1": "img/locked-door.jpg",
         "imageAlt": "Image of a locked door in a pixelated art style",
         "imageName2": "img/boss-room.jpg",
         "imageAlt2": "Image of a boss area in a pixelated art style",
-        "sentence1": " You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!",
-        "sentence2": " You come acoss a large stone locked door. You try everything but the door wont move without its proper key. Youre forced to turn back.  you notice a "
+        "sentence1": "You come across a large stone-locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletal remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!",
+        "sentence2": "You come across a large stone-locked door. You try everything but the door won't move without its proper key. You're forced to turn back.  you notice a "
     },
     9: {
         "imageName": "img/cave-in.jpg",
         "imageAlt": "Image of a cavein in a pixelated art style",
-        "sentence1": "You come accross a partial cave-in, after moving some of the rubble, you discover a small passageway 'I shouldnt have had that extra large breakfast' you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a ",
+        "sentence1": "You come across a partial cave-in, and after moving some of the rubble, you discover a small passageway 'I shouldn't have had that extra large breakfast' you think to yourself as you just about squeeze through. After following the passage for several minutes you feel the walls begin to move back and open up into a small chamber inside you find a ",
     },
 };
 /**rank mapper */ 

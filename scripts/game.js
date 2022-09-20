@@ -78,8 +78,8 @@ document.getElementById("reset-game-btn").addEventListener("click", function res
     nextRoomButton.style.color = "#3da861";
     outputImage.innerHTML = ` <img class="game-image fade-in" src="img/tavern.jpg" alt="the dugeon maze title image">`;
     outputText.innerHTML = `<p class="paragraph-text fade-in">
-    The dungeon of the once great king Aleon is renowned for it's many treasures but also it's deadly inhabitents. You've come across hard times in resent months, the harvests have been poor, and you have been forced to find other means of accumulating income. So you ended up here. In this inn on the otherside of the world. Many others like you have come to seek their fortune but many will fail. You decide to have one last ale before calling it a day. You'll enter the maze at first light. 
-    press the room button to start your adventure. 
+    The dungeon of the once great king Aleon is renowned for its many treasures but also its deadly inhabitants. You've come across hard times in recent months, the harvests have been poor, and you have been forced to find other means of accumulating income. So you ended up here. In this inn on the other side of the world. Many others like you have come to seek their fortune but many will fail. You decide to have one last ale before calling it a day. You'll enter the maze at first light. 
+    Press the room button to start your adventure. 
     </p> `;
 });
 /**-new turn event/function
@@ -105,7 +105,7 @@ document.getElementById("next-room").addEventListener("click", function newTurn(
     attackButton.style.color = "#3da861";
     potionButton.disabled = false;
     potionButton.style.color = "#3da861";
-    if (game.room.includes(' You come acoss a large stone locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletol remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')) {
+    if (game.room.includes('You come across a large stone-locked door. You try the lock with the key in your inventory. The door snaps open revealing a large throne room. On the throne sits the skeletal remains of the king. You watch as they slowly twitch and come to life. You must now fight the dungeons boss!')) {
         createBossHealth();
         outputText.innerHTML = `<p class="paragraph-text fade-in">${game.room}</p>`;
     } else {

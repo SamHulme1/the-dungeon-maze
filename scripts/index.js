@@ -10,8 +10,8 @@ function handleSubmit(event){
 
 /**-update score area 
  * this function updates the score area when the user has attained a score 
- * its based on the last user who played the game
- * if the score isnt assigned a value yet then the area doesn't display
+ * it's based on the last user who played the game
+ * if the score isn't assigned a value yet then the area doesn't display
  */
 function updateScoreArea (){
     let scoreArea = document.getElementById("highscore-area");
@@ -21,7 +21,7 @@ function updateScoreArea (){
     if (score == null){
         scoreArea.innerHTML=`<p>You don't have a score yet</p>`;
     } else {
-        scoreArea.innerHTML= `<p class=paragraph-text> Last user highscore <br> Name:${name} <br> Score:${score} <br> Rank:${rank} <br> can you beat them? </p>`;
+        scoreArea.innerHTML= `<p class=paragraph-text> Last user highscore: <br> Name:${name} <br> Score:${score} <br> Rank:${rank} <br> can you beat them? </p>`;
 
     }
 
