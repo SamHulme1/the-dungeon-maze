@@ -167,12 +167,9 @@ All the containers on the site are set to be fluid so that they cover the screen
 ---
 ### Future Features:
 
-- Due to the time restraint I had to remove the scoreboard page from the site. However, this will be fixed in the future 
 - Id like to add different classes for the user to select. Different classes will do more damage and have differnet abilities and vunerablitites. Such as a wizard that can do 2 damage on attacking but only has 3 life 
 - Id like to add a shop so that the users can purchace upgrades for their character such as better weapons and more life 
-- The html removed from the website can be found [here](unfinished-features-in-development/score-board.html) 
-- The Js removed from the website can be found [here](unfinished-features-in-development/score.js)
-- Alternatively, they can also be found in the unfinshed-features-in-development folder 
+
 ### Naming Conventions and Structure of Files 
 
 - All the files on the site have been named with consistency and structured into their appropriate sections 
@@ -295,6 +292,7 @@ having to load code from external sources such as bootstrap.
 ![lighthouse-mobile-index](img/readme-img/lighthouse-index-mobile.jpg)
 ![lighthouse-desktop-game-start](img/readme-img/lighthouse-game-start-desktop.jpg)
 ![lighthouse-desktop-game-start](img/readme-img/lighthouse-game-start-mobile.jpg)
+
 ---
 ### Online validators 
 
@@ -303,7 +301,7 @@ The final validator results can be seen here:
 ---
 ### Javascript Validation
 
-#### Game cont and game-start 
+#### Game const and game-start 
 ![js-validation-const-game](img/readme-img/js-val-const-game.jpg)
 
 #### Game index 

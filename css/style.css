@@ -5,6 +5,26 @@ body {
     background-size:cover;
     background-repeat: no-repeat;
 }
+.page-loader{
+    width: 100%;
+    height: 100%;
+    background: url(../img/tavern.jpg);
+    background-size: cover;
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader-content{
+    border: 5px solid #c82305;
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width:6em;
+    height:6em;
+    animation: spin 3s linear infinite;
+    position: relative;
+}
 /*animations*/
 /*fade animation credit from https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08 */
 .fade-in {
@@ -54,6 +74,10 @@ body {
       opacity:1;
   }
 }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 /*psuedo effects*/
 .logo:hover {
     color: white;
@@ -195,9 +219,12 @@ background-color: rgba(255,255,255,0.9);
     background-color: rgba(0,0,0, 0.7);
 }
 
-/*margin*/
+/*custom margin classes*/
 .margin {
     margin-bottom: 5%;
+}
+.margin-top {
+    margin-top: 10%;
 }
 /*buttons */
 .btn-reset {

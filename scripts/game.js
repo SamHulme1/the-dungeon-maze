@@ -3,8 +3,11 @@ let rank = "";
 let mobileFeedbackDisplay = document.getElementById("small-screen-output");
 let outputText = document.getElementById("output-text");
 let outputImage = document.getElementById("output-image");
-window.addEventListener("load", initiateGame());
-window.addEventListener("load", welcomeMessage());
+window.addEventListener("load", function() {
+    initiateGame();
+    removeLoadScreen();
+    welcomeMessage();
+});
 /**-initiabte game funtion
  * called when the user first enters the gamepage 
  * this function creates the users health for the first time
@@ -27,11 +30,24 @@ window.addEventListener("load", welcomeMessage());
  * template literals to pass the value to an alert message. On smaller screens were alert messages 
  * dont display. Outputs the message to a seperate div called small-screen-output and stored in the global variable
  * mobileFeedbackDisplay
+ * if the user doesn't have a username for some reason displays welcome mysterious one.
  */
  function welcomeMessage() {
     let username = localStorage.getItem("username");
-    alert(`Welcome to the dungeon ${username}`);
-    mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">Welcome to the dungeon ${username}</p>`;
+    if (username == null) {
+        alert(`Welcome to the dungeon mysterious one`);
+        mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">Welcome to the dungeon mysterious one</p>`;
+    } else {
+        alert(`Welcome to the dungeon ${username}`);
+        mobileFeedbackDisplay.innerHTML = `<p class="paragraph-text fade-in">Welcome to the dungeon ${username}</p>`;
+    }
+}
+/**-remove load screen function
+ * removes the loadscreen by setting its display to none
+ */
+function removeLoadScreen() {
+    let loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.display="none";
 }
 /**-game buttons functions */
 /**-reset buttons functions
@@ -280,6 +296,7 @@ function calculateScore() {
       }
     }
     score = totalScore;
+    storeScore();
     calculateRank();
 }
 /**calculate rank function
@@ -294,6 +311,16 @@ function calculateRank() {
     } else {
         rank = rankMapper[scoreToRank];
     }
+    storeRank();
+}
+/**-Storage functions these functions store the users score and rank */
+function storeScore() {
+    let highScore = score;
+    window.localStorage.setItem("highScore", JSON.stringify(highScore));
+}
+function storeRank() {
+    let ranking = rank;
+    window.localStorage.setItem("rank", JSON.stringify(ranking));
 }
 /**dead function
  * turns off all the buttons
